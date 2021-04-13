@@ -49,13 +49,13 @@ andIncludesCustomerNamed: aName
 			self assert: (aCustomerBook includesCustomerNamed: aName) ]
 ! !
 
-!CustomerBookTest methodsFor: 'assert messages' stamp: 'BAG 4/13/2021 01:07:56'!
-assertThatTheMessage: aBlock takesLessThan: aTimeUpperBoundInMs
+!CustomerBookTest methodsFor: 'assert messages' stamp: 'BAG 4/13/2021 18:20:07'!
+assertThatTheBlock: aBlock takesLessThan: aTimeUpperBoundInMs
  	| millisecondsBeforeRunning millisecondsAfterRunning|
 	millisecondsBeforeRunning := Time millisecondClockValue * millisecond.
 	aBlock value.
 	millisecondsAfterRunning := Time millisecondClockValue * millisecond.
-	self assert: (millisecondsAfterRunning-millisecondsBeforeRunning) < aTimeUpperBoundInMs! !
+	self assert: (millisecondsAfterRunning-millisecondsBeforeRunning) < (aTimeUpperBoundInMs*millisecond)! !
 
 
 !CustomerBookTest methodsFor: 'instance creation' stamp: 'BAG 4/13/2021 00:41:51'!
@@ -73,22 +73,22 @@ createACustomerBookWithASuspendedCustomerNamed: aName
 	^customerBook! !
 
 
-!CustomerBookTest methodsFor: 'testing' stamp: 'BAG 4/13/2021 01:06:49'!
+!CustomerBookTest methodsFor: 'testing' stamp: 'BAG 4/13/2021 18:21:10'!
 test01AddingCustomerShouldNotTakeMoreThan50Milliseconds
 
 	| customerBook |
 	customerBook := CustomerBook new.
-	self assertThatTheMessage: [customerBook addCustomerNamed: 'John Lennon'.] takesLessThan: (50 * millisecond).
+	self assertThatTheBlock: [customerBook addCustomerNamed: 'John Lennon'.] takesLessThan: 50.
 ! !
 
-!CustomerBookTest methodsFor: 'testing' stamp: 'BAG 4/13/2021 01:07:32'!
+!CustomerBookTest methodsFor: 'testing' stamp: 'BAG 4/13/2021 18:20:41'!
 test02RemovingCustomerShouldNotTakeMoreThan100Milliseconds
 
 	| customerBook paulMcCartney |
 	paulMcCartney := 'Paul McCartney'.
 	customerBook := self createACustomerBookWithACustomerNamed: paulMcCartney .
 	
-	self assertThatTheMessage: [customerBook removeCustomerNamed: paulMcCartney.] takesLessThan: (100 * millisecond).
+	self assertThatTheBlock: [customerBook removeCustomerNamed: paulMcCartney.] takesLessThan: 100.
 	
 ! !
 
