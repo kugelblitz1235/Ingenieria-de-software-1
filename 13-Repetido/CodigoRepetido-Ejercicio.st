@@ -239,13 +239,30 @@ numberOfSuspendedCustomers
 	
 	^suspended size! !
 
-!CustomerBook methodsFor: 'customer management' stamp: 'BAG 4/13/2021 01:53:12'!
+!CustomerBook methodsFor: 'customer management' stamp: 'BAG 4/15/2021 00:05:42'!
 removeCustomerNamed: aName 
-	(active includes: aName) ifTrue:[^active remove: aName].
-	(suspended includes: aName) ifTrue:[^suspended remove: aName].
-		
-	^ NotFound signal.
-! !
+	^self removeCustomerNamed: aName from:active ifAbsent:[
+		self removeCustomerNamed: aName from: suspended ifAbsent:[NotFound signal]
+	].
+	
+	"
+	No quisimos alterar la funcionalidad dado lo mencionado en clase, pero esta es una alternativa que aprovecha los mensajes de OrderedCollection para no volver a crear mensajes que repiten el comportamiento de algunos ya existentes.
+	^active remove: aName ifAbsent: [suspended remove: aName ifAbsent:[^NotFound signal]]  
+	"
+	! !
+
+!CustomerBook methodsFor: 'customer management' stamp: 'BAG 4/14/2021 23:55:54'!
+removeCustomerNamed: aName from: aGroupOfCustomers ifAbsent: aBlock .
+	1 to: aGroupOfCustomers size do: 
+	[ :index |
+		aName = (aGroupOfCustomers at: index)
+			ifTrue: [
+				aGroupOfCustomers removeAt: index.
+				^ aName 
+			] 
+	].
+	
+	^aBlock value.! !
 
 !CustomerBook methodsFor: 'customer management' stamp: 'HernanWilkinson 7/6/2011 17:52'!
 signalCustomerAlreadyExists 
