@@ -139,28 +139,37 @@ test10CanNotTopWhenThereAreNoObjectsInTheStack
 
 !classDefinition: #SentenceFinderByPrefixTest category: 'Stack-Exercise'!
 TestCase subclass: #SentenceFinderByPrefixTest
-	instanceVariableNames: 'emptyFinder fourSentencesFinder stackOfFourSentences'
+	instanceVariableNames: 'emptyFinder fourSentencesFinder emptyStack stackOfFourSentences stackOfFourSentencesCopy'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Stack-Exercise'!
 
-!SentenceFinderByPrefixTest methodsFor: 'setUp/tearDown' stamp: 'TT 4/27/2021 18:37:19'!
+!SentenceFinderByPrefixTest methodsFor: 'setUp/tearDown' stamp: 'TT 4/29/2021 13:34:58'!
 setUp
-	emptyFinder :=  SentenceFinderByPrefix createWithSentences: (OOStack new).
 	stackOfFourSentences := OOStack new.
 	stackOfFourSentences 
 		push: 'winter is coming';
 		push: 'winning is everything';
 		push: 'The winds of Winter';
 		push: 'Winter is here'.
+		
+	stackOfFourSentencesCopy := OOStack new.
+	stackOfFourSentencesCopy 
+		push: 'winter is coming';
+		push: 'winning is everything';
+		push: 'The winds of Winter';
+		push: 'Winter is here'.
 	
+	emptyStack := OOStack new.
+	
+	emptyFinder :=  SentenceFinderByPrefix createWithSentences: emptyStack.
 	fourSentencesFinder := SentenceFinderByPrefix createWithSentences: stackOfFourSentences.
 		
 
 	! !
 
 
-!SentenceFinderByPrefixTest methodsFor: 'auxiliars' stamp: 'TT 4/27/2021 18:56:14'!
+!SentenceFinderByPrefixTest methodsFor: 'auxiliars' stamp: 'TT 4/29/2021 13:50:22'!
 assertStack: aStack isEqualToStack: anotherStack
 	| aStackCopy anotherStackCopy |
 	aStackCopy := aStack copy.
@@ -168,7 +177,7 @@ assertStack: aStack isEqualToStack: anotherStack
 	
 	self assert: (aStackCopy size = anotherStackCopy size).
 	
-	[aStackCopy isEmpty] whileFalse: [
+	aStackCopy size timesRepeat: [
 		self assert: (aStackCopy pop = anotherStackCopy pop).
 	].! !
 
@@ -201,11 +210,11 @@ test02StackShouldOnlyContainSentences
 		
 	! !
 
-!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'TT 4/27/2021 18:40:33'!
+!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'TT 4/29/2021 13:27:15'!
 test03CreateShouldWorkIfStackIsValid
 	| finder |
 	finder := SentenceFinderByPrefix createWithSentences: stackOfFourSentences.
-	self assertStack: stackOfFourSentences isEqualToStack: finder sentences.
+	self assertStack: stackOfFourSentences isEqualToStack: stackOfFourSentencesCopy.
 ! !
 
 !SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'BAG 4/29/2021 00:40:43'!
@@ -232,58 +241,51 @@ test05FindPrefixShouldNotContainBlanks
 		
 ! !
 
-!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'BAG 4/29/2021 00:41:16'!
+!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'TT 4/29/2021 13:31:19'!
 test06StackIsNotModifiedIfFindDoesNotReturnSentences
-	| initialSentences |
-	initialSentences := fourSentencesFinder sentences.
+	
 	fourSentencesFinder find: 'pepe'.
-	self assertStack: initialSentences isEqualToStack: fourSentencesFinder sentences.
+	self assertStack: stackOfFourSentences isEqualToStack: stackOfFourSentencesCopy .
 	
 ! !
 
-!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'BAG 4/29/2021 00:41:23'!
+!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'TT 4/29/2021 13:31:32'!
 test07StackIsNotModifiedIfFindReturnSentences
-	| initialSentences |
-	initialSentences := fourSentencesFinder sentences.
+	
 	fourSentencesFinder find: 'win'.
-	self assertStack: initialSentences isEqualToStack: fourSentencesFinder sentences.
+	self assertStack: stackOfFourSentences isEqualToStack: stackOfFourSentencesCopy .
 	
 ! !
 
-!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'BAG 4/29/2021 00:41:31'!
+!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'TT 4/29/2021 13:38:19'!
 test08FindShouldNotReturnSentencesFromEmptyStack
-	| initialSentences |
-	initialSentences := emptyFinder sentences.
+	| emptyStackCopy |
+	emptyStackCopy := OOStack new.
 	
 	self assert: (emptyFinder find: 'pepe') size = 0. 
-	self assertStack: initialSentences isEqualToStack: emptyFinder sentences.
-		
+	self assertStack: emptyStack isEqualToStack: emptyStackCopy.
 ! !
 
-!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'BAG 4/29/2021 00:41:40'!
+!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'TT 4/29/2021 13:39:39'!
 test09FindShouldNotReturnSentencesIfNoneMatch
-	|initialSentences|
-	initialSentences := fourSentencesFinder sentences.
-	
+
 	self assert: (fourSentencesFinder find: 'pepe') = (OrderedCollection new). 
-	self assertStack: initialSentences isEqualToStack: fourSentencesFinder sentences.
+	self assertStack: stackOfFourSentences isEqualToStack: stackOfFourSentencesCopy .
 ! !
 
-!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'BAG 4/29/2021 00:42:44'!
+!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'TT 4/29/2021 13:39:57'!
 test10FindShouldReturnOneSentence
-	|initialSentences expectedResults|
+	| expectedResults |
 	expectedResults := OrderedCollection new.
 	expectedResults add: 'Winter is here'.
-	initialSentences := fourSentencesFinder sentences.
 	
 	self assert: (fourSentencesFinder find: 'Wint') = expectedResults. 
-	self assertStack: initialSentences isEqualToStack: fourSentencesFinder sentences.
+	self assertStack: stackOfFourSentences isEqualToStack: stackOfFourSentencesCopy .
 	! !
 
-!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'BAG 4/29/2021 00:42:55'!
+!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'TT 4/29/2021 13:40:07'!
 test11FindShouldReturnMultipleSentences
-	|initialSentences expectedResults|
-	initialSentences := fourSentencesFinder sentences.
+	| expectedResults |
 	
 	expectedResults := OrderedCollection new.
 	expectedResults			
@@ -291,17 +293,16 @@ test11FindShouldReturnMultipleSentences
 		add: 'winter is coming'.
 				 
 	self assert: (fourSentencesFinder find: 'win') = expectedResults.
-	self assertStack: initialSentences isEqualToStack: fourSentencesFinder sentences.
+	self assertStack: stackOfFourSentences isEqualToStack: stackOfFourSentencesCopy .
 	! !
 
-!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'BAG 4/29/2021 00:43:02'!
+!SentenceFinderByPrefixTest methodsFor: 'test' stamp: 'TT 4/29/2021 13:40:16'!
 test12FindShouldBeCaseSensitive
-	| initialSentences expectedResults|
-	initialSentences := fourSentencesFinder sentences .
+	| expectedResults |
 	expectedResults := OrderedCollection new.
 	
 	self assert: (fourSentencesFinder find: 'WIN') = expectedResults. 
-	self assertStack: initialSentences isEqualToStack: fourSentencesFinder sentences.! !
+	self assertStack: stackOfFourSentences isEqualToStack: stackOfFourSentencesCopy .! !
 
 
 !classDefinition: #OOList category: 'Stack-Exercise'!
@@ -475,12 +476,14 @@ Object subclass: #SentenceFinderByPrefix
 	poolDictionaries: ''
 	category: 'Stack-Exercise'!
 
-!SentenceFinderByPrefix methodsFor: 'initialization' stamp: 'BAG 4/29/2021 01:48:12'!
+!SentenceFinderByPrefix methodsFor: 'initialization' stamp: 'TT 4/29/2021 13:59:05'!
 initializeWithSentences: aStackOfSentences
+
+	stackOfSentences := aStackOfSentences.
+	
 	self assertTypeIsStack: aStackOfSentences.
 	self assertIsAStackOfSentences: aStackOfSentences.
 	
-	stackOfSentences := aStackOfSentences copy
 	
 	! !
 
@@ -492,47 +495,43 @@ find: aPrefix
 	
 	^self selectSentencesWithPrefix: aPrefix.! !
 
-!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'BAG 4/29/2021 01:48:46'!
-sentences
-	^ stackOfSentences copy! !
 
-
-!SentenceFinderByPrefix methodsFor: 'auxiliar operations' stamp: 'BAG 4/29/2021 01:15:34'!
-from: aStack select: aBlock
-	|selectedElements stackCopy|
-	selectedElements := OrderedCollection new.
+!SentenceFinderByPrefix methodsFor: 'auxiliar operations' stamp: 'TT 4/29/2021 14:25:05'!
+fromSentencesSelect: aBlock
+	|selectedSentences stackCopy|
+	selectedSentences := OrderedCollection new.
 	stackCopy := OOStack new.
 	
-	[aStack isEmpty ] whileFalse: [ 
-		| topElement |
-		topElement := aStack pop.
-		self ifElement: topElement satisfies: aBlock  addTo: selectedElements	.
-		stackCopy push: topElement 
+	stackOfSentences size timesRepeat: [ 
+		| topSentence |
+		topSentence := stackOfSentences pop.
+		self if: topSentence satisfies: aBlock  addTo: selectedSentences	.
+		stackCopy push: topSentence 
 	].                                                                                                            
 	
-	self restore: aStack from: stackCopy.
+	self restoreSentencesFrom: stackCopy.
 		
 
-	^selectedElements .	
+	^selectedSentences .	
 ! !
 
-!SentenceFinderByPrefix methodsFor: 'auxiliar operations' stamp: 'BAG 4/27/2021 00:34:18'!
-ifElement: anElement satisfies: aBlockCondition addTo: aCollectionOfElements
-		(aBlockCondition value: anElement) ifTrue:[aCollectionOfElements add: anElement].! !
+!SentenceFinderByPrefix methodsFor: 'auxiliar operations' stamp: 'TT 4/29/2021 14:23:47'!
+if: aSentence satisfies: aBlockCondition addTo: aCollectionOfElements
+		(aBlockCondition value: aSentence) ifTrue:[aCollectionOfElements add: aSentence].! !
 
-!SentenceFinderByPrefix methodsFor: 'auxiliar operations' stamp: 'BAG 4/29/2021 00:56:34'!
-restore: aStack from: anotherStack
-	[anotherStack isEmpty] whileFalse:[aStack push: (anotherStack pop)].! !
+!SentenceFinderByPrefix methodsFor: 'auxiliar operations' stamp: 'TT 4/29/2021 14:02:27'!
+restoreSentencesFrom: anotherStack
+	anotherStack size timesRepeat: [stackOfSentences push: (anotherStack pop)].! !
 
-!SentenceFinderByPrefix methodsFor: 'auxiliar operations' stamp: 'BAG 4/27/2021 00:40:58'!
+!SentenceFinderByPrefix methodsFor: 'auxiliar operations' stamp: 'TT 4/29/2021 13:54:18'!
 selectSentencesWithPrefix: aPrefix
-	^self from: stackOfSentences select: [:aSentence | aSentence beginsWith: aPrefix].! !
+	^self fromSentencesSelect: [:aSentence | aSentence beginsWith: aPrefix].! !
 
 
-!SentenceFinderByPrefix methodsFor: 'asserts' stamp: 'BAG 4/27/2021 00:51:46'!
+!SentenceFinderByPrefix methodsFor: 'asserts' stamp: 'TT 4/29/2021 13:57:16'!
 assertIsAStackOfSentences: aStack
 	|nonSentences|
-	nonSentences := (self from: aStack select: [:elem | (elem isKindOf: String) not ]). 
+	nonSentences := (self fromSentencesSelect: [:elem | (elem isKindOf: String) not ]). 
 	
 	nonSentences isEmpty ifFalse:[^self error: self class stackShouldOnlyContainSentencesErrorDescription ].! !
 
