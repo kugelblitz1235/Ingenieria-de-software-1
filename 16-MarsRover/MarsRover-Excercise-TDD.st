@@ -5,56 +5,56 @@ TestCase subclass: #MarsRoverTest
 	poolDictionaries: ''
 	category: 'MarsRover-Excercise-TDD'!
 
-!MarsRoverTest methodsFor: 'rotation commands' stamp: 'BAG 5/15/2021 03:11:03'!
+!MarsRoverTest methodsFor: 'turn left and right commands' stamp: 'BAG 5/15/2021 03:11:03'!
 test13FacingWestProcessTurnRightCommand
 	|rover|
 	rover := MarsRover startingAt: 1@0 facing: West.
 	rover process:'r'.
 	self assert: (rover isAt: 1@0 heading: North).! !
 
-!MarsRoverTest methodsFor: 'rotation commands' stamp: 'BAG 5/15/2021 03:11:15'!
+!MarsRoverTest methodsFor: 'turn left and right commands' stamp: 'BAG 5/15/2021 03:11:15'!
 test14FacingNorthProcessTurnRightCommand
 	|rover|
 	rover := MarsRover startingAt: 1@0 facing: North.
 	rover process:'r'.
 	self assert: (rover isAt: 1@0 heading: East).! !
 
-!MarsRoverTest methodsFor: 'rotation commands' stamp: 'BAG 5/15/2021 03:11:37'!
+!MarsRoverTest methodsFor: 'turn left and right commands' stamp: 'BAG 5/15/2021 03:11:37'!
 test15FacingEastProcessTurnRightCommand
 	|rover|
 	rover := MarsRover startingAt: 1@0 facing: East.
 	rover process:'r'.
 	self assert: (rover isAt: 1@0 heading: South).! !
 
-!MarsRoverTest methodsFor: 'rotation commands' stamp: 'BAG 5/15/2021 03:11:48'!
+!MarsRoverTest methodsFor: 'turn left and right commands' stamp: 'BAG 5/15/2021 03:11:48'!
 test16FacingSouthProcessTurnRightCommand
 	|rover|
 	rover := MarsRover startingAt: 1@0 facing: South.
 	rover process:'r'.
 	self assert: (rover isAt: 1@0 heading: West).! !
 
-!MarsRoverTest methodsFor: 'rotation commands' stamp: 'BAG 5/15/2021 03:12:01'!
+!MarsRoverTest methodsFor: 'turn left and right commands' stamp: 'BAG 5/15/2021 03:12:01'!
 test17FacingWestProcessTurnLeftCommand
 	|rover|
 	rover := MarsRover startingAt: 1@0 facing: West.
 	rover process:'l'.
 	self assert: (rover isAt: 1@0 heading: South).! !
 
-!MarsRoverTest methodsFor: 'rotation commands' stamp: 'BAG 5/15/2021 03:12:16'!
+!MarsRoverTest methodsFor: 'turn left and right commands' stamp: 'BAG 5/15/2021 03:12:16'!
 test18FacingSouthProcessTurnLeftCommand
 	|rover|
 	rover := MarsRover startingAt: 1@0 facing: South.
 	rover process:'l'.
 	self assert: (rover isAt: 1@0 heading: East).! !
 
-!MarsRoverTest methodsFor: 'rotation commands' stamp: 'BAG 5/15/2021 03:12:35'!
+!MarsRoverTest methodsFor: 'turn left and right commands' stamp: 'BAG 5/15/2021 03:12:35'!
 test19FacingEastProcessTurnLeftCommand
 	|rover|
 	rover := MarsRover startingAt: 1@0 facing: East.
 	rover process:'l'.
 	self assert: (rover isAt: 1@0 heading: North).! !
 
-!MarsRoverTest methodsFor: 'rotation commands' stamp: 'BAG 5/15/2021 03:12:55'!
+!MarsRoverTest methodsFor: 'turn left and right commands' stamp: 'BAG 5/15/2021 03:12:55'!
 test20FacingNorthProcessTurnLeftCommand
 	|rover|
 	rover := MarsRover startingAt: 1@0 facing: North.
