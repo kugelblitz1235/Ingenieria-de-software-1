@@ -1314,8 +1314,8 @@ operationForAccountOnEntering: anAccount
 operationForAccountOnLeaving: anAccount
 	self subclassResponsibility ! !
 
-!Report methodsFor: 'operations' stamp: 'BAG 6/1/2021 21:36:20'!
-operationForDeposit: aTransaction
+!Report methodsFor: 'operations' stamp: 'BAG 6/3/2021 11:59:32'!
+operationForDeposit: aDeposit
 	self subclassResponsibility ! !
 
 !Report methodsFor: 'operations' stamp: 'BAG 6/2/2021 00:51:01'!
@@ -1326,16 +1326,16 @@ operationForPortfolioOnEntering: aPortfolio
 operationForPortfolioOnLeaving: aPortfolio
 	self subclassResponsibility ! !
 
-!Report methodsFor: 'operations' stamp: 'BAG 6/3/2021 00:07:43'!
-operationForTransferLegDestination: aTransaction
+!Report methodsFor: 'operations' stamp: 'BAG 6/3/2021 11:59:44'!
+operationForTransferLegDestination: aTransferLegDestination
 	self subclassResponsibility ! !
 
-!Report methodsFor: 'operations' stamp: 'BAG 6/3/2021 00:07:51'!
-operationForTransferLegOrigin: aTransaction
+!Report methodsFor: 'operations' stamp: 'BAG 6/3/2021 11:59:55'!
+operationForTransferLegOrigin: aTransferLegOrigin
 	self subclassResponsibility ! !
 
-!Report methodsFor: 'operations' stamp: 'BAG 6/1/2021 21:36:25'!
-operationForWithdraw: aTransaction
+!Report methodsFor: 'operations' stamp: 'BAG 6/3/2021 12:00:01'!
+operationForWithdraw: aWithdraw
 	self subclassResponsibility ! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
