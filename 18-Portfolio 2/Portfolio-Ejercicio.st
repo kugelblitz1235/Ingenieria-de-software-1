@@ -1594,14 +1594,13 @@ initializeWith: aValue from: anOriginAccount to: aDestinationAccount
 	! !
 
 
-!Transfer methodsFor: 'transaction' stamp: 'BAG 5/28/2021 00:17:25'!
-origin
-	^origin! !
-
-
 !Transfer methodsFor: 'accessing' stamp: 'BAG 5/28/2021 00:34:40'!
 destination
 	^destination! !
+
+!Transfer methodsFor: 'accessing' stamp: 'BAG 5/28/2021 00:17:25'!
+origin
+	^origin! !
 
 !Transfer methodsFor: 'accessing' stamp: 'BAG 5/27/2021 23:46:31'!
 value
