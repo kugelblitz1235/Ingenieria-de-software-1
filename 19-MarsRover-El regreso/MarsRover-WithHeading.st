@@ -49,6 +49,39 @@ test03PositionLoggerOnlyLogsWhenPositionChanges
 	self assert: 0 equals: log size.
 	! !
 
+!MarsRoverStateLoggerTest methodsFor: 'position' stamp: 'BAG 6/7/2021 00:12:13'!
+test09PositionLoggerLogsWhenMovingForwardInAllDirections
+	| marsRover logger log expectedLog |
+	
+	expectedLog := OrderedCollection withAll: #('1@2' '2@2' '2@1' '1@1').
+	marsRover := MarsRover at: 1@1 heading: #North.
+	logger := MarsRoverStateLogger new.
+	marsRover subscribeToPositionChange:logger.
+	
+	marsRover process:'frfrfrfr'.
+	log := logger log.
+	
+	self assert: 4 equals: log size.
+	self assert:  expectedLog equals: log.
+	! !
+
+!MarsRoverStateLoggerTest methodsFor: 'position' stamp: 'BAG 6/7/2021 00:16:21'!
+test10PositionLoggerLogsWhenMovingBackwardInAllDirections
+	| marsRover logger log expectedLog |
+	
+	expectedLog := OrderedCollection withAll: #('1@0' '0@0' '0@1' '1@1').
+	
+	marsRover := MarsRover at: 1@1 heading: #North.
+	logger := MarsRoverStateLogger new.
+	marsRover subscribeToPositionChange:logger.
+	
+	marsRover process:'brbrbrbr'.
+	log := logger log.
+	
+	self assert: 4 equals: log size.
+	self assert:  expectedLog equals: log.
+	! !
+
 
 !MarsRoverStateLoggerTest methodsFor: 'heading' stamp: 'BAG 6/4/2021 19:55:39'!
 test04HeadingLoggerLogsWhenRotatingEast
@@ -208,6 +241,44 @@ test02WindowShowsPositionWhenMovingBackward
 	marsRover process:'b'.
 	
 	self assert: 2@1 equals: window positionTextFieldModel.
+	! !
+
+!MarsRoverStateWindowTest methodsFor: 'position' stamp: 'BAG 6/7/2021 00:41:47'!
+test07WindowsShowsPositionWhenMovingBackwardInAllDirections
+	| marsRover window expectedPositions expectedHeading |
+	
+	expectedPositions := OrderedCollection with: 1@0 with: 0@0 with: 0@1 with: 1@1.
+	expectedHeading := OrderedCollection withAll: #('Este' 'Sur' 'Oeste' 'Norte').
+	
+	marsRover := MarsRover at: 1@1 heading: #North.
+	window := MarsRoverStateWindow new.
+	marsRover subscribeToPositionChange: window.
+	marsRover subscribeToHeadingChange: window.
+	
+	expectedPositions do: [ :expectedPosition | 
+				marsRover process: 'br'.
+				self assert: expectedPosition equals: window positionTextFieldModel. 
+			].
+	expectedHeading do: [ :heading | 
+			marsRover process: 'br'.
+			self assert: heading equals: window headingTextFieldModel. 
+		].
+	! !
+
+!MarsRoverStateWindowTest methodsFor: 'position' stamp: 'BAG 6/7/2021 00:44:23'!
+test08WindowsShowsPositionWhenMovingForwardInAllDirections
+	| marsRover window expectedPositions |
+	
+	expectedPositions := OrderedCollection with: 1@2 with: 2@2 with: 2@1 with: 1@1.
+	
+	marsRover := MarsRover at: 1@1 heading: #North.
+	window := MarsRoverStateWindow new.
+	marsRover subscribeToPositionChange: window.
+	
+	expectedPositions do: [ :expectedPosition | 
+				marsRover process: 'fr'.
+				self assert: expectedPosition equals: window positionTextFieldModel. 
+			].
 	! !
 
 
