@@ -42,16 +42,21 @@ test06CanNotAddABookWithNegativeQuantityToShoppingCart
 
 	self should: [shoppingCart add: bookRuperto units: -5] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.! !
 
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/10/2021 15:17:32'!
+test07CanNotAddABookWithZeroQuantityToShoppingCart
 
-!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:58:44'!
-test07EmptyShoppingCartReturnsNoBooks
+	self should: [shoppingCart add: bookRuperto units: 0] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.! !
+
+
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/10/2021 15:17:51'!
+test08EmptyShoppingCartReturnsNoBooks
 	| books |
 	books := shoppingCart books.
 	
 	self assert: 0 equals: books size.! !
 
-!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:58:50'!
-test08ShoppingCartWithOneUniqueBookReturnsThatBook
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/10/2021 15:17:56'!
+test09ShoppingCartWithOneUniqueBookReturnsThatBook
 	| books |
 	catalog register: bookRuperto.
 	
@@ -62,8 +67,8 @@ test08ShoppingCartWithOneUniqueBookReturnsThatBook
 	self assert: 1 equals: books size.
 	self assert: bookRuperto equals: books first.! !
 
-!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:59:03'!
-test09ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/10/2021 15:18:09'!
+test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
 	| books |
 	catalog register: bookRuperto .
 	catalog register: bookRicardo .
@@ -137,10 +142,10 @@ assertBookIsInCatalog: aBook
 
 	(bookCatalog has: aBook) ifFalse: [self signalBookIsNotInCatalog ]! !
 
-!ShoppingCart methodsFor: 'asserts' stamp: 'TT 6/8/2021 18:21:32'!
+!ShoppingCart methodsFor: 'asserts' stamp: 'TT 6/10/2021 15:23:23'!
 assertQuantityIsPositiveInteger: aQuantity
 
-	((aQuantity isKindOf: Integer) and: (aQuantity >= 0)) ifFalse: [self signalUnitHasToBePositiveInteger ].! !
+	((aQuantity isKindOf: Integer) and: (aQuantity > 0)) ifFalse: [self signalUnitHasToBePositiveInteger ].! !
 
 
 !ShoppingCart methodsFor: 'signal errors' stamp: 'TT 6/8/2021 18:45:06'!

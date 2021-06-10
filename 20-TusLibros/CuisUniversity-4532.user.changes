@@ -1,0 +1,4950 @@
+
+
+----STARTUP---- (30 May 2021 19:30:22) as C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\CuisUniversity-4532.image!
+
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\Decimals.st----!
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\DecimalsTests.st----!
+
+!classDefinition: #BA category: 'Decimals' stamp: 'TT 5/30/2021 19:31:24'!
+DecimalInteger subclass: #BA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BA class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:24'!
+BA class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:24'!
+PASSED!
+
+!classDefinition: #BCD category: 'Decimals' stamp: 'TT 5/30/2021 19:31:24'!
+DecimalInteger subclass: #BCD
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BCD class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:24'!
+BCD class
+	instanceVariableNames: ''!
+
+!classDefinition: #BC category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+DecimalInteger subclass: #BC
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BC class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+BC class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:25'!
+PASSED!
+
+!classDefinition: #EB category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+DecimalInteger subclass: #EB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'EB class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+EB class
+	instanceVariableNames: ''!
+
+!classDefinition: #FJ category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+DecimalInteger subclass: #FJ
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'FJ class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+FJ class
+	instanceVariableNames: ''!
+
+!classDefinition: #F category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+DecimalInteger subclass: #F
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'F class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+F class
+	instanceVariableNames: ''!
+
+!classDefinition: #E category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+DecimalInteger subclass: #E
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'E class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+E class
+	instanceVariableNames: ''!
+
+!classDefinition: #J category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+DecimalInteger subclass: #J
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'J class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+J class
+	instanceVariableNames: ''!
+
+!classDefinition: #BAA category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+DecimalInteger subclass: #BAA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BAA class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+BAA class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:25'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:25'!
+PASSED!
+
+!classDefinition: #BFA category: 'Decimals' stamp: 'TT 5/30/2021 19:31:25'!
+DecimalInteger subclass: #BFA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BFA class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+BFA class
+	instanceVariableNames: ''!
+
+!classDefinition: #DF category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+DecimalInteger subclass: #DF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'DF class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+DF class
+	instanceVariableNames: ''!
+
+!classDefinition: #FA category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+DecimalInteger subclass: #FA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'FA class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+FA class
+	instanceVariableNames: ''!
+
+!classDefinition: #BF category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+DecimalInteger subclass: #BF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BF class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+BF class
+	instanceVariableNames: ''!
+
+!classDefinition: #BJ category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+DecimalInteger subclass: #BJ
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BJ class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+BJ class
+	instanceVariableNames: ''!
+
+!classDefinition: #D category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+DecimalInteger subclass: #D
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'D class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+D class
+	instanceVariableNames: ''!
+
+!classDefinition: #C category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+DecimalInteger subclass: #C
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'C class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+C class
+	instanceVariableNames: ''!
+
+!classDefinition: #BB category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+DecimalInteger subclass: #BB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BB class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+BB class
+	instanceVariableNames: ''!
+
+!classDefinition: #BBF category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+DecimalInteger subclass: #BBF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BBF class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+BBF class
+	instanceVariableNames: ''!
+
+!classDefinition: #I category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+DecimalInteger subclass: #I
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'I class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+I class
+	instanceVariableNames: ''!
+
+!classDefinition: #BI category: 'Decimals' stamp: 'TT 5/30/2021 19:31:26'!
+DecimalInteger subclass: #BI
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BI class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+BI class
+	instanceVariableNames: ''!
+
+!classDefinition: #IA category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+DecimalInteger subclass: #IA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'IA class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+IA class
+	instanceVariableNames: ''!
+
+!classDefinition: #EF category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+DecimalInteger subclass: #EF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'EF class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+EF class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:27'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:27'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:27'!
+PASSED!
+
+!classDefinition: #G category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+DecimalInteger subclass: #G
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'G class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+G class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:27'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:27'!
+PASSED!
+
+!classDefinition: #CB category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+DecimalInteger subclass: #CB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'CB class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+CB class
+	instanceVariableNames: ''!
+
+!classDefinition: #FG category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+DecimalInteger subclass: #FG
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'FG class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+FG class
+	instanceVariableNames: ''!
+
+!classDefinition: #BBC category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+DecimalInteger subclass: #BBC
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BBC class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+BBC class
+	instanceVariableNames: ''!
+
+!classDefinition: #H category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+DecimalInteger subclass: #H
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'H class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+H class
+	instanceVariableNames: ''!
+
+!classDefinition: #BBH category: 'Decimals' stamp: 'TT 5/30/2021 19:31:27'!
+DecimalInteger subclass: #BBH
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BBH class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+BBH class
+	instanceVariableNames: ''!
+
+!classDefinition: #BBHG category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+DecimalInteger subclass: #BBHG
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BBHG class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+BBHG class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:28'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:28'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:28'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:28'!
+PASSED!
+
+!classDefinition: #BH category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+DecimalInteger subclass: #BH
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BH class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+BH class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:28'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:28'!
+PASSED!
+
+!classDefinition: #IEFJD category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+DecimalInteger subclass: #IEFJD
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'IEFJD class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+IEFJD class
+	instanceVariableNames: ''!
+
+!classDefinition: #DIE category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+DecimalInteger subclass: #DIE
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'DIE class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+DIE class
+	instanceVariableNames: ''!
+
+!classDefinition: #EFJD category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+DecimalInteger subclass: #EFJD
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'EFJD class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+EFJD class
+	instanceVariableNames: ''!
+
+!classDefinition: #IE category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+DecimalInteger subclass: #IE
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'IE class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+IE class
+	instanceVariableNames: ''!
+
+!classDefinition: #FJD category: 'Decimals' stamp: 'TT 5/30/2021 19:31:28'!
+DecimalInteger subclass: #FJD
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'FJD class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+FJD class
+	instanceVariableNames: ''!
+
+!classDefinition: #IEF category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #IEF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'IEF class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+IEF class
+	instanceVariableNames: ''!
+
+!classDefinition: #DI category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #DI
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'DI class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DI class
+	instanceVariableNames: ''!
+
+!classDefinition: #BG category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #BG
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BG class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+BG class
+	instanceVariableNames: ''!
+
+!classDefinition: #EG category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #EG
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'EG class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+EG class
+	instanceVariableNames: ''!
+
+!classDefinition: #EGB category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #EGB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'EGB class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+EGB class
+	instanceVariableNames: ''!
+
+!classDefinition: #HH category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #HH
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'HH class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+HH class
+	instanceVariableNames: ''!
+
+!classDefinition: #JD category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #JD
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'JD class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+JD class
+	instanceVariableNames: ''!
+
+!classDefinition: #HHJ category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #HHJ
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'HHJ class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+HHJ class
+	instanceVariableNames: ''!
+
+!classDefinition: #DJ category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #DJ
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'DJ class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DJ class
+	instanceVariableNames: ''!
+
+!classDefinition: #DJF category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #DJF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'DJF class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DJF class
+	instanceVariableNames: ''!
+
+!classDefinition: #JF category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #JF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'JF class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+JF class
+	instanceVariableNames: ''!
+
+!classDefinition: #BBD category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #BBD
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BBD class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+BBD class
+	instanceVariableNames: ''!
+
+!classDefinition: #CA category: 'Decimals' stamp: 'TT 5/30/2021 19:31:29'!
+DecimalInteger subclass: #CA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'CA class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:30'!
+CA class
+	instanceVariableNames: ''!
+
+!classDefinition: #CCA category: 'Decimals' stamp: 'TT 5/30/2021 19:31:30'!
+DecimalInteger subclass: #CCA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'CCA class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:30'!
+CCA class
+	instanceVariableNames: ''!
+
+!classDefinition: #CC category: 'Decimals' stamp: 'TT 5/30/2021 19:31:30'!
+DecimalInteger subclass: #CC
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'CC class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:30'!
+CC class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:30'!
+PASSED!
+
+!classDefinition: #CJE category: 'Decimals' stamp: 'TT 5/30/2021 19:31:30'!
+DecimalInteger subclass: #CJE
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'CJE class' category: 'Decimals' stamp: 'TT 5/30/2021 19:31:30'!
+CJE class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 5/30/2021 19:31:30'!
+PASSED!
+
+----STARTUP---- (30 May 2021 19:31:41) as C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\CuisUniversity-4532.image!
+
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\DecimalsTests.st----!
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\Decimals.st----!
+
+----STARTUP---- (31 May 2021 10:19:05) as C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\CuisUniversity-4532.image!
+
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\Decimals.st----!
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\1Parcial\DecimalsTests.st----!
+
+----STARTUP---- (3 June 2021 11:49:34) as C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\CuisUniversity-4532.image!
+
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\Entregables\Ingenieria-de-software-1\18-Portfolio 2\Portfolio-Ejercicio.st----!
+
+!testRun: #PortfolioTest #test01EmptyPortfolioHasZeroBalance stamp: 'TT 6/3/2021 11:50:10'!
+PASSED!
+
+!testRun: #PortfolioTest #test02PortfolioWithOneAccountGivesCorrectBalance stamp: 'TT 6/3/2021 11:50:10'!
+PASSED!
+
+!testRun: #PortfolioTest #test03PortfolioWithTwoAccountsGivesCorrectBalance stamp: 'TT 6/3/2021 11:50:10'!
+PASSED!
+
+!testRun: #PortfolioTest #test04OneDepthPortfolioWithAnAccountGivesCorrectBalance stamp: 'TT 6/3/2021 11:50:10'!
+PASSED!
+
+!testRun: #PortfolioTest #test05TwoDepthPortfolioWithAnAccountGivesCorrectBalance stamp: 'TT 6/3/2021 11:50:10'!
+PASSED!
+
+!testRun: #PortfolioTest #test06ShouldNotAddAPortfolioTwice stamp: 'TT 6/3/2021 11:50:10'!
+PASSED!
+
+!testRun: #PortfolioTest #test07ShouldNotAddTwoPortfoliosToEachOther stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test08ShouldNotAddAPortfolioChildThatCanReachTheParent stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test09ShouldNotAddAPortfolioChildThatIsReachableByParent stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test10ShouldNotAddAPortfolioThatHasPortfoliosInCommon stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test11ShouldNotAddAnAccountTwice stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test12ShouldNotAddAPortfolioWithTheSameAccount stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test13ShouldNotAddAPortfolioThatHasAccountsInCommon stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test14EmptyPortfolioHasNoTransactions stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test15PortfolioWithOneAccountHasOneTransaction stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test16PortfolioWithTwoAccountsHasTwoTransactions stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test17OneDepthPortfolioWithAnAccountHasOneTransaction stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test18TwoDepthPortfolioWithAnAccountHasOneTransaction stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test19PortfolioWithOneAccountDoesNotHaveATransactionRegistered stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test20EmptyPortfolioDoesNotHaveTransactionsRegistered stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test21PortfolioWithOneAccountHasOneOfItsTransactionsRegistered stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test22PortfolioWithTwoAccountsHasOneOfItsTransactionsRegistered stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test23OneDepthPortfolioWithAnAccountHasOneOfItsTransactionsRegistered stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test24TwoDepthPortfolioWithAnAccountHasOneOfItsTransactionsRegistered stamp: 'TT 6/3/2021 11:50:11'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReportTest #test01EmptyAccountReportsAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReportTest #test02AccountWithDepositReportAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReportTest #test03AccountWithdrawReportAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReportTest #test04AccountWithTransferLegOriginReportAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReportTest #test05AccountWithTransferLegDestinationReportAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReportTest #test06AccountWithMultipleTransactionsReportAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReportTest #test07EmptyAccountReportsTransferNetCorrectly stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReportTest #test08AccountWithDepositReportTransferNetCorrectly stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReportTest #test09AccountWithdrawReportTransferNetCorrectly stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReportTest #test10AccountWithTransferLegOriginReportTransferNetCorrectly stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReportTest #test11AccountWithTransferLegDestinationReportTransferNetCorrectly stamp: 'TT 6/3/2021 11:50:12'!
+PASSED!
+
+!testRun: #ReportTest #test12AccountWithMultipleTransactionsReportTransferNetCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test13EmptyPortfolioReportsAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test14PortfolioWithAccountsReportAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test15OneDepthPortfolioWithMultipleTransactionReportAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test16EmptyPortfolioReportsTransferNetCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test17PortfolioWithAccountsReportTransferNetCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test18OneDepthPortfolioWithMultipleTransactionReportTransferNetCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test19EmptyPortfolioReportsPortfolioStructureCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test20PortfolioWithAccountsReportsPortfolioStructureCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test21OneDepthPortfolioWithAccountsReportsPortfolioStructureCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test22PortfoliosWithDifferentDepthsReportPortfolioStructureCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test23MultiplePortfoliosWithAccountsReportPortfolioStructureCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test24EmptyPortfolioReportsSpecialAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test25PortfolioWithAccountsReportsSpecialAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test26OneDepthPortfolioWithAccountsReportsSpecialAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test27TwoDepthPortfolioWithMultipleTransactionReportAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test28TwoDepthPortfolioWithMultipleTransactionReportTransferNetCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #ReportTest #test29TwoDepthPortfolioWithAccountsReportsSpecialAccountSummaryCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #TransferTest #test01TransferOperationAppliesCorrectly stamp: 'TT 6/3/2021 11:50:13'!
+PASSED!
+
+!testRun: #TransferTest #test02TransferOriginHasCorrectValue stamp: 'TT 6/3/2021 11:50:14'!
+PASSED!
+
+!testRun: #TransferTest #test03TransferDestinationHasCorrectValue stamp: 'TT 6/3/2021 11:50:14'!
+PASSED!
+
+!testRun: #TransferTest #test04TransferCanGoBackAndForthOrigin stamp: 'TT 6/3/2021 11:50:14'!
+PASSED!
+
+!testRun: #TransferTest #test05TransferCanGoBackAndForthDestination stamp: 'TT 6/3/2021 11:50:14'!
+PASSED!
+
+!testRun: #TransferTest #test06CanNotTransferUsingTheSameAccount stamp: 'TT 6/3/2021 11:50:14'!
+PASSED!
+
+!testRun: #TransferTest #test07CanNotTransferAnInvalidValue stamp: 'TT 6/3/2021 11:50:14'!
+PASSED!
+
+!classRemoval: #Transfer stamp: 'TT 6/3/2021 12:20:29'!
+Object subclass: #Transfer
+	instanceVariableNames: 'origin destination value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #ReportTransferNet stamp: 'TT 6/3/2021 12:20:30'!
+Report subclass: #ReportTransferNet
+	instanceVariableNames: 'netTransferValue'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #ReportSpecialAccountSummary stamp: 'TT 6/3/2021 12:20:30'!
+Report subclass: #ReportSpecialAccountSummary
+	instanceVariableNames: 'summary depthBlanks'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #ReportPortfolioStructure stamp: 'TT 6/3/2021 12:20:31'!
+Report subclass: #ReportPortfolioStructure
+	instanceVariableNames: 'structure depthBlanks'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #ReportAccountSummary stamp: 'TT 6/3/2021 12:20:31'!
+Report subclass: #ReportAccountSummary
+	instanceVariableNames: 'summary'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #Report stamp: 'TT 6/3/2021 12:20:31'!
+Object subclass: #Report
+	instanceVariableNames: 'financialAsset'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #ReceptiveAccount stamp: 'TT 6/3/2021 12:20:32'!
+FinancialAsset subclass: #ReceptiveAccount
+	instanceVariableNames: 'transactions'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #Portfolio stamp: 'TT 6/3/2021 12:20:32'!
+FinancialAsset subclass: #Portfolio
+	instanceVariableNames: 'financialAssets parents'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #FinancialAsset stamp: 'TT 6/3/2021 12:20:33'!
+Object subclass: #FinancialAsset
+	instanceVariableNames: 'name'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #Withdraw stamp: 'TT 6/3/2021 12:20:33'!
+AccountTransaction subclass: #Withdraw
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #TransferLegOrigin stamp: 'TT 6/3/2021 12:20:34'!
+AccountTransaction subclass: #TransferLegOrigin
+	instanceVariableNames: 'transfer'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #TransferLegDestination stamp: 'TT 6/3/2021 12:20:34'!
+AccountTransaction subclass: #TransferLegDestination
+	instanceVariableNames: 'transfer'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #Deposit stamp: 'TT 6/3/2021 12:20:34'!
+AccountTransaction subclass: #Deposit
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #AccountTransaction stamp: 'TT 6/3/2021 12:20:35'!
+Object subclass: #AccountTransaction
+	instanceVariableNames: 'value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #TransferTest stamp: 'TT 6/3/2021 12:20:35'!
+TestCase subclass: #TransferTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #ReportTest stamp: 'TT 6/3/2021 12:20:36'!
+TestCase subclass: #ReportTest
+	instanceVariableNames: 'pedroPortfolio rupertoPortfolio jimmyAccount carlosAccount summaryReportEmpty summaryReportWithDeposit summaryReportWithdraw summaryReportWithTransferOrigin summaryReportWithTransferDestination summaryReportWithMultipleTransactions summaryReportWithPortfolio netTransferReportEmpty netTransferReportWithTrasnferOrigin netTransferReportWithTrasnferDestination netTransferReportWithMultipleTransactions netTransferReportPortfolio ricardoAccount ramonPortfolio specialSummaryForOneDepthPortfolios specialSummaryForPortfolioWithAccounts specialSummaryForTwoDepthPortfolio'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #ReceptiveAccountTest stamp: 'TT 6/3/2021 12:20:36'!
+TestCase subclass: #ReceptiveAccountTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #PortfolioTest stamp: 'TT 6/3/2021 12:20:37'!
+TestCase subclass: #PortfolioTest
+	instanceVariableNames: 'portfolio1 portfolio2 portfolio3 portfolio4 account1 account2 deposit1 deposit2'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\Entregables\Ingenieria-de-software-1\18-Portfolio 2\Portfolio-Ejercicio.st----!
+
+----STARTUP---- (3 June 2021 15:42:22) as C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\CuisUniversity-4532.image!
+
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\Decimals.st----!
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\DecimalsTests.st----!
+
+B/A!
+
+A/A!
+
+B/A!
+
+----STARTUP---- (3 June 2021 19:55:19) as C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\CuisUniversity-4532.image!
+
+
+!classRemoval: #ReceptiveAccount stamp: 'TT 6/3/2021 19:55:29'!
+FinancialAsset subclass: #ReceptiveAccount
+	instanceVariableNames: 'transactions'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #Portfolio stamp: 'TT 6/3/2021 19:55:29'!
+FinancialAsset subclass: #Portfolio
+	instanceVariableNames: 'financialAssets parents'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #FinancialAsset stamp: 'TT 6/3/2021 19:55:30'!
+Object subclass: #FinancialAsset
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #Withdraw stamp: 'TT 6/3/2021 19:55:30'!
+AccountTransaction subclass: #Withdraw
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #Deposit stamp: 'TT 6/3/2021 19:55:31'!
+AccountTransaction subclass: #Deposit
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #AccountTransaction stamp: 'TT 6/3/2021 19:55:31'!
+Object subclass: #AccountTransaction
+	instanceVariableNames: 'value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #ReceptiveAccountTest stamp: 'TT 6/3/2021 19:55:31'!
+TestCase subclass: #ReceptiveAccountTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #PortfolioTest stamp: 'TT 6/3/2021 19:55:32'!
+TestCase subclass: #PortfolioTest
+	instanceVariableNames: 'portfolio1 portfolio2 portfolio3 portfolio4 account1 account2 deposit1 deposit2'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\MarsRover-WithHeading.st----!
+
+!testRun: #MarsRoverTest #test01 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test02 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test03 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test04 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test05 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test06 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test07 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test08 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test09 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test10 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test11 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test12 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test13 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test14 stamp: 'TT 6/3/2021 20:11:52'!
+PASSED!
+
+!testRun: #MarsRoverTest #test15 stamp: 'TT 6/3/2021 20:11:53'!
+PASSED!
+
+!testRun: #MarsRoverTest #test16 stamp: 'TT 6/3/2021 20:11:53'!
+PASSED!
+!MarsRover methodsFor: 'command processing' stamp: 'TT 6/3/2021 20:13:27' prior: 50359371!
+processCommand: aCommand
+	(self isForwardCommand: aCommand) ifTrue: [ ^ self moveForward ].
+	(self isBackwardCommand: aCommand) ifTrue: [ ^ self moveBackward ].
+	(self isRotateRightCommand: aCommand) ifTrue: [ ^ self rotateRight ].
+	(self isRotateLeftCommand: aCommand) ifTrue: [ ^ self rotateLeft ].
+
+	self signalInvalidCommand.! !
+
+!testRun: #MarsRoverTest #test01 stamp: 'TT 6/4/2021 02:04:33'!
+PASSED!
+
+!testRun: #MarsRoverTest #test02 stamp: 'TT 6/4/2021 02:04:33'!
+PASSED!
+
+!testRun: #MarsRoverTest #test03 stamp: 'TT 6/4/2021 02:04:33'!
+PASSED!
+
+!testRun: #MarsRoverTest #test04 stamp: 'TT 6/4/2021 02:04:33'!
+PASSED!
+
+!testRun: #MarsRoverTest #test05 stamp: 'TT 6/4/2021 02:04:34'!
+PASSED!
+
+!testRun: #MarsRoverTest #test06 stamp: 'TT 6/4/2021 02:04:34'!
+PASSED!
+
+!testRun: #MarsRoverTest #test07 stamp: 'TT 6/4/2021 02:04:34'!
+PASSED!
+
+!testRun: #MarsRoverTest #test08 stamp: 'TT 6/4/2021 02:04:34'!
+PASSED!
+
+!testRun: #MarsRoverTest #test09 stamp: 'TT 6/4/2021 02:04:34'!
+PASSED!
+
+!testRun: #MarsRoverTest #test10 stamp: 'TT 6/4/2021 02:04:34'!
+PASSED!
+
+!testRun: #MarsRoverTest #test11 stamp: 'TT 6/4/2021 02:04:34'!
+PASSED!
+
+!testRun: #MarsRoverTest #test12 stamp: 'TT 6/4/2021 02:04:34'!
+PASSED!
+
+!testRun: #MarsRoverTest #test13 stamp: 'TT 6/4/2021 02:04:34'!
+PASSED!
+
+!testRun: #MarsRoverTest #test14 stamp: 'TT 6/4/2021 02:04:34'!
+PASSED!
+
+!testRun: #MarsRoverTest #test15 stamp: 'TT 6/4/2021 02:04:34'!
+PASSED!
+
+!testRun: #MarsRoverTest #test16 stamp: 'TT 6/4/2021 02:04:34'!
+PASSED!
+!Cursor methodsFor: 'printing' stamp: 'TT 6/4/2021 02:16:17' prior: 16825837 overrides: 50333000!
+printOn: aStream
+
+	#self storeOn: aStream base: 2! !
+!Cursor methodsFor: 'printing' stamp: 'TT 6/4/2021 02:16:22' prior: 50359755 overrides: 50333000!
+printOn: aStream
+
+	"self storeOn: aStream base: 2"! !
+!Cursor methodsFor: 'displaying' stamp: 'TT 6/4/2021 02:17:09' prior: 16825828!
+showWhile: aBlock 
+	"While evaluating the argument, aBlock, make the receiver be the cursor 
+	shape."
+
+	| oldcursor |
+	oldcursor _ Cursor currentCursor.
+	"self activateCursor."
+	^aBlock ensure: [oldcursor activateCursor]
+! !
+!Cursor methodsFor: 'displaying' stamp: 'TT 6/4/2021 02:17:19' prior: 50359765!
+showWhile: aBlock 
+	"While evaluating the argument, aBlock, make the receiver be the cursor 
+	shape."
+
+	| oldcursor |
+	oldcursor _ Cursor currentCursor.
+	"self activateCursor."
+	"^aBlock ensure: [oldcursor activateCursor]"
+! !
+!EventSensor methodsFor: 'private' stamp: 'TT 6/4/2021 02:19:09' prior: 50645953!
+eventTickler
+	| temp1 temp2 |
+	temp1 _ Delay forMilliseconds: self class eventPollPeriod.
+	self lastEventPoll.
+	[
+	[
+	temp1 wait.
+	temp2 _ Time localMillisecondClock - lastEventPoll.
+	temp2 > self class eventPollPeriod ifTrue: [
+		"Cursor currentCursor = Cursor defaultCursor ifTrue: [ (Cursor cursorAt: #waitCursor) activateCursor ]."
+		self fetchMoreEventsDiscardingMouseEvents: true ]]
+		on: Error
+		do: [ :arg4 |
+			nil ]] repeat.! !
+!HandMorph methodsFor: 'drawing' stamp: 'TT 6/4/2021 02:21:10' prior: 50674120 overrides: 16899205!
+drawOn: arg1
+	! !
+
+!methodRemoval: HandMorph #drawOn: stamp: 'TT 6/4/2021 02:21:36'!
+drawOn: arg1
+	!
+
+!methodRemoval: HandMorph #needsToBeDrawn stamp: 'TT 6/4/2021 02:21:49'!
+needsToBeDrawn
+	(savedPatch notNil or: [
+		submorphs anySatisfy: [ :arg1 |
+			arg1 visible ]]) ifTrue: [
+		Cursor currentCursor == (Cursor cursorAt: #blankCursor) ifFalse: [ (Cursor cursorAt: #blankCursor) activateCursor ].
+		^ true ].
+	^ false.!
+
+----STARTUP---- (4 June 2021 10:49:25) as C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\CuisUniversity-4532.image!
+
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\DecimalsTests.st----!
+
+----End fileIn of C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\Decimals.st----!
+
+!methodRemoval: DecimalInteger class #toNumber:do: stamp: 'TT 6/4/2021 10:50:12'!
+toNumber: aNumber do: aBlock
+	self toNumber: aNumber byNumber: B do: aBlock.!
+
+!methodRemoval: DecimalInteger class #toNumber:byNumber:do: stamp: 'TT 6/4/2021 10:50:14'!
+toNumber: anEnd byNumber: aJump do: aBlock
+	self > anEnd ifFalse: [
+		aBlock value: self.
+		(self + aJump) toNumber: anEnd byNumber: aJump do: aBlock.
+	].!
+
+!methodRemoval: DecimalInteger class #repeat: stamp: 'TT 6/4/2021 10:50:18'!
+repeat: aBlock
+	B toNumber: self do: [:e| aBlock value] !
+
+!methodRemoval: DecimalInteger class #raiseNumber: stamp: 'TT 6/4/2021 10:50:21'!
+raiseNumber: aBase
+	^aBase * ((self - B) raiseNumber: aBase)
+	"
+	| divisionByTwoQuotient numberC numberResult |
+	numberC := dC asNumber .
+	divisionByTwoQuotient := self / numberC.
+	numberResult := (aBase ^ divisionByTwoQuotient).
+	numberResult := numberResult * numberResult .
+	self unit isPair ifFalse: [numberResult := numberResult * aBase].
+	^numberResult 
+	"!
+
+!methodRemoval: DecimalInteger class #> stamp: 'TT 6/4/2021 11:10:42'!
+> aNumber
+	^aNumber < self.!
+
+!methodRemoval: DecimalInteger class #'^' stamp: 'TT 6/4/2021 11:10:44'!
+^ anExponent
+	^anExponent raiseNumber: self!
+
+!methodRemoval: DecimalInteger class #applyOperation:toNumber: stamp: 'TT 6/4/2021 11:10:51'!
+applyOperation: aSymbolOperation toNumber: aNumber
+	| digitsResult remainingResult |
+	digitsResult _ (aSymbolOperation asMessageWith: aNumber unitDigit) sendTo: self unitDigit.
+	remainingResult := (aSymbolOperation asMessageWith: aNumber withoutUnitDigit) sendTo: self withoutUnitDigit.
+	remainingResult := (aSymbolOperation asMessageWith: digitsResult withoutUnitDigit) sendTo: remainingResult.
+	^self createNumberWithUnitDigit: digitsResult unitDigit andWithoutUnitNumber: remainingResult .!
+
+!classDefinition: #J category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+DecimalInteger subclass: #J
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'J class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+J class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:49'!
+PASSED!
+
+!classDefinition: #D category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+DecimalInteger subclass: #D
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'D class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+D class
+	instanceVariableNames: ''!
+
+!classDefinition: #F category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+DecimalInteger subclass: #F
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'F class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+F class
+	instanceVariableNames: ''!
+
+!classDefinition: #I category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+DecimalInteger subclass: #I
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'I class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+I class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:49'!
+PASSED!
+
+!classDefinition: #CJE category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+DecimalInteger subclass: #CJE
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'CJE class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+CJE class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:49'!
+PASSED!
+
+!classDefinition: #E category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+DecimalInteger subclass: #E
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'E class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+E class
+	instanceVariableNames: ''!
+
+!classDefinition: #C category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+DecimalInteger subclass: #C
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'C class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+C class
+	instanceVariableNames: ''!
+
+!classDefinition: #G category: 'Decimals' stamp: 'TT 6/5/2021 00:11:49'!
+DecimalInteger subclass: #G
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'G class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+G class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:50'!
+PASSED!
+
+!classDefinition: #BA category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+DecimalInteger subclass: #BA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BA class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+BA class
+	instanceVariableNames: ''!
+
+!classDefinition: #BJ category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+DecimalInteger subclass: #BJ
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BJ class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+BJ class
+	instanceVariableNames: ''!
+
+!classDefinition: #BI category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+DecimalInteger subclass: #BI
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BI class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+BI class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:50'!
+PASSED!
+
+!classDefinition: #BCD category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+DecimalInteger subclass: #BCD
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BCD class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+BCD class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:50'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:50'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:50'!
+PASSED!
+
+!classDefinition: #EB category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+DecimalInteger subclass: #EB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'EB class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+EB class
+	instanceVariableNames: ''!
+
+!classDefinition: #FJ category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+DecimalInteger subclass: #FJ
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'FJ class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+FJ class
+	instanceVariableNames: ''!
+
+!classDefinition: #BAA category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+DecimalInteger subclass: #BAA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BAA class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:50'!
+BAA class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:50'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:50'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:51'!
+PASSED!
+
+!classDefinition: #BFA category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+DecimalInteger subclass: #BFA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BFA class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+BFA class
+	instanceVariableNames: ''!
+
+!classDefinition: #DF category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+DecimalInteger subclass: #DF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'DF class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+DF class
+	instanceVariableNames: ''!
+
+!classDefinition: #FA category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+DecimalInteger subclass: #FA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'FA class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+FA class
+	instanceVariableNames: ''!
+
+!classDefinition: #BF category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+DecimalInteger subclass: #BF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BF class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+BF class
+	instanceVariableNames: ''!
+
+!classDefinition: #BC category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+DecimalInteger subclass: #BC
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BC class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+BC class
+	instanceVariableNames: ''!
+
+!classDefinition: #BB category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+DecimalInteger subclass: #BB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BB class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+BB class
+	instanceVariableNames: ''!
+
+!classDefinition: #BBF category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+DecimalInteger subclass: #BBF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BBF class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+BBF class
+	instanceVariableNames: ''!
+
+!classDefinition: #IA category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+DecimalInteger subclass: #IA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'IA class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+IA class
+	instanceVariableNames: ''!
+
+!classDefinition: #EF category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+DecimalInteger subclass: #EF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'EF class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:51'!
+EF class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:52'!
+PASSED!
+
+!classDefinition: #H category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+DecimalInteger subclass: #H
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'H class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+H class
+	instanceVariableNames: ''!
+
+!classDefinition: #BH category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+DecimalInteger subclass: #BH
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BH class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+BH class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:52'!
+PASSED!
+
+!classDefinition: #IEFJD category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+DecimalInteger subclass: #IEFJD
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'IEFJD class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+IEFJD class
+	instanceVariableNames: ''!
+
+!classDefinition: #DIE category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+DecimalInteger subclass: #DIE
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'DIE class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+DIE class
+	instanceVariableNames: ''!
+
+!classDefinition: #EFJD category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+DecimalInteger subclass: #EFJD
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'EFJD class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+EFJD class
+	instanceVariableNames: ''!
+
+!classDefinition: #IE category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+DecimalInteger subclass: #IE
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'IE class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+IE class
+	instanceVariableNames: ''!
+
+!classDefinition: #FJD category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+DecimalInteger subclass: #FJD
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'FJD class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+FJD class
+	instanceVariableNames: ''!
+
+!classDefinition: #IEF category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+DecimalInteger subclass: #IEF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'IEF class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:52'!
+IEF class
+	instanceVariableNames: ''!
+
+!classDefinition: #DI category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DecimalInteger subclass: #DI
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'DI class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DI class
+	instanceVariableNames: ''!
+
+!classDefinition: #BG category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DecimalInteger subclass: #BG
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BG class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+BG class
+	instanceVariableNames: ''!
+
+!classDefinition: #EG category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DecimalInteger subclass: #EG
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'EG class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+EG class
+	instanceVariableNames: ''!
+
+!classDefinition: #EGB category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DecimalInteger subclass: #EGB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'EGB class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+EGB class
+	instanceVariableNames: ''!
+
+!classDefinition: #HH category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DecimalInteger subclass: #HH
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'HH class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+HH class
+	instanceVariableNames: ''!
+
+!classDefinition: #JD category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DecimalInteger subclass: #JD
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'JD class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+JD class
+	instanceVariableNames: ''!
+
+!classDefinition: #HHJ category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DecimalInteger subclass: #HHJ
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'HHJ class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+HHJ class
+	instanceVariableNames: ''!
+
+!classDefinition: #DJ category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DecimalInteger subclass: #DJ
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'DJ class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DJ class
+	instanceVariableNames: ''!
+
+!classDefinition: #DJF category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DecimalInteger subclass: #DJF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'DJF class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DJF class
+	instanceVariableNames: ''!
+
+!classDefinition: #JF category: 'Decimals' stamp: 'TT 6/5/2021 00:11:53'!
+DecimalInteger subclass: #JF
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'JF class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+JF class
+	instanceVariableNames: ''!
+
+!classDefinition: #BBD category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+DecimalInteger subclass: #BBD
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BBD class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+BBD class
+	instanceVariableNames: ''!
+
+!classDefinition: #CA category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+DecimalInteger subclass: #CA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'CA class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+CA class
+	instanceVariableNames: ''!
+
+!classDefinition: #CCA category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+DecimalInteger subclass: #CCA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'CCA class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+CCA class
+	instanceVariableNames: ''!
+
+!classDefinition: #CC category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+DecimalInteger subclass: #CC
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'CC class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+CC class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:54'!
+PASSED!
+
+!classDefinition: #CB category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+DecimalInteger subclass: #CB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'CB class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+CB class
+	instanceVariableNames: ''!
+
+!classDefinition: #FG category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+DecimalInteger subclass: #FG
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'FG class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+FG class
+	instanceVariableNames: ''!
+
+!classDefinition: #BBC category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+DecimalInteger subclass: #BBC
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BBC class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+BBC class
+	instanceVariableNames: ''!
+
+!classDefinition: #BBH category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+DecimalInteger subclass: #BBH
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BBH class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:54'!
+BBH class
+	instanceVariableNames: ''!
+
+!classDefinition: #BBHG category: 'Decimals' stamp: 'TT 6/5/2021 00:11:55'!
+DecimalInteger subclass: #BBHG
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Decimals'!
+
+!classDefinition: 'BBHG class' category: 'Decimals' stamp: 'TT 6/5/2021 00:11:55'!
+BBHG class
+	instanceVariableNames: ''!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:55'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:55'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TT 6/5/2021 00:11:55'!
+PASSED!
+
+----STARTUP---- (7 June 2021 19:57:26) as C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\CuisUniversity-4532.image!
+
+
+!classRemoval: #ReceptiveAccount stamp: 'TT 6/7/2021 19:59:36'!
+FinancialAsset subclass: #ReceptiveAccount
+	instanceVariableNames: 'transactions'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #Portfolio stamp: 'TT 6/7/2021 19:59:37'!
+FinancialAsset subclass: #Portfolio
+	instanceVariableNames: 'financialAssets parents'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #FinancialAsset stamp: 'TT 6/7/2021 19:59:37'!
+Object subclass: #FinancialAsset
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #Withdraw stamp: 'TT 6/7/2021 19:59:38'!
+AccountTransaction subclass: #Withdraw
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #Deposit stamp: 'TT 6/7/2021 19:59:38'!
+AccountTransaction subclass: #Deposit
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #AccountTransaction stamp: 'TT 6/7/2021 19:59:39'!
+Object subclass: #AccountTransaction
+	instanceVariableNames: 'value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #ReceptiveAccountTest stamp: 'TT 6/7/2021 19:59:39'!
+TestCase subclass: #ReceptiveAccountTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+!classRemoval: #PortfolioTest stamp: 'TT 6/7/2021 19:59:39'!
+TestCase subclass: #PortfolioTest
+	instanceVariableNames: 'portfolio1 portfolio2 portfolio3 portfolio4 account1 account2 deposit1 deposit2'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Portfolio-Ejercicio'!
+
+Object subclass: #ShoppingCart
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros'!
+
+!classDefinition: #ShoppingCart category: 'Ejercicio-TusLibros' stamp: 'TT 6/7/2021 23:40:04'!
+Object subclass: #ShoppingCart
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros'!
+
+TestCase subclass: #ShoppingCartTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros'!
+
+!classDefinition: #ShoppingCartTest category: 'Ejercicio-TusLibros' stamp: 'TT 6/7/2021 23:40:26'!
+TestCase subclass: #ShoppingCartTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros'!
+!ShoppingCartTest methodsFor: 'no messages' stamp: 'TT 6/7/2021 23:42:24'!
+test01NewShoppingCartIsEmpty
+	| shoppingCart |
+	shoppingCart := ShoppingCart new.
+	
+	self assert: shoppingCart products size = 0.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:42:42' prior: 50361606!
+test01NewShoppingCartIsEmpty
+	| shoppingCart |
+	shoppingCart := ShoppingCart new.
+	
+	self assert: 0 equals: shoppingCart products size.! !
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/7/2021 23:42:45'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:42:51'!
+products
+	self shouldBeImplemented.! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:42:59' prior: 50361624!
+products
+	^OrderedCollection new! !
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/7/2021 23:43:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/7/2021 23:43:00'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:45:07'!
+test02
+	| shoppingCart |
+	shoppingCart := ShoppingCart new.
+	
+	self assert: 0 equals: shoppingCart products size.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:48:02' prior: 50361639!
+test02
+	| shoppingCart book shoppingCartBooks |
+	shoppingCart := ShoppingCart new.
+	book := '978-3-16-148410-0'.
+	shoppingCart addBook: book.
+	
+	shoppingCartBooks := shoppingCart products.
+	self assert: 1 equals: shoppingCartBooks size.
+	self assert: book equals: shoppingCartBooks first.! !
+
+!testRun: #ShoppingCartTest #test02 stamp: 'TT 6/7/2021 23:48:06'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:48:11'!
+addBook: aString 
+	self shouldBeImplemented.! !
+
+!classDefinition: #ShoppingCart category: 'Ejercicio-TusLibros' stamp: 'TT 6/7/2021 23:49:02'!
+Object subclass: #ShoppingCart
+	instanceVariableNames: 'books'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros'!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:48:59' prior: 50361660!
+addBook: aISBN
+	books add: aISBN.! !
+
+!testRun: #ShoppingCartTest #test02 stamp: 'TT 6/7/2021 23:49:06'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:49:28' overrides: 16896425!
+initialize
+	books := OrderedCollection new! !
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/7/2021 23:49:31'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02 stamp: 'TT 6/7/2021 23:49:31'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test02 stamp: 'TT 6/7/2021 23:49:31'!
+FAILURE!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:49:43' prior: 50361629!
+products
+	^books! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:49:56'!
+books
+	^books! !
+
+!methodRemoval: ShoppingCart #products stamp: 'TT 6/7/2021 23:49:56'!
+products
+	^books!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:50:01' prior: 50361614!
+test01NewShoppingCartIsEmpty
+	| shoppingCart |
+	shoppingCart := ShoppingCart new.
+	
+	self assert: 0 equals: shoppingCart books size.! !
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/7/2021 23:50:02'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/7/2021 23:50:02'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02 stamp: 'TT 6/7/2021 23:50:02'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test02 stamp: 'TT 6/7/2021 23:50:02'!
+ERROR!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:50:10' prior: 50361646!
+test02
+	| shoppingCart book shoppingCartBooks |
+	shoppingCart := ShoppingCart new.
+	book := '978-3-16-148410-0'.
+	shoppingCart addBook: book.
+	
+	shoppingCartBooks := shoppingCart books.
+	self assert: 1 equals: shoppingCartBooks size.
+	self assert: book equals: shoppingCartBooks first.! !
+
+!testRun: #ShoppingCartTest #test02 stamp: 'TT 6/7/2021 23:50:11'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/7/2021 23:50:16'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/7/2021 23:50:16'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02 stamp: 'TT 6/7/2021 23:50:16'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/7/2021 23:51:33'!
+test02EmptyShoppingCartWithBookAddedHasThatBook
+	| shoppingCart book shoppingCartBooks |
+	shoppingCart := ShoppingCart new.
+	book := '978-3-16-148410-0'.
+	shoppingCart addBook: book.
+	
+	shoppingCartBooks := shoppingCart books.
+	self assert: 1 equals: shoppingCartBooks size.
+	self assert: book equals: shoppingCartBooks first.! !
+
+!methodRemoval: ShoppingCartTest #test02 stamp: 'TT 6/7/2021 23:51:33'!
+test02
+	| shoppingCart book shoppingCartBooks |
+	shoppingCart := ShoppingCart new.
+	book := '978-3-16-148410-0'.
+	shoppingCart addBook: book.
+	
+	shoppingCartBooks := shoppingCart books.
+	self assert: 1 equals: shoppingCartBooks size.
+	self assert: book equals: shoppingCartBooks first.!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:02:43'!
+test03CanNotAddABookToShoppingCartThatIsNotInCatalog
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := Catalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart new.
+	
+	self should: [shoppingCart addBook: book] raise: Error description: ShoppingCart bookIsNotInCatalogErrorDescription.! !
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:02:54'!
+ERROR!
+!Catalog methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:03:00'!
+register: aString 
+	self shouldBeImplemented.! !
+
+!classDefinition: #Catalog category: 'Tools-Finder-Model' stamp: 'TT 6/8/2021 00:03:22'!
+Object subclass: #Catalog
+	instanceVariableNames: 'books'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Tools-Finder-Model'!
+!Catalog methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:03:20' prior: 50361787!
+register: aISBN 
+	books add: aISBN! !
+
+!classDefinition: #BookCatalog category: 'Ejercicio-TusLibros.com' stamp: 'TT 6/8/2021 00:04:13'!
+Object subclass: #BookCatalog
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros.com'!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:04:07' prior: 50361770!
+test03CanNotAddABookToShoppingCartThatIsNotInCatalog
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart new.
+	
+	self should: [shoppingCart addBook: book] raise: Error description: ShoppingCart bookIsNotInCatalogErrorDescription.! !
+
+!classDefinition: #BookCatalog category: 'Ejercicio-TusLibros.com' stamp: 'TT 6/8/2021 00:04:29'!
+Object subclass: #BookCatalog
+	instanceVariableNames: 'books'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros.com'!
+!BookCatalog methodsFor: 'no messages' stamp: 'TT 6/8/2021 00:04:28'!
+register: aISBN
+	books add: aISBN ! !
+!BookCatalog methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:04:42' overrides: 16896425!
+initialize
+	books := OrderedCollection new.! !
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:04:47'!
+ERROR!
+!ShoppingCart class methodsFor: 'error description' stamp: 'TT 6/8/2021 00:05:06'!
+bookIsNotInCatalogErrorDescription
+	self shouldBeImplemented.! !
+!ShoppingCart class methodsFor: 'error description' stamp: 'TT 6/8/2021 00:05:22' prior: 50361845!
+bookIsNotInCatalogErrorDescription
+	^'El libro no existe en el catalogo'! !
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:05:25'!
+FAILURE!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:07:16' prior: 50361811!
+test03CanNotAddABookToShoppingCartThatIsNotInCatalog
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withCatalog: catalog.
+	
+	self should: [shoppingCart addBook: book] raise: Error description: ShoppingCart bookIsNotInCatalogErrorDescription.! !
+!ShoppingCart class methodsFor: 'error description' stamp: 'TT 6/8/2021 00:08:26'!
+withBookCatalog: aBookCatalog
+	^self new initializeWithBookCatalog: aBookCatalog ! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:08:38' prior: 50361861!
+test03CanNotAddABookToShoppingCartThatIsNotInCatalog
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self should: [shoppingCart addBook: book] raise: Error description: ShoppingCart bookIsNotInCatalogErrorDescription.! !
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:08:40'!
+ERROR!
+
+!classDefinition: #ShoppingCart category: 'Ejercicio-TusLibros.com' stamp: 'TT 6/8/2021 00:08:45'!
+Object subclass: #ShoppingCart
+	instanceVariableNames: 'books bookCatalog'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros.com'!
+!ShoppingCart methodsFor: 'initialization' stamp: 'TT 6/8/2021 00:08:45'!
+initializeWithBookCatalog: aBookCatalog 
+	self shouldBeImplemented.
+	bookCatalog := aBookCatalog.! !
+!ShoppingCart methodsFor: 'initialization' stamp: 'TT 6/8/2021 00:08:52' prior: 50361907!
+initializeWithBookCatalog: aBookCatalog 
+	bookCatalog := aBookCatalog.! !
+!ShoppingCart methodsFor: 'initialization' stamp: 'TT 6/8/2021 00:09:01' prior: 50361913!
+initializeWithBookCatalog: aBookCatalog 
+	bookCatalog := aBookCatalog.
+	books := OrderedCollection new.! !
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:09:04'!
+FAILURE!
+
+!methodRemoval: ShoppingCart #initialize stamp: 'TT 6/8/2021 00:09:21'!
+initialize
+	books := OrderedCollection new!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:10:38' prior: 50361672!
+addBook: aISBN
+	(bookCatalog anySatisfy: [ :aBook | aBook = aISBN ]) ifTrue: [self error: ShoppingCart bookIsNotInCatalogErrorDescription ].
+	books add: aISBN.! !
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:10:41'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:10:41'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:10:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:10:43'!
+ERROR!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:11:21' prior: 50361703!
+test01NewShoppingCartIsEmpty
+	| shoppingCart catalog |
+	catalog := BookCatalog new.
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self assert: 0 equals: shoppingCart books size.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:11:49' prior: 50361745!
+test02EmptyShoppingCartWithBookAddedHasThatBook
+	| shoppingCart book shoppingCartBooks catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart addBook: book.
+	
+	shoppingCartBooks := shoppingCart books.
+	self assert: 1 equals: shoppingCartBooks size.
+	self assert: book equals: shoppingCartBooks first.! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:11:54'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:12:11'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:12:11'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:12:11'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:12:11'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:12:54' prior: 50361933!
+addBook: aISBN
+	(bookCatalog hasBook: aISBN) ifTrue: [self error: ShoppingCart bookIsNotInCatalogErrorDescription ].
+	books add: aISBN.! !
+!BookCatalog methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:13:08'!
+hasBook: aISBN
+	^books anySatisfy: [ :aBook | aBook = aISBN ]! !
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:13:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:13:10'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:13:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:13:10'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:13:26' prior: 50361999!
+addBook: aISBN
+	(bookCatalog hasBook: aISBN) ifFalse: [self error: ShoppingCart bookIsNotInCatalogErrorDescription ].
+	books add: aISBN.! !
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:13:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:13:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:13:35'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:13:35'!
+FAILURE!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:13:50' prior: 50361881!
+test03CanNotAddABookToShoppingCartThatIsNotInCatalog
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self should: [shoppingCart addBook: book] raise: Error description: ShoppingCart bookIsNotInCatalogErrorDescription.! !
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:13:52'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:13:54'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:13:54'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:13:54'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:16:17' prior: 50361955!
+test01NewShoppingCartIsEmpty
+	| shoppingCart catalog |
+	catalog := BookCatalog new.
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self assert: 0 equals: shoppingCart amount.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:16:52' prior: 50361965!
+test02EmptyShoppingCartWithBookAddedHasThatBook
+	| shoppingCart book shoppingCartBooks catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart addBook: book.
+	
+	shoppingCartBooks := shoppingCart books.
+	self assert: 1 equals: shoppingCart amount.
+	self assert: true equals: (shoppingCart has: book).! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:17:06' prior: 50362086!
+test02EmptyShoppingCartWithBookAddedHasThatBook
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart addBook: book.
+	
+	self assert: 1 equals: shoppingCart amount.
+	self assert: (shoppingCart has: book).! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:17:17'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:17:22'!
+amount
+	self shouldBeImplemented.! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:17:28' prior: 50362120!
+amount
+	^books size! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:17:29'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:17:34'!
+has: aString 
+	self shouldBeImplemented.! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:18:05' prior: 50362132!
+has: aISBN
+	^books anySatisfy: [ :aBook | aBook = aISBN ]! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:18:07'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:18:07'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:18:07'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:18:07'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:22:42' prior: 50362103!
+test02EmptyShoppingCartWithBookAddedHasThatBook
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 1.
+	
+	self assert: 1 equals: shoppingCart amount.
+	self assert: (shoppingCart has: book).! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:22:54' prior: 50362048!
+test03CanNotAddABookToShoppingCartThatIsNotInCatalog
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self should: [shoppingCart add: book units: 1] raise: Error description: ShoppingCart bookIsNotInCatalogErrorDescription.! !
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:22:58'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:22:58'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:22:58'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:22:58'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:22:58'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:23:03'!
+add: aString units: aSmallInteger 
+	self shouldBeImplemented.! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:24:04' prior: 50362202!
+add: aISBN units: aQuantity 
+	aQuantity timesRepeat: [ books add: aISBN ]! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:24:08'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:24:11'!
+FAILURE!
+
+!methodRemoval: ShoppingCart #addBook: stamp: 'TT 6/8/2021 00:24:19'!
+addBook: aISBN
+	(bookCatalog hasBook: aISBN) ifFalse: [self error: ShoppingCart bookIsNotInCatalogErrorDescription ].
+	books add: aISBN.!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:24:46'!
+FAILURE!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:25:47' prior: 50362207!
+add: aISBN units: aQuantity 
+	(bookCatalog hasBook: aISBN) ifFalse: [self error: ShoppingCart bookIsNotInCatalogErrorDescription ].
+	aQuantity timesRepeat: [ books add: aISBN ]! !
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:25:49'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:25:49'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:25:49'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:27:34'!
+test02EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 1.
+	
+	self assert: 1 equals: shoppingCart amount.
+	self assert: (shoppingCart has: book).! !
+
+!methodRemoval: ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:27:34'!
+test02EmptyShoppingCartWithBookAddedHasThatBook
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 1.
+	
+	self assert: 1 equals: shoppingCart amount.
+	self assert: (shoppingCart has: book).!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:29:35'!
+test01NewShoppingCartHasZeroUnitsOfABook
+	| shoppingCart catalog book |
+	catalog := BookCatalog new.
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self assert: 0 equals: (shoppingCart unitsOf: book).! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:29:44'!
+test02NewShoppingCartHasZeroUnitsOfABook
+	| shoppingCart catalog book |
+	catalog := BookCatalog new.
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self assert: 0 equals: (shoppingCart unitsOf: book).! !
+
+!methodRemoval: ShoppingCartTest #test01NewShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:29:49'!
+test01NewShoppingCartHasZeroUnitsOfABook
+	| shoppingCart catalog book |
+	catalog := BookCatalog new.
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self assert: 0 equals: (shoppingCart unitsOf: book).!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:30:03' prior: 50362289!
+test02NewShoppingCartHasZeroUnitsOfABook
+	| shoppingCart catalog book |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self assert: 0 equals: (shoppingCart unitsOf: book).! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:30:14'!
+test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 1.
+	
+	self assert: 1 equals: shoppingCart amount.
+	self assert: (shoppingCart has: book).! !
+
+!methodRemoval: ShoppingCartTest #test02EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:30:14'!
+test02EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 1.
+	
+	self assert: 1 equals: shoppingCart amount.
+	self assert: (shoppingCart has: book).!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:30:20'!
+test05CanNotAddABookToShoppingCartThatIsNotInCatalog
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self should: [shoppingCart add: book units: 1] raise: Error description: ShoppingCart bookIsNotInCatalogErrorDescription.! !
+
+!methodRemoval: ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:30:20'!
+test03CanNotAddABookToShoppingCartThatIsNotInCatalog
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self should: [shoppingCart add: book units: 1] raise: Error description: ShoppingCart bookIsNotInCatalogErrorDescription.!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:30:45'!
+test02EmptyShoppingCartHasZeroUnitsOfABook
+	| shoppingCart catalog book |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self assert: 0 equals: (shoppingCart unitsOf: book).! !
+
+!methodRemoval: ShoppingCartTest #test02NewShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:30:45'!
+test02NewShoppingCartHasZeroUnitsOfABook
+	| shoppingCart catalog book |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self assert: 0 equals: (shoppingCart unitsOf: book).!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:30:50'!
+test01EmptyShoppingCartIsEmpty
+	| shoppingCart catalog |
+	catalog := BookCatalog new.
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self assert: 0 equals: shoppingCart amount.! !
+
+!methodRemoval: ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:30:50'!
+test01NewShoppingCartIsEmpty
+	| shoppingCart catalog |
+	catalog := BookCatalog new.
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self assert: 0 equals: shoppingCart amount.!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:30:58'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:31:05'!
+unitsOf: aString 
+	self shouldBeImplemented.! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:32:24' prior: 50362419!
+unitsOf: aISBN
+	^books sum: [ :book | aISBN = book ifTrue: [0] ifFalse: [1] ]! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:32:25'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:32:42' prior: 50362424!
+unitsOf: aISBN
+	^books sum: [ :book | aISBN = book ifTrue: [0] ifFalse: [1] ] ifEmpty: [0]! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:32:43'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:32:43'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:32:43'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:32:44'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:32:44'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:33:55'!
+test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 2.
+	
+	self assert: 2 equals: (shoppingCart unitsOf: book).! !
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:34:00'!
+FAILURE!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:34:28' prior: 50362320!
+test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 1.
+	
+	self assert: 1 equals: (shoppingCart unitsOf: book)! !
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:34:29'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:35:03'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:35:09'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:35:09'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:35:09'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:35:09'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:35:09'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:35:10'!
+FAILURE!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:36:35' prior: 50362433!
+unitsOf: aISBN
+	^books sum: [ :book | aISBN = book ifTrue: [1] ifFalse: [0] ] ifEmpty: [0]! !
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:36:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:36:39'!
+PASSED!
+
+!methodRemoval: ShoppingCart #books stamp: 'TT 6/8/2021 00:37:15'!
+books
+	^books!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:39:08'!
+test06CanNotAddABookWithFractionalQuantityToShoppingCart
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self should: [shoppingCart add: book units: 1.5] raise: Error description: ShoppingCart unitsHasToBeANaturalNumber.! !
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:39:11'!
+ERROR!
+!ShoppingCart class methodsFor: 'error description' stamp: 'TT 6/8/2021 00:39:22'!
+unitsHasToBeANaturalNumber
+	self shouldBeImplemented.! !
+!ShoppingCart class methodsFor: 'error description' stamp: 'TT 6/8/2021 00:40:19' prior: 50362554!
+unitsHasToBeANaturalNumber
+	^'Solo se puede agregar una cantidad entera positiva de un libro'! !
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:40:20'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:40:21'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:40:21'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:40:21'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:40:21'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:40:21'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:40:21'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:40:39'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:40:39'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:40:39'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:40:39'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:40:39'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:40:39'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:40:40'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:41:08'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:41:08'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:41:08'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:41:08'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:41:08'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:41:08'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:41:08'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:41:56' prior: 50362537!
+test06CanNotAddABookWithFractionalQuantityToShoppingCart
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self should: [shoppingCart add: book units: 1.5] raise: Error description: ShoppingCart unitsHasToBeANaturalNumberErrorDescription.! !
+!ShoppingCart class methodsFor: 'error description' stamp: 'TT 6/8/2021 00:42:08'!
+unitsHasToBeANaturalNumberErrorDescription
+	^'Solo se puede agregar una cantidad entera positiva de un libro'! !
+
+!methodRemoval: ShoppingCart class #unitsHasToBeANaturalNumber stamp: 'TT 6/8/2021 00:42:09'!
+unitsHasToBeANaturalNumber
+	^'Solo se puede agregar una cantidad entera positiva de un libro'!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:42:39' prior: 50362645!
+test06CanNotAddABookWithFractionalQuantityToShoppingCart
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self should: [shoppingCart add: book units: 1.5] raise: Error withMessageText: ShoppingCart unitsHasToBeANaturalNumberErrorDescription.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:42:44' prior: 50362349!
+test05CanNotAddABookToShoppingCartThatIsNotInCatalog
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self should: [shoppingCart add: book units: 1] raise: Error withMessageText: ShoppingCart bookIsNotInCatalogErrorDescription.! !
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:42:46'!
+FAILURE!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:43:49' prior: 50362231!
+add: aISBN units: aQuantity 
+	(aQuantity isKindOf: Fraction) ifTrue: [self error: ShoppingCart unitsHasToBeANaturalNumberErrorDescription ].
+	(bookCatalog hasBook: aISBN) ifFalse: [self error: ShoppingCart bookIsNotInCatalogErrorDescription ].
+	aQuantity timesRepeat: [ books add: aISBN ]! !
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:43:52'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:43:52'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:43:52'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:43:52'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:43:52'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:43:52'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:43:53'!
+FAILURE!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:45:18' prior: 50362704!
+add: aISBN units: aQuantity 
+	(aQuantity isKindOf: Integer) ifFalse: [self error: ShoppingCart unitsHasToBeANaturalNumberErrorDescription ].
+	(bookCatalog hasBook: aISBN) ifFalse: [self error: ShoppingCart bookIsNotInCatalogErrorDescription ].
+	aQuantity timesRepeat: [ books add: aISBN ]! !
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:45:19'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:45:19'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:45:19'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:45:19'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:45:19'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:45:19'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:46:11'!
+test07CanNotAddABookWithNegativeQuantityToShoppingCart
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self should: [shoppingCart add: book units: -5] raise: Error withMessageText: ShoppingCart unitsHasToBeANaturalNumberErrorDescription.! !
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 00:46:14'!
+FAILURE!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:46:37' prior: 50362743!
+add: aISBN units: aQuantity 
+	(aQuantity isKindOf: Integer) ifFalse: [self error: ShoppingCart unitsHasToBeANaturalNumberErrorDescription ].
+	(aQuantity < 0) ifFalse: [self error: ShoppingCart unitsHasToBeANaturalNumberErrorDescription ].
+	(bookCatalog hasBook: aISBN) ifFalse: [self error: ShoppingCart bookIsNotInCatalogErrorDescription ].
+	aQuantity timesRepeat: [ books add: aISBN ]! !
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:46:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:46:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:46:41'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:46:41'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:46:41'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:46:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 00:46:41'!
+FAILURE!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:46:51' prior: 50362796!
+add: aISBN units: aQuantity 
+	(aQuantity isKindOf: Integer) ifFalse: [self error: ShoppingCart unitsHasToBeANaturalNumberErrorDescription ].
+	(aQuantity < 0) ifTrue: [self error: ShoppingCart unitsHasToBeANaturalNumberErrorDescription ].
+	(bookCatalog hasBook: aISBN) ifFalse: [self error: ShoppingCart bookIsNotInCatalogErrorDescription ].
+	aQuantity timesRepeat: [ books add: aISBN ]! !
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:47:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:47:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:47:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:47:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:47:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:47:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 00:47:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:47:04'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:47:04'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:47:04'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:47:06'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:47:06'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:47:06'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test03CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:47:07'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test01NewShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:47:07'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedHasThatBook stamp: 'TT 6/8/2021 00:47:07'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:47:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:47:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:47:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:47:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:47:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:47:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 00:47:10'!
+PASSED!
+!BookCatalog methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:49:19'!
+has: aISBN
+	^books anySatisfy: [ :aBook | aBook = aISBN ]! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:49:19' prior: 50362838!
+add: aISBN units: aQuantity 
+	(aQuantity isKindOf: Integer) ifFalse: [self error: ShoppingCart unitsHasToBeANaturalNumberErrorDescription ].
+	(aQuantity < 0) ifTrue: [self error: ShoppingCart unitsHasToBeANaturalNumberErrorDescription ].
+	(bookCatalog has: aISBN) ifFalse: [self error: ShoppingCart bookIsNotInCatalogErrorDescription ].
+	aQuantity timesRepeat: [ books add: aISBN ]! !
+
+!methodRemoval: BookCatalog #hasBook: stamp: 'TT 6/8/2021 00:49:19'!
+hasBook: aISBN
+	^books anySatisfy: [ :aBook | aBook = aISBN ]!
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:49:22'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:49:22'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:49:22'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:49:22'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:49:22'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:49:22'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 00:49:23'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 00:51:21' prior: 50362457!
+test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 1.
+	shoppingCart add: book units: 1.
+	
+	self assert: 2 equals: (shoppingCart unitsOf: book).! !
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:51:23'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:51:23'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 00:51:23'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 00:51:23'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 00:51:23'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 00:51:23'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 00:51:23'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 00:51:23'!
+PASSED!
+
+!methodRemoval: ShoppingCartTest #test01EmptyShoppingCartIsEmpty stamp: 'TT 6/8/2021 00:53:16'!
+test01EmptyShoppingCartIsEmpty
+	| shoppingCart catalog |
+	catalog := BookCatalog new.
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self assert: 0 equals: shoppingCart amount.!
+
+----SNAPSHOT----(8 June 2021 01:07:30) CuisUniversity-4532.image priorSource: 580973!
+
+----STARTUP---- (8 June 2021 17:54:25) as C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\CuisUniversity-4532.image!
+
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:02:03'!
+test08EmptyShoppingCartHasNoBooks
+	| shoppingCart books catalog |
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	books := shoppingCart books.
+	self assert: 0 equals: books size.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:02:18' prior: 50363049!
+test08EmptyShoppingCartHasNoBooks
+	| shoppingCart books catalog |
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	books := shoppingCart books.
+	
+	self assert: 0 equals: books size.! !
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartHasNoBooks stamp: 'TT 6/8/2021 18:02:20'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:02:24'!
+books
+	self shouldBeImplemented.
+	^books! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:02:29' prior: 50363073!
+books
+	^books! !
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartHasNoBooks stamp: 'TT 6/8/2021 18:02:32'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:02:32'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:02:32'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:02:32'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:02:32'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:02:32'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:02:32'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartHasNoBooks stamp: 'TT 6/8/2021 18:02:32'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartHasNoBooks stamp: 'TT 6/8/2021 18:02:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:02:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:02:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:02:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:02:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:02:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:02:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartHasNoBooks stamp: 'TT 6/8/2021 18:02:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartHasNoBooks stamp: 'TT 6/8/2021 18:02:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:02:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:02:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:02:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:02:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:02:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:02:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartHasNoBooks stamp: 'TT 6/8/2021 18:02:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartHasNoBooks stamp: 'TT 6/8/2021 18:02:39'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:02:39'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:02:39'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:02:39'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:02:40'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:02:40'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:02:40'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartHasNoBooks stamp: 'TT 6/8/2021 18:02:40'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:03:48'!
+test09ShoppingCartWithOneUniqueBookReturnsThatBook
+	| shoppingCart books catalog |
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	books := shoppingCart books.
+	
+	self assert: 0 equals: books size.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:04:06'!
+test08EmptyShoppingCartReturnsNoBooks
+	| shoppingCart books catalog |
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	books := shoppingCart books.
+	
+	self assert: 0 equals: books size.! !
+
+!methodRemoval: ShoppingCartTest #test08EmptyShoppingCartHasNoBooks stamp: 'TT 6/8/2021 18:04:06'!
+test08EmptyShoppingCartHasNoBooks
+	| shoppingCart books catalog |
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	books := shoppingCart books.
+	
+	self assert: 0 equals: books size.!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:04:55' prior: 50363212!
+test08EmptyShoppingCartReturnsNoBooks
+	| shoppingCart books catalog book |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 1.
+	 
+	books := shoppingCart books.
+	
+	self assert: 0 equals: books size.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:05:07' prior: 50363233!
+test08EmptyShoppingCartReturnsNoBooks
+	| shoppingCart books catalog book |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 1.
+	 
+	books := shoppingCart books.
+	
+	self assert: 1 equals: books size.
+	self assert: book equals: books first.! !
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:05:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:05:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:05:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:05:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:05:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:05:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:05:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:05:10'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:05:10'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:04:06' prior: 50363247!
+test08EmptyShoppingCartReturnsNoBooks
+	| shoppingCart books catalog |
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	books := shoppingCart books.
+	
+	self assert: 0 equals: books size.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:05:35' prior: 50363201!
+test09ShoppingCartWithOneUniqueBookReturnsThatBook
+	| shoppingCart books catalog book |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 1.
+	 
+	books := shoppingCart books.
+	
+	self assert: 1 equals: books size.
+	self assert: book equals: books first.! !
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:05:36'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:05:36'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:05:36'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:05:36'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:05:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:05:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:05:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:05:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:05:37'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:05:47' prior: 50363307!
+test09ShoppingCartWithOneUniqueBookReturnsThatBook
+	| shoppingCart books catalog book |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 5.
+	 
+	books := shoppingCart books.
+	
+	self assert: 1 equals: books size.
+	self assert: book equals: books first.! !
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:05:49'!
+FAILURE!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:06:18' prior: 50363078!
+books
+	^books first! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:06:22'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:06:22'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:06:22'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:06:22'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:06:22'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:06:22'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:06:23'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:06:23'!
+FAILURE!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:06:40' prior: 50363376!
+books
+	^OrderedCollection with: books first! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:06:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:06:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:06:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:06:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:06:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:06:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:06:42'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:06:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:06:42'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:06:59' prior: 50363411!
+books
+	books  ifEmpty: [^books].
+	^OrderedCollection with: books first! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:07:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:07:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:07:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:07:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:07:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:07:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:07:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:07:01'!
+PASSED!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:10:27'!
+test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	| shoppingCart books catalog book |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	catalog register: book.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book units: 5.
+	 
+	books := shoppingCart books.
+	
+	self assert: 1 equals: books size.
+	self assert: book equals: books first.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:11:06' prior: 50363486!
+test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	| shoppingCart books catalog book1 book2 |
+	book1 := '978-3-16-148410-0'.
+	book2 := '978-3-16-148410-1'.
+	
+	catalog := BookCatalog new.
+	catalog register: book1.
+	catalog register: book2.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book1 units: 5.
+	shoppingCart add: book2 units: 7.
+	 
+	books := shoppingCart books.
+	
+	self assert: 2 equals: books size.
+	self assert: book1 equals: books first.
+	self assert: book2 equals: books second.! !
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:11:11'!
+FAILURE!
+
+	(OrderedCollection with: 4 with: 58) second!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:12:06' prior: 50363502!
+test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	| shoppingCart books catalog book1 book2 |
+	book1 := '978-3-16-148410-0'.
+	book2 := '978-3-16-148410-1'.
+	
+	catalog := BookCatalog new.
+	catalog register: book1.
+	catalog register: book2.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	shoppingCart add: book1 units: 5.
+	shoppingCart add: book2 units: 7.
+	 
+	books := shoppingCart books.
+	
+	self assert: 2 equals: books size.
+	self assert: book1 equals: books first.
+	self assert: book2 equals: books second.! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:14:28' prior: 50363450!
+books
+	books  ifEmpty: [^books].
+	books size = 1 ifTrue: [^OrderedCollection with: books first].
+	^OrderedCollection with: books first with: (books at: 6)! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:14:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:14:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:14:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:14:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:14:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:14:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:14:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:14:29'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:14:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:14:29'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:14:35' prior: 50363548!
+books
+	books  ifEmpty: [^books].
+	books size = 5 ifTrue: [^OrderedCollection with: books first].
+	^OrderedCollection with: books first with: (books at: 6)! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:14:36'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:14:36'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:14:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:14:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:14:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:14:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:14:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:14:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:14:37'!
+PASSED!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:15:40' prior: 50363594!
+books
+	| uniqueBooks |
+	uniqueBooks := Set withAll: books.
+	^uniqueBooks ! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:15:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:15:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:15:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:15:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:15:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:15:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:15:41'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:15:41'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:15:41'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:15:43'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:15:58' prior: 50363637!
+books
+	| uniqueBooks |
+	uniqueBooks := Set withAll: books.
+	^OrderedCollection withAll: uniqueBooks ! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:16:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:16:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:16:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:16:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:16:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:16:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:16:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:16:00'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:16:00'!
+PASSED!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:17:21'!
+assertQuantityIsPositiveInteger: aQuantity
+
+	(aQuantity isKindOf: Integer) ifFalse: [self error: ShoppingCart unitsHasToBeANaturalNumberErrorDescription ].
+	(aQuantity < 0) ifTrue: [self error: ShoppingCart unitsHasToBeANaturalNumberErrorDescription ]! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:17:21' prior: 50362942!
+add: aISBN units: aQuantity 
+	self assertQuantityIsPositiveInteger: aQuantity.
+	(bookCatalog has: aISBN) ifFalse: [self error: ShoppingCart bookIsNotInCatalogErrorDescription ].
+	aQuantity timesRepeat: [ books add: aISBN ]! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:18:03'!
+assertBookIsInCatalog: aISBN
+
+	^ (bookCatalog has: aISBN) ifFalse: [self error: ShoppingCart bookIsNotInCatalogErrorDescription ]! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:18:03' prior: 50363733!
+add: aISBN units: aQuantity 
+	self assertQuantityIsPositiveInteger: aQuantity.
+	self assertBookIsInCatalog: aISBN.
+	aQuantity timesRepeat: [ books add: aISBN ]! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:18:12' prior: 50363751!
+add: aISBN units: aQuantity 
+	self assertQuantityIsPositiveInteger: aQuantity.
+	self assertBookIsInCatalog: aISBN.
+	
+	aQuantity timesRepeat: [ books add: aISBN ]! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:18:55'!
+signalBookIsNotInCatalog
+
+	^ self error: ShoppingCart bookIsNotInCatalogErrorDescription! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:18:55' prior: 50363743!
+assertBookIsInCatalog: aISBN
+
+	^ (bookCatalog has: aISBN) ifFalse: [self signalBookIsNotInCatalog ]! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:19:11'!
+signalUnitHasToBePositiveInteger
+
+	^ self error: ShoppingCart unitsHasToBeANaturalNumberErrorDescription! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:19:11' prior: 50363722!
+assertQuantityIsPositiveInteger: aQuantity
+
+	(aQuantity isKindOf: Integer) ifFalse: [self signalUnitHasToBePositiveInteger ].
+	(aQuantity < 0) ifTrue: [self error: ShoppingCart unitsHasToBeANaturalNumberErrorDescription ]! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:19:17' prior: 50363787!
+assertQuantityIsPositiveInteger: aQuantity
+
+	(aQuantity isKindOf: Integer) ifFalse: [self signalUnitHasToBePositiveInteger ].
+	(aQuantity < 0) ifTrue: [self signalUnitHasToBePositiveInteger ]! !
+!ShoppingCart class methodsFor: 'error description' stamp: 'TT 6/8/2021 18:19:40'!
+unitsHasToBeAPositiveIntegerErrorDescription
+	^'Solo se puede agregar una cantidad entera positiva de un libro'! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:19:40' prior: 50363780!
+signalUnitHasToBePositiveInteger
+
+	^ self error: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:19:40' prior: 50362778!
+test07CanNotAddABookWithNegativeQuantityToShoppingCart
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self should: [shoppingCart add: book units: -5] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:19:40' prior: 50362672!
+test06CanNotAddABookWithFractionalQuantityToShoppingCart
+	| shoppingCart book catalog |
+	book := '978-3-16-148410-0'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.
+	
+	self should: [shoppingCart add: book units: 1.5] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.! !
+
+!methodRemoval: ShoppingCart class #unitsHasToBeANaturalNumberErrorDescription stamp: 'TT 6/8/2021 18:19:40'!
+unitsHasToBeANaturalNumberErrorDescription
+	^'Solo se puede agregar una cantidad entera positiva de un libro'!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:19:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:19:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:19:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:19:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:19:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:19:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:19:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:19:42'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:19:42'!
+PASSED!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:20:11' prior: 50363797!
+assertQuantityIsPositiveInteger: aQuantity
+
+	((aQuantity isKindOf: Integer) or: (aQuantity < 0)) ifFalse: [self signalUnitHasToBePositiveInteger ].! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:20:18'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:20:18'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:20:18'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:20:18'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:20:18'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:20:18'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:20:18'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:20:18'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:20:18'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:20:18'!
+FAILURE!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:20:51' prior: 50363890!
+assertQuantityIsPositiveInteger: aQuantity
+
+	((aQuantity isKindOf: Integer) not or: (aQuantity < 0)) ifFalse: [self signalUnitHasToBePositiveInteger ].! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:20:52'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:20:52'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:20:52'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:20:52'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:20:52'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:20:52'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:20:52'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:20:52'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:20:53'!
+ERROR!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:20:56'!
+ERROR!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:21:11' prior: 50363936!
+assertQuantityIsPositiveInteger: aQuantity
+
+	((aQuantity isKindOf: Integer) not or: (aQuantity < 0)) ifTrue: [self signalUnitHasToBePositiveInteger ].! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:21:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:21:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:21:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:21:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:21:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:21:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:21:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:21:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:21:12'!
+PASSED!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:21:32' prior: 50363983!
+assertQuantityIsPositiveInteger: aQuantity
+
+	((aQuantity isKindOf: Integer) and: (aQuantity >= 0)) ifFalse: [self signalUnitHasToBePositiveInteger ].! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:21:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:21:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:21:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:21:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:21:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:21:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:21:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:21:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:21:34'!
+PASSED!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:22:15' prior: 50363774!
+assertBookIsInCatalog: aBook
+
+	^ (bookCatalog has: aBook) ifFalse: [self signalBookIsNotInCatalog ]! !
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:22:35' prior: 50362137!
+has: aBook
+	^books anySatisfy: [ :book | aBook = book ]! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:22:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:22:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:22:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:22:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:22:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:22:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:22:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:22:37'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:22:37'!
+PASSED!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:22:48' prior: 50362520!
+unitsOf: aBook
+	^books sum: [ :book | aBook = book ifTrue: [1] ifFalse: [0] ] ifEmpty: [0]! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:22:49'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:22:49'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:22:49'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:22:49'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:22:49'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:22:49'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:22:49'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:22:49'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:22:49'!
+PASSED!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:22:57' prior: 50363760!
+add: aBook units: aQuantity 
+	self assertQuantityIsPositiveInteger: aQuantity.
+	self assertBookIsInCatalog: aBook.
+	
+	aQuantity timesRepeat: [ books add: aBook ]! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:22:58'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:22:58'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:22:58'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:22:58'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:22:58'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:22:58'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:22:58'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:22:58'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:22:58'!
+PASSED!
+
+!classDefinition: #ShoppingCart category: 'Ejercicio-TusLibros.com' stamp: 'TT 6/8/2021 18:24:38'!
+Object subclass: #ShoppingCart
+	instanceVariableNames: 'books bookCatalog newBooks'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros.com'!
+!ShoppingCart methodsFor: 'initialization' stamp: 'TT 6/8/2021 18:24:36' prior: 50361919!
+initializeWithBookCatalog: aBookCatalog 
+	bookCatalog := aBookCatalog.
+	books := OrderedCollection new.
+	newBooks := OrderedCollection new.! !
+
+a := OrderedCollection withAll: #(1 2 3)!
+
+a!
+
+a detect: [ :e | e = 2] ifFound: [10] ifNone: [20] !
+
+a detect: [ :e | e = 2] ifFound: [ :e | 10] ifNone: [20] !
+
+a detect: [ :e | e = 2] ifFound: [ :e | e] ifNone: [20] !
+
+a detect: [ :e | e = 3@4] ifFound: [ :e | e at: 2] ifNone: [20]!
+
+a detect: [ :e | e = 3@4] ifFound: [ :e | e] ifNone: [20]!
+
+a detect: [ :e | e = (3@4)] ifFound: [ :e | e] ifNone: [20]!
+
+a detect: [ :e | e = (3@4)] ifFound: [ :e | e] ifNone: [20]!
+
+a := OrderedCollection withAll: #((1@2) (3@4) (5@6)).!
+
+a := OrderedCollection with: (1@2) with: (3@4) with: (5@6).!
+
+a detect: [ :e | e = (3@4)] ifFound: [ :e | e] ifNone: [20]!
+
+a detect: [ :e | e = (3@4)] ifFound: [ :e | e at: 1] ifNone: [20] !
+
+Point!
+
+a detect: [ :e | e = (3@4)] ifFound: [ :e | e x] ifNone: [20] !
+
+a at: 2 put: 5!
+
+a!
+
+a := OrderedCollection with: (1@2) with: (3@4) with: (5@6).!
+!ShoppingCart methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:33:26' prior: 50364157!
+add: aBook units: aQuantity 
+	self assertQuantityIsPositiveInteger: aQuantity.
+	self assertBookIsInCatalog: aBook.
+	
+	aQuantity timesRepeat: [ books add: aBook ]! !
+!BookCatalog methodsFor: 'actions' stamp: 'TT 6/8/2021 18:37:01' prior: 50361832!
+register: aBook
+	books add: aBook ! !
+!BookCatalog methodsFor: 'accessing' stamp: 'TT 6/8/2021 18:37:13' prior: 50362937!
+has: aBook
+	^books anySatisfy: [ :book | book = aBook ]! !
+!ShoppingCart methodsFor: 'initialization' stamp: 'TT 6/8/2021 18:40:38' prior: 50364208!
+initializeWithBookCatalog: aBookCatalog 
+	bookCatalog := aBookCatalog.
+	books := OrderedCollection new.! !
+
+!methodRemoval: ShoppingCart #amount stamp: 'TT 6/8/2021 18:43:07'!
+amount
+	^books size!
+!ShoppingCart methodsFor: 'accessing' stamp: 'TT 6/8/2021 18:44:00' prior: 50364116!
+unitsOf: aBook
+	^books occurrencesOf: aBook! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:44:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:44:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:44:01'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:44:02'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:44:02'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:44:02'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:44:02'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:44:02'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:44:02'!
+PASSED!
+!ShoppingCart methodsFor: 'asserts' stamp: 'TT 6/8/2021 18:44:54' prior: 50364069!
+assertBookIsInCatalog: aBook
+
+	(bookCatalog has: aBook) ifFalse: [self signalBookIsNotInCatalog ]! !
+!ShoppingCart methodsFor: 'signal errors' stamp: 'TT 6/8/2021 18:45:06' prior: 50363768!
+signalBookIsNotInCatalog
+
+	self error: ShoppingCart bookIsNotInCatalogErrorDescription! !
+!ShoppingCart methodsFor: 'signal errors' stamp: 'TT 6/8/2021 18:45:10' prior: 50363813!
+signalUnitHasToBePositiveInteger
+
+	self error: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription! !
+
+a detect: [ :e | e = (3@4)] ifNone: [20].!
+
+a detect: [ :e | e = (3@4)] ifNone: [20].!
+
+a detect: [ :e | e = (3@4)] ifNone: [20].!
+
+a detect: [ :e | e = (5@4)] ifNone: [20].!
+
+a detect: [ :e | e = (5@4)] ifNone: [a add: (6@6)].  !
+
+e := a detect: [ :e | e = (5@4)] ifNone: [a add: (6@6)]. !
+
+a := OrderedCollection with: (1@2) with: (3@4) with: (5@6).!
+
+e := a detect: [ :e | e x = 3] ifNone: [a add: (6@6)]. !
+
+e!
+
+e := e + (0@5)!
+
+a!
+
+----SNAPSHOT----(8 June 2021 18:49:59) CuisUniversity-4532.image priorSource: 1004509!
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:50:51'!
+setup! !
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:50:55' overrides: 16927572!
+setUp! !
+
+!methodRemoval: ShoppingCartTest #setup stamp: 'TT 6/8/2021 18:50:56'!
+setup!
+
+!classDefinition: #ShoppingCartTest category: 'Ejercicio-TusLibros.com' stamp: 'TT 6/8/2021 18:51:56'!
+TestCase subclass: #ShoppingCartTest
+	instanceVariableNames: 'bookRuperto'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros.com'!
+
+!classDefinition: #ShoppingCartTest category: 'Ejercicio-TusLibros.com' stamp: 'TT 6/8/2021 18:51:57'!
+TestCase subclass: #ShoppingCartTest
+	instanceVariableNames: 'bookRuperto bookRicardo'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros.com'!
+
+!classDefinition: #ShoppingCartTest category: 'Ejercicio-TusLibros.com' stamp: 'TT 6/8/2021 18:51:59'!
+TestCase subclass: #ShoppingCartTest
+	instanceVariableNames: 'bookRuperto bookRicardo bookCatalog'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros.com'!
+
+!classDefinition: #ShoppingCartTest category: 'Ejercicio-TusLibros.com' stamp: 'TT 6/8/2021 18:52:00'!
+TestCase subclass: #ShoppingCartTest
+	instanceVariableNames: 'bookRuperto bookRicardo bookCatalog shoppingCart1'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros.com'!
+!ShoppingCartTest methodsFor: 'setup' stamp: 'TT 6/8/2021 18:51:54' prior: 50364347 overrides: 16927572!
+setUp
+	bookRuperto := '978-3-16-148410-0'.
+	bookRicardo := '978-3-16-148410-1'.
+	
+	bookCatalog := BookCatalog new.
+	
+	shoppingCart1 := ShoppingCart withBookCatalog: bookCatalog.! !
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:52:25' prior: 50362376!
+test02EmptyShoppingCartHasZeroUnitsOfABook
+
+	self assert: 0 equals: (shoppingCart1 unitsOf: bookRuperto).! !
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:52:51' prior: 50362475!
+test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook
+	| book |
+	bookCatalog register: book.
+	
+	shoppingCart1 add: bookRuperto units: 1.
+	
+	self assert: 1 equals: (shoppingCart1 unitsOf: bookRuperto)! !
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:53:03' prior: 50364405!
+test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook
+	bookCatalog register: bookRuperto.
+	
+	shoppingCart1 add: bookRuperto units: 1.
+	
+	self assert: 1 equals: (shoppingCart1 unitsOf: bookRuperto)! !
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:53:05'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:53:05'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:53:05'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:53:05'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:53:05'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:53:05'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:53:05'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:53:05'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:53:05'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:53:05'!
+PASSED!
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:53:47' prior: 50362988!
+test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook
+	bookCatalog register: bookRuperto.
+	
+	shoppingCart1 add: bookRuperto units: 1.
+	shoppingCart1 add: bookRuperto units: 1.
+	
+	self assert: 2 equals: (shoppingCart1 unitsOf: bookRuperto).! !
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:54:07' prior: 50362686!
+test05CanNotAddABookToShoppingCartThatIsNotInCatalog
+
+	self should: [shoppingCart1 add: bookRuperto units: 1] raise: Error withMessageText: ShoppingCart bookIsNotInCatalogErrorDescription.! !
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:54:08'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:54:08'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:54:08'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:54:09'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:54:09'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:54:09'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:54:09'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:54:09'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:54:09'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:54:09'!
+PASSED!
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:54:20' prior: 50363834!
+test06CanNotAddABookWithFractionalQuantityToShoppingCart
+
+	self should: [shoppingCart1 add: bookRuperto units: 1.5] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.! !
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:54:20'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:54:20'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:54:20'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:54:21'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:54:21'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:54:21'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:54:21'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:54:21'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:54:21'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:54:21'!
+PASSED!
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:54:32' prior: 50363820!
+test07CanNotAddABookWithNegativeQuantityToShoppingCart
+
+	self should: [shoppingCart1 add: bookRuperto units: -5] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.! !
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:54:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:54:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:54:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:54:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:54:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:54:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:54:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:54:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:54:34'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:54:35'!
+PASSED!
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:54:50' prior: 50363296!
+test08EmptyShoppingCartReturnsNoBooks
+	| books |
+	books := shoppingCart1 books.
+	
+	self assert: 0 equals: books size.! !
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:55:25' prior: 50363357!
+test09ShoppingCartWithOneUniqueBookReturnsThatBook
+	| books |
+	bookCatalog register: bookRuperto.
+	
+	shoppingCart1 add: bookRuperto units: 5.
+	 
+	books := shoppingCart1 books.
+	
+	self assert: 1 equals: books size.
+	self assert: bookRuperto equals: books first.! !
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:56:16' prior: 50363528!
+test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	
+	| books |
+	bookCatalog register: bookRuperto .
+	bookCatalog register: bookRicardo .
+	
+	shoppingCart1 := ShoppingCart withBookCatalog: bookCatalog.
+	shoppingCart1 add: bookRuperto units: 5.
+	shoppingCart1 add: bookRicardo units: 7.
+	 
+	books := shoppingCart1 books.
+	
+	self assert: 2 equals: books size.
+	self assert: bookRuperto equals: books first.
+	self assert: bookRicardo equals: books second.! !
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:56:27' prior: 50364637!
+test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	| books |
+	bookCatalog register: bookRuperto .
+	bookCatalog register: bookRicardo .
+	
+	shoppingCart1 add: bookRuperto units: 5.
+	shoppingCart1 add: bookRicardo units: 7.
+	 
+	books := shoppingCart1 books.
+	
+	self assert: 2 equals: books size.
+	self assert: bookRuperto equals: books first.
+	self assert: bookRicardo equals: books second.! !
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:56:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:56:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:56:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:56:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:56:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:56:29'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:56:30'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:56:30'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:56:30'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:56:30'!
+PASSED!
+
+----SNAPSHOT----(8 June 2021 18:56:33) CuisUniversity-4532.image priorSource: 1046048!
+
+!classDefinition: #ShoppingCartTest category: 'Ejercicio-TusLibros.com' stamp: 'TT 6/8/2021 18:56:47'!
+TestCase subclass: #ShoppingCartTest
+	instanceVariableNames: 'bookRuperto bookRicardo catalog shoppingCart1'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros.com'!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:56:47' prior: 50364655!
+test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	| books |
+	catalog register: bookRuperto .
+	catalog register: bookRicardo .
+	
+	shoppingCart1 add: bookRuperto units: 5.
+	shoppingCart1 add: bookRicardo units: 7.
+	 
+	books := shoppingCart1 books.
+	
+	self assert: 2 equals: books size.
+	self assert: bookRuperto equals: books first.
+	self assert: bookRicardo equals: books second.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:56:47' prior: 50364389 overrides: 16927572!
+setUp
+	bookRuperto := '978-3-16-148410-0'.
+	bookRicardo := '978-3-16-148410-1'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart1 := ShoppingCart withBookCatalog: catalog.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:56:47' prior: 50364625!
+test09ShoppingCartWithOneUniqueBookReturnsThatBook
+	| books |
+	catalog register: bookRuperto.
+	
+	shoppingCart1 add: bookRuperto units: 5.
+	 
+	books := shoppingCart1 books.
+	
+	self assert: 1 equals: books size.
+	self assert: bookRuperto equals: books first.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:56:47' prior: 50364415!
+test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook
+	catalog register: bookRuperto.
+	
+	shoppingCart1 add: bookRuperto units: 1.
+	
+	self assert: 1 equals: (shoppingCart1 unitsOf: bookRuperto)! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:56:47' prior: 50364463!
+test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook
+	catalog register: bookRuperto.
+	
+	shoppingCart1 add: bookRuperto units: 1.
+	shoppingCart1 add: bookRuperto units: 1.
+	
+	self assert: 2 equals: (shoppingCart1 unitsOf: bookRuperto).! !
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:57:07'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:57:07'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:57:08'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:57:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:57:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:57:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:57:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:57:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:57:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:57:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:57:12'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:57:12'!
+PASSED!
+
+!classDefinition: #ShoppingCartTest category: 'Ejercicio-TusLibros.com' stamp: 'TT 6/8/2021 18:57:20'!
+TestCase subclass: #ShoppingCartTest
+	instanceVariableNames: 'bookRuperto bookRicardo catalog shoppingCart'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-TusLibros.com'!
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:57:20' prior: 50364758!
+test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook
+	catalog register: bookRuperto.
+	
+	shoppingCart add: bookRuperto units: 1.
+	
+	self assert: 1 equals: (shoppingCart unitsOf: bookRuperto)! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:57:20' prior: 50364768!
+test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook
+	catalog register: bookRuperto.
+	
+	shoppingCart add: bookRuperto units: 1.
+	shoppingCart add: bookRuperto units: 1.
+	
+	self assert: 2 equals: (shoppingCart unitsOf: bookRuperto).! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:57:21' prior: 50364522!
+test06CanNotAddABookWithFractionalQuantityToShoppingCart
+
+	self should: [shoppingCart add: bookRuperto units: 1.5] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:57:21' prior: 50364737 overrides: 16927572!
+setUp
+	bookRuperto := '978-3-16-148410-0'.
+	bookRicardo := '978-3-16-148410-1'.
+	
+	catalog := BookCatalog new.
+	
+	shoppingCart := ShoppingCart withBookCatalog: catalog.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:57:21' prior: 50364746!
+test09ShoppingCartWithOneUniqueBookReturnsThatBook
+	| books |
+	catalog register: bookRuperto.
+	
+	shoppingCart add: bookRuperto units: 5.
+	 
+	books := shoppingCart books.
+	
+	self assert: 1 equals: books size.
+	self assert: bookRuperto equals: books first.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:57:21' prior: 50364398!
+test02EmptyShoppingCartHasZeroUnitsOfABook
+
+	self assert: 0 equals: (shoppingCart unitsOf: bookRuperto).! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:57:21' prior: 50364570!
+test07CanNotAddABookWithNegativeQuantityToShoppingCart
+
+	self should: [shoppingCart add: bookRuperto units: -5] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:57:21' prior: 50364618!
+test08EmptyShoppingCartReturnsNoBooks
+	| books |
+	books := shoppingCart books.
+	
+	self assert: 0 equals: books size.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:57:21' prior: 50364721!
+test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	| books |
+	catalog register: bookRuperto .
+	catalog register: bookRicardo .
+	
+	shoppingCart add: bookRuperto units: 5.
+	shoppingCart add: bookRicardo units: 7.
+	 
+	books := shoppingCart books.
+	
+	self assert: 2 equals: books size.
+	self assert: bookRuperto equals: books first.
+	self assert: bookRicardo equals: books second.! !
+!ShoppingCartTest methodsFor: 'as yet unclassified' stamp: 'TT 6/8/2021 18:57:21' prior: 50364474!
+test05CanNotAddABookToShoppingCartThatIsNotInCatalog
+
+	self should: [shoppingCart add: bookRuperto units: 1] raise: Error withMessageText: ShoppingCart bookIsNotInCatalogErrorDescription.! !
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:57:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:57:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:57:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:57:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:57:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:57:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:57:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:57:38'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:57:39'!
+PASSED!
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:58:02'!
+test01EmptyShoppingCartHasZeroUnitsOfABook
+
+	self assert: 0 equals: (shoppingCart unitsOf: bookRuperto).! !
+
+!methodRemoval: ShoppingCartTest #test02EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/8/2021 18:58:02'!
+test02EmptyShoppingCartHasZeroUnitsOfABook
+
+	self assert: 0 equals: (shoppingCart unitsOf: bookRuperto).!
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:58:07'!
+test02EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook
+	catalog register: bookRuperto.
+	
+	shoppingCart add: bookRuperto units: 1.
+	
+	self assert: 1 equals: (shoppingCart unitsOf: bookRuperto)! !
+
+!methodRemoval: ShoppingCartTest #test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/8/2021 18:58:08'!
+test03EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook
+	catalog register: bookRuperto.
+	
+	shoppingCart add: bookRuperto units: 1.
+	
+	self assert: 1 equals: (shoppingCart unitsOf: bookRuperto)!
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:58:13'!
+test03EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook
+	catalog register: bookRuperto.
+	
+	shoppingCart add: bookRuperto units: 1.
+	shoppingCart add: bookRuperto units: 1.
+	
+	self assert: 2 equals: (shoppingCart unitsOf: bookRuperto).! !
+
+!methodRemoval: ShoppingCartTest #test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/8/2021 18:58:13'!
+test04EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook
+	catalog register: bookRuperto.
+	
+	shoppingCart add: bookRuperto units: 1.
+	shoppingCart add: bookRuperto units: 1.
+	
+	self assert: 2 equals: (shoppingCart unitsOf: bookRuperto).!
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:58:19'!
+test04CanNotAddABookToShoppingCartThatIsNotInCatalog
+
+	self should: [shoppingCart add: bookRuperto units: 1] raise: Error withMessageText: ShoppingCart bookIsNotInCatalogErrorDescription.! !
+
+!methodRemoval: ShoppingCartTest #test05CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/8/2021 18:58:20'!
+test05CanNotAddABookToShoppingCartThatIsNotInCatalog
+
+	self should: [shoppingCart add: bookRuperto units: 1] raise: Error withMessageText: ShoppingCart bookIsNotInCatalogErrorDescription.!
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:58:26'!
+test05CanNotAddABookWithFractionalQuantityToShoppingCart
+
+	self should: [shoppingCart add: bookRuperto units: 1.5] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.! !
+
+!methodRemoval: ShoppingCartTest #test06CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/8/2021 18:58:26'!
+test06CanNotAddABookWithFractionalQuantityToShoppingCart
+
+	self should: [shoppingCart add: bookRuperto units: 1.5] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.!
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/8/2021 18:58:36'!
+test06CanNotAddABookWithNegativeQuantityToShoppingCart
+
+	self should: [shoppingCart add: bookRuperto units: -5] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.! !
+
+!methodRemoval: ShoppingCartTest #test07CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/8/2021 18:58:36'!
+test07CanNotAddABookWithNegativeQuantityToShoppingCart
+
+	self should: [shoppingCart add: bookRuperto units: -5] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.!
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:58:44'!
+test07EmptyShoppingCartReturnsNoBooks
+	| books |
+	books := shoppingCart books.
+	
+	self assert: 0 equals: books size.! !
+
+!methodRemoval: ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/8/2021 18:58:44'!
+test08EmptyShoppingCartReturnsNoBooks
+	| books |
+	books := shoppingCart books.
+	
+	self assert: 0 equals: books size.!
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:58:50'!
+test08ShoppingCartWithOneUniqueBookReturnsThatBook
+	| books |
+	catalog register: bookRuperto.
+	
+	shoppingCart add: bookRuperto units: 5.
+	 
+	books := shoppingCart books.
+	
+	self assert: 1 equals: books size.
+	self assert: bookRuperto equals: books first.! !
+
+!methodRemoval: ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/8/2021 18:58:50'!
+test09ShoppingCartWithOneUniqueBookReturnsThatBook
+	| books |
+	catalog register: bookRuperto.
+	
+	shoppingCart add: bookRuperto units: 5.
+	 
+	books := shoppingCart books.
+	
+	self assert: 1 equals: books size.
+	self assert: bookRuperto equals: books first.!
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:58:57'!
+test9ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	| books |
+	catalog register: bookRuperto .
+	catalog register: bookRicardo .
+	
+	shoppingCart add: bookRuperto units: 5.
+	shoppingCart add: bookRicardo units: 7.
+	 
+	books := shoppingCart books.
+	
+	self assert: 2 equals: books size.
+	self assert: bookRuperto equals: books first.
+	self assert: bookRicardo equals: books second.! !
+
+!methodRemoval: ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:58:57'!
+test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	| books |
+	catalog register: bookRuperto .
+	catalog register: bookRicardo .
+	
+	shoppingCart add: bookRuperto units: 5.
+	shoppingCart add: bookRicardo units: 7.
+	 
+	books := shoppingCart books.
+	
+	self assert: 2 equals: books size.
+	self assert: bookRuperto equals: books first.
+	self assert: bookRicardo equals: books second.!
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/8/2021 18:59:03'!
+test09ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	| books |
+	catalog register: bookRuperto .
+	catalog register: bookRicardo .
+	
+	shoppingCart add: bookRuperto units: 5.
+	shoppingCart add: bookRicardo units: 7.
+	 
+	books := shoppingCart books.
+	
+	self assert: 2 equals: books size.
+	self assert: bookRuperto equals: books first.
+	self assert: bookRicardo equals: books second.! !
+
+!methodRemoval: ShoppingCartTest #test9ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/8/2021 18:59:03'!
+test9ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	| books |
+	catalog register: bookRuperto .
+	catalog register: bookRicardo .
+	
+	shoppingCart add: bookRuperto units: 5.
+	shoppingCart add: bookRicardo units: 7.
+	 
+	books := shoppingCart books.
+	
+	self assert: 2 equals: books size.
+	self assert: bookRuperto equals: books first.
+	self assert: bookRicardo equals: books second.!
+
+----SNAPSHOT----(8 June 2021 19:00:09) CuisUniversity-4532.image priorSource: 1057846!
+
+----STARTUP---- (10 June 2021 15:15:10) as C:\Users\tomas\Documents\Programming\University\Inge I\1ParcialCheck\CuisUniversity-4532.image!
+
+!ShoppingCart methodsFor: 'asserts' stamp: 'TT 6/10/2021 15:17:02' prior: 50364026!
+assertQuantityIsPositiveInteger: aQuantity
+
+	((aQuantity isKindOf: Integer) and: (aQuantity >= 1)) ifFalse: [self signalUnitHasToBePositiveInteger ].! !
+!ShoppingCartTest methodsFor: 'adding books' stamp: 'TT 6/10/2021 15:17:32'!
+test07CanNotAddABookWithZeroQuantityToShoppingCart
+
+	self should: [shoppingCart add: bookRuperto units: 0] raise: Error withMessageText: ShoppingCart unitsHasToBeAPositiveIntegerErrorDescription.! !
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/10/2021 15:17:51'!
+test08EmptyShoppingCartReturnsNoBooks
+	| books |
+	books := shoppingCart books.
+	
+	self assert: 0 equals: books size.! !
+
+!methodRemoval: ShoppingCartTest #test07EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/10/2021 15:17:51'!
+test07EmptyShoppingCartReturnsNoBooks
+	| books |
+	books := shoppingCart books.
+	
+	self assert: 0 equals: books size.!
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/10/2021 15:17:56'!
+test09ShoppingCartWithOneUniqueBookReturnsThatBook
+	| books |
+	catalog register: bookRuperto.
+	
+	shoppingCart add: bookRuperto units: 5.
+	 
+	books := shoppingCart books.
+	
+	self assert: 1 equals: books size.
+	self assert: bookRuperto equals: books first.! !
+
+!methodRemoval: ShoppingCartTest #test08ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/10/2021 15:17:56'!
+test08ShoppingCartWithOneUniqueBookReturnsThatBook
+	| books |
+	catalog register: bookRuperto.
+	
+	shoppingCart add: bookRuperto units: 5.
+	 
+	books := shoppingCart books.
+	
+	self assert: 1 equals: books size.
+	self assert: bookRuperto equals: books first.!
+!ShoppingCartTest methodsFor: 'finding books' stamp: 'TT 6/10/2021 15:18:09'!
+test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	| books |
+	catalog register: bookRuperto .
+	catalog register: bookRicardo .
+	
+	shoppingCart add: bookRuperto units: 5.
+	shoppingCart add: bookRicardo units: 7.
+	 
+	books := shoppingCart books.
+	
+	self assert: 2 equals: books size.
+	self assert: bookRuperto equals: books first.
+	self assert: bookRicardo equals: books second.! !
+
+!methodRemoval: ShoppingCartTest #test09ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/10/2021 15:18:09'!
+test09ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks
+	| books |
+	catalog register: bookRuperto .
+	catalog register: bookRicardo .
+	
+	shoppingCart add: bookRuperto units: 5.
+	shoppingCart add: bookRicardo units: 7.
+	 
+	books := shoppingCart books.
+	
+	self assert: 2 equals: books size.
+	self assert: bookRuperto equals: books first.
+	self assert: bookRicardo equals: books second.!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithZeroQuantityToShoppingCart stamp: 'TT 6/10/2021 15:18:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/10/2021 15:18:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/10/2021 15:18:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/10/2021 15:18:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/10/2021 15:18:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/10/2021 15:18:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/10/2021 15:18:35'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithZeroQuantityToShoppingCart stamp: 'TT 6/10/2021 15:18:36'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/10/2021 15:18:36'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/10/2021 15:18:36'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/10/2021 15:18:36'!
+PASSED!
+!ShoppingCart methodsFor: 'asserts' stamp: 'TT 6/10/2021 15:19:01' prior: 50365187!
+assertQuantityIsPositiveInteger: aQuantity
+
+	((aQuantity isKindOf: Integer) and: (aQuantity >= 0)) ifFalse: [self signalUnitHasToBePositiveInteger ].! !
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/10/2021 15:19:03'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/10/2021 15:19:03'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/10/2021 15:19:03'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/10/2021 15:19:03'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/10/2021 15:19:03'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/10/2021 15:19:03'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithZeroQuantityToShoppingCart stamp: 'TT 6/10/2021 15:19:03'!
+FAILURE!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/10/2021 15:19:03'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/10/2021 15:19:03'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/10/2021 15:19:03'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithZeroQuantityToShoppingCart stamp: 'TT 6/10/2021 15:19:03'!
+FAILURE!
+!ShoppingCart methodsFor: 'asserts' stamp: 'TT 6/10/2021 15:19:09' prior: 50365314!
+assertQuantityIsPositiveInteger: aQuantity
+
+	((aQuantity isKindOf: Integer) and: (aQuantity >= 1)) ifFalse: [self signalUnitHasToBePositiveInteger ].! !
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/10/2021 15:19:13'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/10/2021 15:19:13'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/10/2021 15:19:13'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/10/2021 15:19:13'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/10/2021 15:19:13'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/10/2021 15:19:13'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithZeroQuantityToShoppingCart stamp: 'TT 6/10/2021 15:19:13'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/10/2021 15:19:13'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/10/2021 15:19:13'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/10/2021 15:19:13'!
+PASSED!
+!ShoppingCart methodsFor: 'asserts' stamp: 'TT 6/10/2021 15:23:23' prior: 50365364!
+assertQuantityIsPositiveInteger: aQuantity
+
+	((aQuantity isKindOf: Integer) and: (aQuantity > 0)) ifFalse: [self signalUnitHasToBePositiveInteger ].! !
+
+!testRun: #ShoppingCartTest #test01EmptyShoppingCartHasZeroUnitsOfABook stamp: 'TT 6/10/2021 15:23:25'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test02EmptyShoppingCartWithBookAddedOnceHasOneUnitOfThatBook stamp: 'TT 6/10/2021 15:23:25'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test03EmptyShoppingCartWithBookAddedTwiceHasTwoUnitsOfThatBook stamp: 'TT 6/10/2021 15:23:25'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test04CanNotAddABookToShoppingCartThatIsNotInCatalog stamp: 'TT 6/10/2021 15:23:25'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test05CanNotAddABookWithFractionalQuantityToShoppingCart stamp: 'TT 6/10/2021 15:23:25'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test06CanNotAddABookWithNegativeQuantityToShoppingCart stamp: 'TT 6/10/2021 15:23:25'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test07CanNotAddABookWithZeroQuantityToShoppingCart stamp: 'TT 6/10/2021 15:23:25'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test08EmptyShoppingCartReturnsNoBooks stamp: 'TT 6/10/2021 15:23:25'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test09ShoppingCartWithOneUniqueBookReturnsThatBook stamp: 'TT 6/10/2021 15:23:25'!
+PASSED!
+
+!testRun: #ShoppingCartTest #test10ShoppingCartWithTwoUniqueBooksReturnsThoseTwoBooks stamp: 'TT 6/10/2021 15:23:25'!
+PASSED!
+
+----SNAPSHOT----(10 June 2021 15:26:40) CuisUniversity-4532.image priorSource: 1072924!
