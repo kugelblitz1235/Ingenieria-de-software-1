@@ -241,6 +241,23 @@ test08CanNotCheckoutSecondTimeWithoutEnoughBalance
 	
 		! !
 
+!CashierTest methodsFor: 'tests' stamp: 'BAG 6/17/2021 16:13:51'!
+test09CanNotCheckoutWithBalanceExceeded
+	| salesBook validCreditCard |
+	validCreditCard  := storeFactory validCreditCard. 
+	salesBook := storeFactory createSalesBook.
+	
+	cart add: 2 of:storeFactory expensiveItemSellByTheStore. 
+	 
+	self should:[cashier checkout: cart charging: validCreditCard  on: storeFactory today  registeredOn: salesBook ] 
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [ :error | 
+			self assert: error messageText = MerchantProcessorSimulator balanceExceededErrorDescription.
+			self assert: 0 equals: salesBook size.
+		].
+	
+		! !
+
 
 !classDefinition: #Cart category: 'TusLibros'!
 Object subclass: #Cart
@@ -439,6 +456,11 @@ assertCreditCardIsValid: aCreditCard
 
 	^ (validCardNumber = aCreditCard number) ifFalse: [self error: self class fakeCreditCardErrorDescription]! !
 
+!MerchantProcessorSimulator methodsFor: 'assertions' stamp: 'BAG 6/17/2021 16:19:42'!
+assertValidAmount: anAmount
+
+	^ ((anAmount numberOfDigitsInBase: 10) > 15) ifTrue: [self error: self class balanceExceededErrorDescription ]! !
+
 
 !MerchantProcessorSimulator methodsFor: 'auxiliar' stamp: 'BAG 6/17/2021 00:36:03'!
 substract: anAmount from: anAccountNumber
@@ -449,12 +471,14 @@ substract: anAmount from: anAccountNumber
 	accounts at: anAccountNumber put: balance.! !
 
 
-!MerchantProcessorSimulator methodsFor: 'transactions' stamp: 'BAG 6/17/2021 00:36:27'!
+!MerchantProcessorSimulator methodsFor: 'transactions' stamp: 'BAG 6/17/2021 16:19:42'!
 debitFor: aCreditCard amount: anAmount
-	
+
+	self assertValidAmount: anAmount.
 	self assertCreditCardIsNotStolen: aCreditCard.
 	self assertCreditCardIsValid: aCreditCard.
 	self assertAccountFor: aCreditCard canDebit: anAmount.
+	
 	
 	self substract: anAmount from: aCreditCard number.
 	! !
@@ -471,6 +495,10 @@ initializeWithStolenCardNumber: aStolenCardNumber andValidCardNumber: aValidCard
 !classDefinition: 'MerchantProcessorSimulator class' category: 'TusLibros'!
 MerchantProcessorSimulator class
 	instanceVariableNames: ''!
+
+!MerchantProcessorSimulator class methodsFor: 'error description' stamp: 'BAG 6/17/2021 16:14:47'!
+balanceExceededErrorDescription
+	^'No puede debitarse un monto con más de 15 digitos'.! !
 
 !MerchantProcessorSimulator class methodsFor: 'error description' stamp: 'BAG 6/14/2021 21:39:56'!
 fakeCreditCardErrorDescription
@@ -501,6 +529,16 @@ Object subclass: #StoreTestObjectFactory
 createSalesBook
 	^OrderedCollection new.! !
 
+
+!StoreTestObjectFactory methodsFor: 'sell item' stamp: 'BAG 6/17/2021 16:10:28'!
+expensiveItemSellByTheStore
+	
+	^ 'expensive validBook'! !
+
+!StoreTestObjectFactory methodsFor: 'sell item' stamp: 'BAG 6/17/2021 16:11:34'!
+expensiveItemSellByTheStorePrice
+	
+	^ 923456789123456! !
 
 !StoreTestObjectFactory methodsFor: 'sell item' stamp: 'BAG 6/14/2021 21:01:00'!
 itemNotSellByTheStore
@@ -560,10 +598,11 @@ validCreditCard
 	^CreditCard numbered: 1234567812345689  owner: 'Roberto'  expiredOn: FixedGregorianDate tomorrow.! !
 
 
-!StoreTestObjectFactory methodsFor: 'catalog' stamp: 'BAG 6/14/2021 22:05:46'!
+!StoreTestObjectFactory methodsFor: 'catalog' stamp: 'BAG 6/17/2021 16:12:36'!
 defaultCatalog
 	
-	^ Dictionary with: (Association key: self itemSellByTheStore  value: self itemSellByTheStorePrice).! !
+	^ Dictionary with: (Association key: self itemSellByTheStore  value: self itemSellByTheStorePrice) 
+			     with: (Association key: self expensiveItemSellByTheStore  value: self expensiveItemSellByTheStorePrice).! !
 
 
 !StoreTestObjectFactory methodsFor: 'cart' stamp: 'BAG 6/14/2021 21:00:33'!

@@ -4910,3 +4910,498 @@ PASSED!
 ----SNAPSHOT----(17 June 2021 00:41:06) CuisUniversity-4532.image priorSource: 17066442!
 
 ----QUIT----(17 June 2021 00:41:12) CuisUniversity-4532.image priorSource: 17117940!
+
+----STARTUP---- (17 June 2021 16:07:41) as /home/bruno/Documents/UBA/Ingenieria del software 1/linux64New/CuisUniversity-4532.image!
+
+!CashierTest methodsFor: 'tests' stamp: 'BAG 6/17/2021 16:09:34'!
+test09CanNotCheckoutWithBalanceExceeded
+	| salesBook validCreditCard |
+	validCreditCard  := storeFactory validCreditCard. 
+	salesBook := storeFactory createSalesBook.
+	
+	cart add: 5 of:storeFactory itemSellByTheStore. 
+	
+	cashier checkout: cart charging: validCreditCard  on: storeFactory today  registeredOn: salesBook.
+	 
+	self should:[cashier checkout: cart charging: validCreditCard  on: storeFactory today  registeredOn: salesBook ] 
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [ :error | 
+			self assert: error messageText = MerchantProcessorSimulator notEnoughBalanceErrorDescription.
+			self assert: 1 equals: salesBook size.
+			self assert: 5 * (storeFactory itemSellByTheStorePrice) equals: salesBook first.
+		].
+	
+		! !
+!CashierTest methodsFor: 'tests' stamp: 'BAG 6/17/2021 16:10:03' prior: 50866596!
+test09CanNotCheckoutWithBalanceExceeded
+	| salesBook validCreditCard |
+	validCreditCard  := storeFactory validCreditCard. 
+	salesBook := storeFactory createSalesBook.
+	
+	cart add: 5 of:storeFactory expensiveItemSellByTheStore. 
+	 
+	self should:[cashier checkout: cart charging: validCreditCard  on: storeFactory today  registeredOn: salesBook ] 
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [ :error | 
+			self assert: error messageText = MerchantProcessorSimulator notEnoughBalanceErrorDescription.
+			self assert: 1 equals: salesBook size.
+			self assert: 5 * (storeFactory itemSellByTheStorePrice) equals: salesBook first.
+		].
+	
+		! !
+!CashierTest methodsFor: 'tests' stamp: 'BAG 6/17/2021 16:10:09' prior: 50866622!
+test09CanNotCheckoutWithBalanceExceeded
+	| salesBook validCreditCard |
+	validCreditCard  := storeFactory validCreditCard. 
+	salesBook := storeFactory createSalesBook.
+	
+	cart add: 2 of:storeFactory expensiveItemSellByTheStore. 
+	 
+	self should:[cashier checkout: cart charging: validCreditCard  on: storeFactory today  registeredOn: salesBook ] 
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [ :error | 
+			self assert: error messageText = MerchantProcessorSimulator notEnoughBalanceErrorDescription.
+			self assert: 1 equals: salesBook size.
+			self assert: 5 * (storeFactory itemSellByTheStorePrice) equals: salesBook first.
+		].
+	
+		! !
+!StoreTestObjectFactory methodsFor: 'sell item' stamp: 'BAG 6/17/2021 16:10:28'!
+expensiveItemSellByTheStore
+	
+	^ 'expensive validBook'! !
+!StoreTestObjectFactory methodsFor: 'sell item' stamp: 'BAG 6/17/2021 16:11:34'!
+expensiveItemSellByTheStorePrice
+	
+	^ 923456789123456! !
+!StoreTestObjectFactory methodsFor: 'catalog' stamp: 'BAG 6/17/2021 16:12:36' prior: 50863186!
+defaultCatalog
+	
+	^ Dictionary with: (Association key: self itemSellByTheStore  value: self itemSellByTheStorePrice) 
+			     with: (Association key: self expensiveItemSellByTheStore  value: self expensiveItemSellByTheStorePrice).! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CashierTest #test02CheckoutCartWithOneItemReturnsTotal stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CashierTest #test03CheckoutCartWithManyItemsReturnsTotal stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CashierTest #test04CanNotCheckoutWithExpiredCard stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CashierTest #test05CanNotCheckoutWithStolenCard stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CashierTest #test06CanNotCheckoutWithFakeCard stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CashierTest #test07CanNotCheckoutWithoutEnoughBalance stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CashierTest #test08CanNotCheckoutSecondTimeWithoutEnoughBalance stamp: 'BAG 6/17/2021 16:12:43'!
+PASSED!
+
+!testRun: #CashierTest #test09CanNotCheckoutWithBalanceExceeded stamp: 'BAG 6/17/2021 16:12:43'!
+FAILURE!
+
+!testRun: #CashierTest #test09CanNotCheckoutWithBalanceExceeded stamp: 'BAG 6/17/2021 16:12:43'!
+FAILURE!
+!CashierTest methodsFor: 'tests' stamp: 'BAG 6/17/2021 16:13:23' prior: 50866645!
+test09CanNotCheckoutWithBalanceExceeded
+	| salesBook validCreditCard |
+	validCreditCard  := storeFactory validCreditCard. 
+	salesBook := storeFactory createSalesBook.
+	
+	cart add: 2 of:storeFactory expensiveItemSellByTheStore. 
+	 
+	self should:[cashier checkout: cart charging: validCreditCard  on: storeFactory today  registeredOn: salesBook ] 
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [ :error | 
+			self assert: error messageText = MerchantProcessorSimulator notEnoughBalanceErrorDescription.
+			self assert: 0 equals: salesBook size.
+		].
+	
+		! !
+!CashierTest methodsFor: 'tests' stamp: 'BAG 6/17/2021 16:13:51' prior: 50866747!
+test09CanNotCheckoutWithBalanceExceeded
+	| salesBook validCreditCard |
+	validCreditCard  := storeFactory validCreditCard. 
+	salesBook := storeFactory createSalesBook.
+	
+	cart add: 2 of:storeFactory expensiveItemSellByTheStore. 
+	 
+	self should:[cashier checkout: cart charging: validCreditCard  on: storeFactory today  registeredOn: salesBook ] 
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [ :error | 
+			self assert: error messageText = MerchantProcessorSimulator balanceExceededErrorDescription.
+			self assert: 0 equals: salesBook size.
+		].
+	
+		! !
+
+!testRun: #CashierTest #test09CanNotCheckoutWithBalanceExceeded stamp: 'BAG 6/17/2021 16:13:55'!
+ERROR!
+!MerchantProcessorSimulator class methodsFor: 'error description' stamp: 'BAG 6/17/2021 16:14:10'!
+balanceExceededErrorDescription
+	self shouldBeImplemented.! !
+!MerchantProcessorSimulator class methodsFor: 'error description' stamp: 'BAG 6/17/2021 16:14:47' prior: 50866793!
+balanceExceededErrorDescription
+	^'No puede debitarse un monto con más de 15 digitos'.! !
+
+!testRun: #CashierTest #test09CanNotCheckoutWithBalanceExceeded stamp: 'BAG 6/17/2021 16:14:51'!
+FAILURE!
+!MerchantProcessorSimulator methodsFor: 'transactions' stamp: 'BAG 6/17/2021 16:16:47' prior: 50866524!
+debitFor: aCreditCard amount: anAmount
+	
+	self assertCreditCardIsNotStolen: aCreditCard.
+	self assertCreditCardIsValid: aCreditCard.
+	self assertAccountFor: aCreditCard canDebit: anAmount.
+	(anAmount asInteger asString size > 15) ifTrue: [self error: self class balanceExceededErrorDescription ].
+	
+	self substract: anAmount from: aCreditCard number.
+	! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CashierTest #test02CheckoutCartWithOneItemReturnsTotal stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CashierTest #test03CheckoutCartWithManyItemsReturnsTotal stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CashierTest #test04CanNotCheckoutWithExpiredCard stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CashierTest #test05CanNotCheckoutWithStolenCard stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CashierTest #test06CanNotCheckoutWithFakeCard stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CashierTest #test07CanNotCheckoutWithoutEnoughBalance stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CashierTest #test08CanNotCheckoutSecondTimeWithoutEnoughBalance stamp: 'BAG 6/17/2021 16:16:53'!
+PASSED!
+
+!testRun: #CashierTest #test09CanNotCheckoutWithBalanceExceeded stamp: 'BAG 6/17/2021 16:16:53'!
+FAILURE!
+
+!testRun: #CashierTest #test09CanNotCheckoutWithBalanceExceeded stamp: 'BAG 6/17/2021 16:16:53'!
+FAILURE!
+!MerchantProcessorSimulator methodsFor: 'transactions' stamp: 'BAG 6/17/2021 16:17:09' prior: 50866809!
+debitFor: aCreditCard amount: anAmount
+
+	(anAmount asInteger asString size > 15) ifTrue: [self error: self class balanceExceededErrorDescription ].
+	self assertCreditCardIsNotStolen: aCreditCard.
+	self assertCreditCardIsValid: aCreditCard.
+	self assertAccountFor: aCreditCard canDebit: anAmount.
+	
+	
+	self substract: anAmount from: aCreditCard number.
+	! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CashierTest #test02CheckoutCartWithOneItemReturnsTotal stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CashierTest #test03CheckoutCartWithManyItemsReturnsTotal stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CashierTest #test04CanNotCheckoutWithExpiredCard stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CashierTest #test05CanNotCheckoutWithStolenCard stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CashierTest #test06CanNotCheckoutWithFakeCard stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CashierTest #test07CanNotCheckoutWithoutEnoughBalance stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CashierTest #test08CanNotCheckoutSecondTimeWithoutEnoughBalance stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+!testRun: #CashierTest #test09CanNotCheckoutWithBalanceExceeded stamp: 'BAG 6/17/2021 16:17:12'!
+PASSED!
+
+123456789 numberOfDigitsInBase: 10.!
+
+123456789123456789 numberOfDigitsInBase: 10. !
+
+123456789123456789123 numberOfDigitsInBase: 10.  18 !
+
+123456789123456789123 numberOfDigitsInBase: 10.!
+!MerchantProcessorSimulator methodsFor: 'transactions' stamp: 'BAG 6/17/2021 16:18:43' prior: 50866882!
+debitFor: aCreditCard amount: anAmount
+
+	((anAmount numberOfDigitsInBase: 10) > 15) ifTrue: [self error: self class balanceExceededErrorDescription ].
+	self assertCreditCardIsNotStolen: aCreditCard.
+	self assertCreditCardIsValid: aCreditCard.
+	self assertAccountFor: aCreditCard canDebit: anAmount.
+	
+	
+	self substract: anAmount from: aCreditCard number.
+	! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CashierTest #test02CheckoutCartWithOneItemReturnsTotal stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CashierTest #test03CheckoutCartWithManyItemsReturnsTotal stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CashierTest #test04CanNotCheckoutWithExpiredCard stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CashierTest #test05CanNotCheckoutWithStolenCard stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CashierTest #test06CanNotCheckoutWithFakeCard stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CashierTest #test07CanNotCheckoutWithoutEnoughBalance stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CashierTest #test08CanNotCheckoutSecondTimeWithoutEnoughBalance stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+
+!testRun: #CashierTest #test09CanNotCheckoutWithBalanceExceeded stamp: 'BAG 6/17/2021 16:18:46'!
+PASSED!
+!MerchantProcessorSimulator methodsFor: 'transactions' stamp: 'BAG 6/17/2021 16:19:02' prior: 50866958!
+debitFor: aCreditCard amount: anAmount
+
+	((anAmount numberOfDigitsInBase: 10) > 15) ifTrue: [self error: self class balanceExceededErrorDescription ].
+	self assertCreditCardIsNotStolen: aCreditCard.
+	self assertCreditCardIsValid: aCreditCard.
+	self assertAccountFor: aCreditCard canDebit: anAmount.
+	
+	
+	self substract: anAmount from: aCreditCard number.
+	! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CashierTest #test02CheckoutCartWithOneItemReturnsTotal stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CashierTest #test03CheckoutCartWithManyItemsReturnsTotal stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CashierTest #test04CanNotCheckoutWithExpiredCard stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CashierTest #test05CanNotCheckoutWithStolenCard stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CashierTest #test06CanNotCheckoutWithFakeCard stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CashierTest #test07CanNotCheckoutWithoutEnoughBalance stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CashierTest #test08CanNotCheckoutSecondTimeWithoutEnoughBalance stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+
+!testRun: #CashierTest #test09CanNotCheckoutWithBalanceExceeded stamp: 'BAG 6/17/2021 16:19:05'!
+PASSED!
+!MerchantProcessorSimulator methodsFor: 'transactions' stamp: 'BAG 6/17/2021 16:19:42'!
+assertValidAmount: anAmount
+
+	^ ((anAmount numberOfDigitsInBase: 10) > 15) ifTrue: [self error: self class balanceExceededErrorDescription ]! !
+!MerchantProcessorSimulator methodsFor: 'transactions' stamp: 'BAG 6/17/2021 16:19:42' prior: 50867028!
+debitFor: aCreditCard amount: anAmount
+
+	self assertValidAmount: anAmount.
+	self assertCreditCardIsNotStolen: aCreditCard.
+	self assertCreditCardIsValid: aCreditCard.
+	self assertAccountFor: aCreditCard canDebit: anAmount.
+	
+	
+	self substract: anAmount from: aCreditCard number.
+	! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CashierTest #test02CheckoutCartWithOneItemReturnsTotal stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CashierTest #test03CheckoutCartWithManyItemsReturnsTotal stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CashierTest #test04CanNotCheckoutWithExpiredCard stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CashierTest #test05CanNotCheckoutWithStolenCard stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CashierTest #test06CanNotCheckoutWithFakeCard stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CashierTest #test07CanNotCheckoutWithoutEnoughBalance stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CashierTest #test08CanNotCheckoutSecondTimeWithoutEnoughBalance stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+!testRun: #CashierTest #test09CanNotCheckoutWithBalanceExceeded stamp: 'BAG 6/17/2021 16:19:54'!
+PASSED!
+
+----SNAPSHOT----(17 June 2021 16:20:30) CuisUniversity-4532.image priorSource: 17118030!
+
+----QUIT----(17 June 2021 16:20:34) CuisUniversity-4532.image priorSource: 17136706!
