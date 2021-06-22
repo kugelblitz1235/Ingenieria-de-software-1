@@ -9438,3 +9438,4421 @@ createCartForUser: aUsername withPassword: aPassword
 ----SNAPSHOT----(19 June 2021 13:46:46) CuisUniversity-4532.image priorSource: 17196908!
 
 ----QUIT----(19 June 2021 13:46:52) CuisUniversity-4532.image priorSource: 17308300!
+
+----STARTUP---- (21 June 2021 17:15:26) as /home/bruno/Documents/UBA/Ingenieria del software 1/linux64New/CuisUniversity-4532.image!
+
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 17:37:57'!
+test10CheckoutEmptyCart
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	
+	cartItems := restInterface listCart: cartID.
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second. 
+	
+
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 17:44:38'!
+test10CheckoutCartWithOneItem
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	
+	
+	
+	cartItems := restInterface listCart: cartID.
+	
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second. 
+	
+
+	! !
+
+!methodRemoval: RestInterfaceTest #test10CheckoutEmptyCart stamp: 'BAG 6/21/2021 17:44:42'!
+test10CheckoutEmptyCart
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	
+	cartItems := restInterface listCart: cartID.
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second. 
+	
+
+	!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 17:44:50' prior: 50872562!
+test10CheckoutCartWithOneItem
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	
+	cartItems := restInterface listCart: cartID.
+	
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second. 
+	
+
+	! !
+
+!classDefinition: #RestInterfaceTest category: 'TusLibros' stamp: 'BAG 6/21/2021 17:47:19'!
+TestCase subclass: #RestInterfaceTest
+	instanceVariableNames: 'validUsername validPassword storeFactory clock creditCardNumber'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 17:47:17' prior: 50872598!
+test10CheckoutCartWithOneItem
+	| restInterface cartID cartItems date ownerName |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	
+	restInterface checkOut: cartID creditCard: creditCardNumber expiredOn: date owner: ownerName.
+	cartItems := restInterface listCart: cartID.
+	
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second. 
+	
+
+	! !
+
+TestCase subclass: #RestInterfaceTest
+	instanceVariableNames: 'validUsername validPassword storeFactory clock '
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+!classDefinition: #RestInterfaceTest category: 'TusLibros' stamp: 'BAG 6/21/2021 17:47:44'!
+TestCase subclass: #RestInterfaceTest
+	instanceVariableNames: 'validUsername validPassword storeFactory clock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 17:49:17' prior: 50872628!
+test10CheckoutCartWithOneItem
+	| restInterface cartID cartItems date ownerName creditCardNumber |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID creditCard: creditCardNumber expiredOn: date owner: ownerName.
+	cartItems := restInterface listCart: cartID.
+	
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second. 
+	
+
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:00:18' prior: 50872666!
+test10CheckoutCartWithOneItem
+	| restInterface cartID cartItems ownerName creditCardNumber expirationMonth expirationYear |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName.
+	cartItems := restInterface listCart: cartID.
+	
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second. 
+	
+
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:03:10' prior: 50872691!
+test10CheckoutCartWithOneItem
+	| restInterface cartID cartItems ownerName creditCardNumber expirationMonth expirationYear transactionID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	transactionID := restInterface checkOut: cartID 
+			    creditCard: creditCardNumber 
+			    expiredOnMonth: expirationMonth 
+			    andYear: expirationYear  
+			    owner: ownerName.
+			
+	cartItems := restInterface listCart: cartID.
+	
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second. 
+	
+
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:08:08' prior: 50872718!
+test10CheckoutCartWithOneItem
+	| restInterface cartID ownerName creditCardNumber expirationMonth expirationYear transactionID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	transactionID := restInterface checkOut: cartID 
+			    creditCard: creditCardNumber 
+			    expiredOnMonth: expirationMonth 
+			    andYear: expirationYear  
+			    owner: ownerName.
+			
+	purchases := restInterface listPurchases: validUsername password: validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore with: 1 with: storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:11:16'!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	! !
+!RestInterface methodsFor: 'initialization' stamp: 'BAG 6/21/2021 18:13:10'!
+initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock through: aMerchantProcessor   
+	userAuthenticator := aUserAuthenticator.
+	nextID := 0.
+	activeCarts := Dictionary new.
+	lastTimeUsedForCart := Dictionary new.
+	catalog := aCatalog. 
+	clock := aClock.
+	
+	! !
+!RestInterface class methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:13:10' prior: 50870707!
+withAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock  
+	^self new initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock through: MerchantProcessor new. ! !
+
+!methodRemoval: RestInterface #initializeWithAuthenticator:catalog:clock: stamp: 'BAG 6/21/2021 18:13:10'!
+initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock  
+	userAuthenticator := aUserAuthenticator.
+	nextID := 0.
+	activeCarts := Dictionary new.
+	lastTimeUsedForCart := Dictionary new.
+	catalog := aCatalog. 
+	clock := aClock.
+	
+	!
+
+!classDefinition: #RestInterface category: 'TusLibros' stamp: 'BAG 6/21/2021 18:13:31'!
+Object subclass: #RestInterface
+	instanceVariableNames: 'userAuthenticator nextID activeCarts catalog clock lastTimeUsedForCart merchantProcessor'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!RestInterface methodsFor: 'initialization' stamp: 'BAG 6/21/2021 18:13:29' prior: 50872787!
+initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock through: aMerchantProcessor   
+	userAuthenticator := aUserAuthenticator.
+	nextID := 0.
+	activeCarts := Dictionary new.
+	lastTimeUsedForCart := Dictionary new.
+	catalog := aCatalog. 
+	clock := aClock.
+	merchantProcessor := aMerchantProcessor. 
+	
+	! !
+!RestInterface class methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:07'!
+withAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor   
+	^self new initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock through: MerchantProcessor new. ! !
+!RestInterfaceTest methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:07' prior: 50870655!
+test01CanNotCreateCartWithInvalidUser
+	| restInterface |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: MerchantProcessor new.
+	
+	self should: [restInterface createCartForUser: 'pepe' withPassword: '1234' ]
+	 raise:  Error - MessageNotUnderstood
+	withExceptionDo: [:anError | 
+			self assert: anError messageText = RestInterface canNotCreateCartWithInvalidCredentialsErrorDescription.
+		].
+	! !
+!RestInterfaceTest methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:07' prior: 50870535!
+test02CanCreateCartWithValidCredentials
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: MerchantProcessor new.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword. 
+	cartItems := restInterface listCart: cartID.
+	
+	self assert: 0 equals: cartItems size.
+	! !
+!RestInterfaceTest methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:07' prior: 50871952!
+test06CanNotAddBookToExpiredCart
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: MerchantProcessor new.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	
+	self advanceMinutesBy: 31.
+	
+	self should: [restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		].
+
+	! !
+!RestInterfaceTest methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:07' prior: 50870572!
+test05AddMultipleBooksToCart
+	| restInterface cartID cartItems item1 item2 |
+	
+	item1 := storeFactory itemSellByTheStore. 
+	item2 := storeFactory anotherItemSellByTheStore.
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: MerchantProcessor new.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword. 
+	
+	restInterface add: 1 of: item1 toCart: cartID  .
+	restInterface add: 1 of: item2 toCart: cartID  .
+	cartItems := restInterface listCart: cartID.
+	
+	self assert: 4 equals: cartItems size.
+	self assert: item1 equals: (cartItems at: 1).
+	self assert: 1 equals: (cartItems at: 2).
+	self assert: item2 equals: (cartItems at: 3).
+	self assert: 1 equals: (cartItems at: 4).
+	! !
+!RestInterfaceTest methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:07' prior: 50871914!
+test08CanNotListExpiredCart
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: MerchantProcessor new.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	
+	self advanceMinutesBy: 31.
+	
+	self should: [restInterface listCart: cartID]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: anError messageText equals: (RestInterface cartDoesNotExistErrorDescription).
+		].
+	! !
+!RestInterfaceTest methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:07' prior: 50872323!
+test09ListCartRefreshesTime
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: MerchantProcessor new.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self advanceMinutesBy: 15.
+	cartItems := restInterface listCart: cartID.
+	
+	self advanceMinutesBy: 20.
+	cartItems := restInterface listCart: cartID.
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second. 
+	
+
+	! !
+!RestInterfaceTest methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:07' prior: 50872747!
+test10CheckoutCartWithOneItem
+	| restInterface cartID ownerName creditCardNumber expirationMonth expirationYear transactionID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: MerchantProcessor new.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	transactionID := restInterface checkOut: cartID 
+			    creditCard: creditCardNumber 
+			    expiredOnMonth: expirationMonth 
+			    andYear: expirationYear  
+			    owner: ownerName.
+			
+	purchases := restInterface listPurchases: validUsername password: validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore with: 1 with: storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+!RestInterfaceTest methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:07' prior: 50870619!
+test04AddBookToCart
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: MerchantProcessor new.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword. 
+	
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID  .
+	cartItems := restInterface listCart: cartID.
+	
+	
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second.
+	! !
+!RestInterfaceTest methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:07' prior: 50870550!
+test03CanCreateMultipleCart
+	| restInterface cartID1 cartID2 cartItems1 cartItems2 |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: MerchantProcessor new.
+	cartID1 := restInterface createCartForUser: validUsername withPassword: validPassword. 
+	cartID2 := restInterface createCartForUser: validUsername withPassword: validPassword. 
+	cartItems1 := restInterface listCart: cartID1.
+	cartItems2 := restInterface listCart: cartID2.
+	
+	self assert: cartID1 ~= cartID2.
+	self assert: 0 equals: cartItems1 size.
+	self assert: 0 equals: cartItems2 size.
+	! !
+!RestInterfaceTest methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:07' prior: 50872273!
+test07AddBookRefreshesTimeOfCart
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: MerchantProcessor new.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	
+	self advanceMinutesBy: 15.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	self advanceMinutesBy: 20.
+	
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	cartItems := restInterface listCart: cartID.
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 2 equals: cartItems second. 
+	
+
+	! !
+
+!methodRemoval: RestInterface class #withAuthenticator:catalog:clock: stamp: 'BAG 6/21/2021 18:15:07'!
+withAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock  
+	^self new initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock through: MerchantProcessor new. !
+!RestInterface class methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:27' prior: 50872845!
+withAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor   
+	^self new initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock through: aMerchantProcessor. ! !
+!RestInterface methodsFor: 'initialization' stamp: 'BAG 6/21/2021 18:15:40'!
+initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor   
+	userAuthenticator := aUserAuthenticator.
+	nextID := 0.
+	activeCarts := Dictionary new.
+	lastTimeUsedForCart := Dictionary new.
+	catalog := aCatalog. 
+	clock := aClock.
+	merchantProcessor := aMerchantProcessor. 
+	
+	! !
+!RestInterface class methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:40' prior: 50873102!
+withAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor   
+	^self new initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor. ! !
+
+!methodRemoval: RestInterface #initializeWithAuthenticator:catalog:clock:through: stamp: 'BAG 6/21/2021 18:15:40'!
+initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock through: aMerchantProcessor   
+	userAuthenticator := aUserAuthenticator.
+	nextID := 0.
+	activeCarts := Dictionary new.
+	lastTimeUsedForCart := Dictionary new.
+	catalog := aCatalog. 
+	clock := aClock.
+	merchantProcessor := aMerchantProcessor. 
+	
+	!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:15:52' prior: 50872856!
+test01CanNotCreateCartWithInvalidUser
+	| restInterface |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	
+	self should: [restInterface createCartForUser: 'pepe' withPassword: '1234' ]
+	 raise:  Error - MessageNotUnderstood
+	withExceptionDo: [:anError | 
+			self assert: anError messageText = RestInterface canNotCreateCartWithInvalidCredentialsErrorDescription.
+		].
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:16:04' prior: 50872874!
+test02CanCreateCartWithValidCredentials
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword. 
+	cartItems := restInterface listCart: cartID.
+	
+	self assert: 0 equals: cartItems size.
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:16:13' prior: 50873043!
+test03CanCreateMultipleCart
+	| restInterface cartID1 cartID2 cartItems1 cartItems2 |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := restInterface createCartForUser: validUsername withPassword: validPassword. 
+	cartID2 := restInterface createCartForUser: validUsername withPassword: validPassword. 
+	cartItems1 := restInterface listCart: cartID1.
+	cartItems2 := restInterface listCart: cartID2.
+	
+	self assert: cartID1 ~= cartID2.
+	self assert: 0 equals: cartItems1 size.
+	self assert: 0 equals: cartItems2 size.
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:16:19' prior: 50873021!
+test04AddBookToCart
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword. 
+	
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID  .
+	cartItems := restInterface listCart: cartID.
+	
+	
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second.
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:16:24' prior: 50872912!
+test05AddMultipleBooksToCart
+	| restInterface cartID cartItems item1 item2 |
+	
+	item1 := storeFactory itemSellByTheStore. 
+	item2 := storeFactory anotherItemSellByTheStore.
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword. 
+	
+	restInterface add: 1 of: item1 toCart: cartID  .
+	restInterface add: 1 of: item2 toCart: cartID  .
+	cartItems := restInterface listCart: cartID.
+	
+	self assert: 4 equals: cartItems size.
+	self assert: item1 equals: (cartItems at: 1).
+	self assert: 1 equals: (cartItems at: 2).
+	self assert: item2 equals: (cartItems at: 3).
+	self assert: 1 equals: (cartItems at: 4).
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:16:29' prior: 50872890!
+test06CanNotAddBookToExpiredCart
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	
+	self advanceMinutesBy: 31.
+	
+	self should: [restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		].
+
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:16:35' prior: 50873066!
+test07AddBookRefreshesTimeOfCart
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	
+	self advanceMinutesBy: 15.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	self advanceMinutesBy: 20.
+	
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	cartItems := restInterface listCart: cartID.
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 2 equals: cartItems second. 
+	
+
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:16:42' prior: 50872940!
+test08CanNotListExpiredCart
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	
+	self advanceMinutesBy: 31.
+	
+	self should: [restInterface listCart: cartID]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: anError messageText equals: (RestInterface cartDoesNotExistErrorDescription).
+		].
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:16:49' prior: 50872961!
+test09ListCartRefreshesTime
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self advanceMinutesBy: 15.
+	cartItems := restInterface listCart: cartID.
+	
+	self advanceMinutesBy: 20.
+	cartItems := restInterface listCart: cartID.
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second. 
+	
+
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:16:56' prior: 50872986!
+test10CheckoutCartWithOneItem
+	| restInterface cartID ownerName creditCardNumber expirationMonth expirationYear transactionID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	transactionID := restInterface checkOut: cartID 
+			    creditCard: creditCardNumber 
+			    expiredOnMonth: expirationMonth 
+			    andYear: expirationYear  
+			    owner: ownerName.
+			
+	purchases := restInterface listPurchases: validUsername password: validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore with: 1 with: storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:19:51'!
+listPurchases: validUsername password: validPassword
+	! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:24:52' prior: 50872780!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook |
+	
+	salesBook := OrderedCollection new.
+	Cashier toCheckout: cartID charging: creditCardNumber  throught: merchantProcessor on: self  registeringOn: salesBook.
+	! !
+
+!classDefinition: #RestInterface category: 'TusLibros' stamp: 'BAG 6/21/2021 18:25:07'!
+Object subclass: #RestInterface
+	instanceVariableNames: 'userAuthenticator nextID activeCarts catalog clock lastTimeUsedForCart merchantProcessor cashier'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:25:05' prior: 50873383!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook |
+	
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: cartID charging: creditCardNumber  throught: merchantProcessor on: self  registeringOn: salesBook.
+	! !
+
+!classDefinition: #RestInterface category: 'TusLibros' stamp: 'BAG 6/21/2021 18:34:53'!
+Object subclass: #RestInterface
+	instanceVariableNames: 'userAuthenticator nextID activeCarts catalog clock lastTimeUsedForCart merchantProcessor cashier purchases'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:34:50' prior: 50873405!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total |
+	
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: cartID charging: creditCardNumber  throught: merchantProcessor on: self  registeringOn: salesBook.
+	
+	total := cashier checkOut.
+	
+	purchases := self listCart: cartID.
+	purchases add: total.
+	
+	^1
+	! !
+
+Object subclass: #RestInterface
+	instanceVariableNames: 'userAuthenticator nextID activeCarts catalog clock lastTimeUsedForCart merchantProcessor purchases'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+!classDefinition: #RestInterface category: 'TusLibros' stamp: 'BAG 6/21/2021 18:35:12'!
+Object subclass: #RestInterface
+	instanceVariableNames: 'userAuthenticator nextID activeCarts catalog clock lastTimeUsedForCart merchantProcessor purchases'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:35:21' prior: 50873428!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier |
+	
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: cartID charging: creditCardNumber  throught: merchantProcessor on: self  registeringOn: salesBook.
+	
+	total := cashier checkOut.
+	
+	purchases := self listCart: cartID.
+	purchases add: total.
+	
+	^1
+	! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:36:07' prior: 50873461!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier |
+	
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: cartID charging: creditCardNumber  throught: merchantProcessor on: self  registeringOn: salesBook.
+	
+	total := cashier checkOut.
+	
+	purchases := self listCart: cartID.
+	purchases add: total.
+	
+	^1
+	! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:36:20' prior: 50873378!
+listPurchases: validUsername password: validPassword
+	^purchases.! !
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:36:27'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:36:27'!
+ERROR!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:37:13' prior: 50873477!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier |
+	
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: creditCardNumber  throught: merchantProcessor on: self  registeringOn: salesBook.
+	
+	total := cashier checkOut.
+	
+	purchases := self listCart: cartID.
+	purchases add: total.
+	
+	^1
+	! !
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:37:15'!
+ERROR!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:39:21' prior: 50873505!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier card |
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear).
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: creditCardNumber throught: merchantProcessor on: self  registeringOn: salesBook.
+	
+	total := cashier checkOut.
+	
+	purchases := self listCart: cartID.
+	purchases add: total.
+	
+	^1
+	! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:39:30' prior: 50873525!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier card |
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear).
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: self  registeringOn: salesBook.
+	
+	total := cashier checkOut.
+	
+	purchases := self listCart: cartID.
+	purchases add: total.
+	
+	^1
+	! !
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:39:34'!
+ERROR!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 18:40:35' prior: 50873345!
+test10CheckoutCartWithOneItem
+	| restInterface cartID transactionID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	transactionID := restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: 'pepe'.
+			
+	purchases := restInterface listPurchases: validUsername password: validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore with: 1 with: storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:40:50'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:40:50'!
+ERROR!
+
+Month!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:42:53' prior: 50873545!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier card |
+	
+	card := CreditCard expiringOn: (DateAndTime month: expirationMonth year: expirationYear).
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: self  registeringOn: salesBook.
+	
+	total := cashier checkOut.
+	
+	purchases := self listCart: cartID.
+	purchases add: total.
+	
+	^1
+	! !
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 18:42:55'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 18:42:55'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 18:42:55'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 18:42:55'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 18:42:55'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 18:42:55'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 18:42:55'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 18:42:55'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 18:42:55'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:42:55'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:42:55'!
+ERROR!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:43:50' prior: 50873606!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier card |
+	
+	card := CreditCard expiringOn: (DateAndTime year: expirationYear month: expirationMonth day: 1).
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: self  registeringOn: salesBook.
+	
+	total := cashier checkOut.
+	
+	purchases := self listCart: cartID.
+	purchases add: total.
+	
+	^1
+	! !
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:43:58'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:43:58'!
+ERROR!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:45:39' prior: 50873661!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier card |
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear).
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: self  registeringOn: salesBook.
+	
+	total := cashier checkOut.
+	
+	purchases := self listCart: cartID.
+	purchases add: total.
+	
+	^1
+	! !
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 18:45:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 18:45:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 18:45:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 18:45:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 18:45:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 18:45:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 18:45:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 18:45:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 18:45:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:45:41'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:45:41'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:47:22'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:47:22'!
+ERROR!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 18:48:12' prior: 50873687!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier card |
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear).
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	
+	total := cashier checkOut.
+	
+	purchases := self listCart: cartID.
+	purchases add: total.
+	
+	^1
+	! !
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:48:15'!
+ERROR!
+!RestInterfaceTest methodsFor: 'mock clock' stamp: 'BAG 6/21/2021 18:48:36'!
+today
+	self shouldBeImplemented.! !
+!RestInterfaceTest methodsFor: 'mock clock' stamp: 'BAG 6/21/2021 18:48:48' prior: 50873770!
+today
+	^DateAndTime now.! !
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:48:50'!
+ERROR!
+
+!classDefinition: #RestInterfaceTest category: 'TusLibros' stamp: 'BAG 6/21/2021 18:49:15'!
+TestCase subclass: #RestInterfaceTest
+	instanceVariableNames: 'validUsername validPassword storeFactory clock debitBehavior'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!RestInterfaceTest methodsFor: 'mocking' stamp: 'BAG 6/21/2021 18:49:11'!
+debit: anAmount from: aCreditCard 
+
+	^debitBehavior value: anAmount value: aCreditCard ! !
+!RestInterfaceTest methodsFor: 'setup' stamp: 'BAG 6/21/2021 18:50:10' prior: 50870744 overrides: 16927572!
+setUp
+	validUsername _ 'RupertoEl+Kpo' . 
+	validPassword _ '3333'. 
+	storeFactory _ StoreTestObjectsFactory new.
+	clock _ 0.
+	debitBehavior _ [:amount : creditCard |].! !
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 18:50:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 18:50:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 18:50:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 18:50:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 18:50:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 18:50:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 18:50:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 18:50:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 18:50:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:50:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 18:50:48'!
+PASSED!
+
+pepe := DateAndTime now.!
+
+pepe := pepe + pepe.!
+
+pepe := pepe + (Duration minutes: 30).!
+
+pepe := DateAndTime now. !
+
+pepe := pepe + (Duration minutes: 30).!
+!RestInterfaceTest methodsFor: 'setup' stamp: 'BAG 6/21/2021 18:56:19' prior: 50873798 overrides: 16927572!
+setUp
+	validUsername _ 'RupertoEl+Kpo' . 
+	validPassword _ '3333'. 
+	storeFactory _ StoreTestObjectsFactory new.
+	clock _ DateAndTime now.
+	debitBehavior _ [:amount : creditCard |].! !
+!RestInterfaceTest methodsFor: 'mocking' stamp: 'BAG 6/21/2021 18:57:29' prior: 50870852!
+advanceMinutesBy: aTimeSpan 
+	clock _ clock + (Duration minutes: aTimeSpan).! !
+
+pepe := pepe - (Duration minutes: 30). !
+
+pepe minutes. !
+
+pepe1 := pepe + (Duration minutes: 30).  !
+
+pepe1 > pepe. !
+
+pepe1 < pepe.  true !
+
+pepe1 < pepe. !
+
+pepe1 minute - pepe minute.!
+
+pepe minute!
+
+pepe secondsSinceMidnight !
+
+pepe1 secondsSinceMidnight!
+
+!classDefinition: #RestInterfaceTest category: 'TusLibros' stamp: 'BAG 6/21/2021 19:07:32'!
+TestCase subclass: #RestInterfaceTest
+	instanceVariableNames: 'validUsername validPassword storeFactory clock debitBehavior clockDate'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!RestInterfaceTest methodsFor: 'setup' stamp: 'BAG 6/21/2021 19:07:30' prior: 50873847 overrides: 16927572!
+setUp
+	validUsername _ 'RupertoEl+Kpo' . 
+	validPassword _ '3333'. 
+	storeFactory _ StoreTestObjectsFactory new.
+	clock _ 0.
+	clockDate _ DateAndTime now.
+	debitBehavior _ [:amount : creditCard |].! !
+!RestInterfaceTest methodsFor: 'mocking' stamp: 'BAG 6/21/2021 19:07:47' prior: 50873856!
+advanceMinutesBy: aTimeSpan 
+	clock _ clock +  aTimeSpan.! !
+!RestInterfaceTest methodsFor: 'mocking' stamp: 'BAG 6/21/2021 19:08:02' prior: 50873775!
+today
+	^clockDate.! !
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 19:08:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 19:08:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 19:08:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 19:08:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 19:08:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 19:08:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 19:08:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 19:08:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 19:08:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 19:08:35'!
+PASSED!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 19:11:14'!
+test11CheckoutTwoCartsForSameClient
+	| restInterface cartID1 cartID2 transactionID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := restInterface createCartForUser: validUsername withPassword: validPassword.
+	cartID2 := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
+	restInterface add: 1 of: (storeFactory anotherItemSellByTheStore) toCart: cartID2.
+	
+	transactionID := restInterface checkOut: cartID1 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: validUsername .
+			
+	transactionID := restInterface checkOut: cartID2 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: validUsername .
+			
+	purchases := restInterface listPurchases: validUsername password: validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore with: 1 with: storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 19:12:39' prior: 50873931!
+test11CheckoutTwoCartsForSameClient
+	| restInterface cartID1 cartID2 transactionID1 transactionID2 expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := restInterface createCartForUser: validUsername withPassword: validPassword.
+	cartID2 := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
+	restInterface add: 1 of: (storeFactory anotherItemSellByTheStore) toCart: cartID2.
+	
+	transactionID1 := restInterface checkOut: cartID1 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: validUsername .
+			
+	transactionID2 := restInterface checkOut: cartID2 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: validUsername .
+			
+	purchases := restInterface listPurchases: validUsername password: validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore 
+										with: 1 
+										with: storeFactory anotherItemSellByTheStore 
+										with: 1
+										with: storeFactory itemSellByTheStorePrice + storeFactory anotherItemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 19:14:17' prior: 50873974!
+test11CheckoutTwoCartsForSameClient
+	| restInterface cartID1 cartID2 expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := restInterface createCartForUser: validUsername withPassword: validPassword.
+	cartID2 := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
+	restInterface add: 1 of: (storeFactory anotherItemSellByTheStore) toCart: cartID2.
+	
+	restInterface checkOut: cartID1 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: validUsername .
+			
+	restInterface checkOut: cartID2 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: validUsername .
+			
+	purchases := restInterface listPurchases: validUsername password: validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore 
+										with: 1 
+										with: storeFactory anotherItemSellByTheStore 
+										with: 1
+										with: storeFactory itemSellByTheStorePrice + storeFactory anotherItemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 19:14:29'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 19:14:38'!
+FAILURE!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 19:15:05' prior: 50873748!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier card |
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear).
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	
+	total := cashier checkOut.
+	
+	purchases addAll: (self listCart: cartID).
+	purchases add: total.
+	
+	^1
+	! !
+!RestInterface methodsFor: 'initialization' stamp: 'BAG 6/21/2021 19:15:27' prior: 50873112!
+initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor   
+	userAuthenticator := aUserAuthenticator.
+	nextID := 0.
+	activeCarts := Dictionary new.
+	lastTimeUsedForCart := Dictionary new.
+	purchases := OrderedCollection new.
+	catalog := aCatalog. 
+	clock := aClock.
+	merchantProcessor := aMerchantProcessor. 
+	
+	! !
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 19:15:30'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 19:15:30'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 19:15:30'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 19:15:30'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 19:15:30'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 19:15:30'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 19:15:30'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 19:15:30'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 19:15:30'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 19:15:30'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 19:15:30'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 19:15:30'!
+FAILURE!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 19:18:38' prior: 50874075!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier card |
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear).
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	
+	total := purchases removeLast. 
+	purchases addAll: (self listCart: cartID).
+	
+	purchases add: cashier checkOut + total.
+	
+	^1
+	! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 19:18:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 19:18:40'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 19:18:40'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 19:18:45'!
+ERROR!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 19:19:37' prior: 50874149!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier card |
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear).
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	
+	total := purchases isEmpty ifTrue: [0] ifFalse: [ purchases removeLast ]. 
+	purchases addAll: (self listCart: cartID).
+	
+	purchases add: cashier checkOut + total.
+	
+	^1
+	! !
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 19:19:42'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 19:19:42'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 19:19:42'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 19:19:42'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 19:19:42'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 19:19:42'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 19:19:42'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 19:19:42'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 19:19:42'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 19:19:42'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 19:19:42'!
+PASSED!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 19:25:32'!
+test12CheckoutWithMultipleItems
+	| restInterface cartID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 5 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	restInterface add: 5 of: (storeFactory anotherItemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: validUsername .
+			
+	purchases := restInterface listPurchases: validUsername password: validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore 
+										with: 5 
+										with: storeFactory anotherItemSellByTheStore 
+										with: 5
+										with: 5*(storeFactory itemSellByTheStorePrice + storeFactory anotherItemSellByTheStorePrice).
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 19:25:35'!
+PASSED!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 19:29:56' prior: 50874022!
+test11CheckoutTwoCartsForSameClient
+	| restInterface cartID1 cartID2 expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := restInterface createCartForUser: validUsername withPassword: validPassword.
+	cartID2 := restInterface createCartForUser: validUsername withPassword: validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID2.
+	
+	restInterface checkOut: cartID1 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: validUsername .
+			
+	restInterface checkOut: cartID2 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: validUsername .
+			
+	purchases := restInterface listPurchases: validUsername password: validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore 
+										with: 2
+										with: 2* storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 19:30:01'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 19:30:01'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 19:31:06'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 19:31:06'!
+FAILURE!
+!Sale methodsFor: 'initialization' stamp: 'BAG 6/21/2021 19:46:43'!
+initializeTotal: aTotal items: items 
+
+	total := aTotal ! !
+!Sale class methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 19:46:43' prior: 50867717!
+of: aTotal
+
+	"should assert total is not negative or 0!!"
+	^self new initializeTotal: aTotal items: self halt ! !
+
+!methodRemoval: Sale #initializeTotal: stamp: 'BAG 6/21/2021 19:46:43'!
+initializeTotal: aTotal
+
+	total := aTotal !
+
+!classDefinition: #Sale category: 'TusLibros' stamp: 'BAG 6/21/2021 19:48:39'!
+Object subclass: #Sale
+	instanceVariableNames: 'total books'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!Sale methodsFor: 'initialization' stamp: 'BAG 6/21/2021 19:48:38' prior: 50874446!
+initializeTotal: aTotal items: anItems 
+
+	total := aTotal. 
+	books := anItems. ! !
+!Sale methodsFor: 'initialization' stamp: 'BAG 6/21/2021 19:49:37'!
+initializeTotal: aTotal items: anItems clientName: aClientName  
+
+	total := aTotal. 
+	books := anItems. ! !
+!Sale class methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 19:49:37' prior: 50874451!
+of: aTotal
+
+	"should assert total is not negative or 0!!"
+	^self new initializeTotal: aTotal items: self halt clientName: 'pepe' ! !
+
+!methodRemoval: Sale #initializeTotal:items: stamp: 'BAG 6/21/2021 19:49:37'!
+initializeTotal: aTotal items: anItems 
+
+	total := aTotal. 
+	books := anItems. !
+
+!classDefinition: #Sale category: 'TusLibros' stamp: 'BAG 6/21/2021 19:49:49'!
+Object subclass: #Sale
+	instanceVariableNames: 'total books clientName'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!Sale methodsFor: 'initialization' stamp: 'BAG 6/21/2021 19:49:48' prior: 50874473!
+initializeTotal: aTotal items: anItems clientName: aClientName  
+
+	total := aTotal. 
+	books := anItems. 
+	clientName := aClientName .! !
+!Sale class methodsFor: 'instance creation' stamp: 'BAG 6/21/2021 19:57:20'!
+of: aTotal withItems: anItems clientName: aClientName
+
+	"should assert total is not negative or 0!!"
+	^self new initializeTotal: aTotal items: anItems clientName: aClientName ! !
+
+!methodRemoval: Sale class #of: stamp: 'BAG 6/21/2021 19:57:27'!
+of: aTotal
+
+	"should assert total is not negative or 0!!"
+	^self new initializeTotal: aTotal items: self halt clientName: 'pepe' !
+!Cashier methodsFor: 'checkout - private' stamp: 'BAG 6/21/2021 19:59:41' prior: 50867428!
+createSale
+
+	^ Sale of: total withItems: cart items clientName: '' 
+! !
+!Cashier methodsFor: 'checkout - private' stamp: 'BAG 6/21/2021 20:00:34' prior: 50874521!
+createSale
+
+	^ Sale of: total withItems: cart items clientName: creditCard ownerName.
+! !
+!Cart methodsFor: 'queries' stamp: 'BAG 6/21/2021 20:01:04'!
+items
+	^items ! !
+!CreditCard class methodsFor: 'instance creation' stamp: 'BAG 6/21/2021 20:01:38'!
+expiringOn: aMonth for: anOwnerName
+	
+	^self new initializeExpiringOn: aMonth for: anOwnerName ! !
+
+!classDefinition: #CreditCard category: 'TusLibros' stamp: 'BAG 6/21/2021 20:02:04'!
+Object subclass: #CreditCard
+	instanceVariableNames: 'expiration owner'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!CreditCard methodsFor: 'initialization' stamp: 'BAG 6/21/2021 20:02:02'!
+initializeExpiringOn: aMonth for: anOwnerName
+	owner := anOwnerName .
+	expiration := aMonth ! !
+
+!methodRemoval: CreditCard #initializeExpiringOn: stamp: 'BAG 6/21/2021 20:02:11'!
+initializeExpiringOn: aMonth 
+	
+	expiration := aMonth !
+!CreditCard methodsFor: 'nil' stamp: 'BAG 6/21/2021 20:03:08'!
+ownerName
+	^owner! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 20:04:21' prior: 50874254!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier card |
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear) for: ownerName.
+	salesBook := OrderedCollection new.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	
+	total := purchases isEmpty ifTrue: [0] ifFalse: [ purchases removeLast ]. 
+	purchases addAll: (self listCart: cartID).
+	
+	purchases add: cashier checkOut + total.
+	
+	^1
+	! !
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 20:05:06' prior: 50867767!
+expiredCreditCard
+	
+	^CreditCard expiringOn: (Month month: today monthIndex year: today yearNumber - 1) for: self validUsername! !
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 20:05:14' prior: 50874586!
+expiredCreditCard
+	
+	^CreditCard expiringOn: (Month month: today monthIndex year: today yearNumber - 1) for: (self validUsername).! !
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 20:05:27' prior: 50867760!
+notExpiredCreditCard
+	
+	^CreditCard expiringOn: (Month month: today monthIndex year: today yearNumber + 1) for: (self validUsername).! !
+!StoreTestObjectsFactory methodsFor: 'items' stamp: 'BAG 6/21/2021 20:06:32'!
+validUsername 
+ 	^'RupertoEl+Kpo' . 
+	! !
+!StoreTestObjectsFactory methodsFor: 'items' stamp: 'BAG 6/21/2021 20:06:37'!
+validPassword 
+	^ '3333'. 	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:07:10' prior: 50873169!
+test02CanCreateCartWithValidCredentials
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
+	cartItems := restInterface listCart: cartID.
+	
+	self assert: 0 equals: cartItems size.
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:07:24' prior: 50873184!
+test03CanCreateMultipleCart
+	| restInterface cartID1 cartID2 cartItems1 cartItems2 |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
+	cartID2 := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
+	cartItems1 := restInterface listCart: cartID1.
+	cartItems2 := restInterface listCart: cartID2.
+	
+	self assert: cartID1 ~= cartID2.
+	self assert: 0 equals: cartItems1 size.
+	self assert: 0 equals: cartItems2 size.
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:07:40' prior: 50873206!
+test04AddBookToCart
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
+	
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID  .
+	cartItems := restInterface listCart: cartID.
+	
+	
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second.
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:07:48' prior: 50873227!
+test05AddMultipleBooksToCart
+	| restInterface cartID cartItems item1 item2 |
+	
+	item1 := storeFactory itemSellByTheStore. 
+	item2 := storeFactory anotherItemSellByTheStore.
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
+	
+	restInterface add: 1 of: item1 toCart: cartID  .
+	restInterface add: 1 of: item2 toCart: cartID  .
+	cartItems := restInterface listCart: cartID.
+	
+	self assert: 4 equals: cartItems size.
+	self assert: item1 equals: (cartItems at: 1).
+	self assert: 1 equals: (cartItems at: 2).
+	self assert: item2 equals: (cartItems at: 3).
+	self assert: 1 equals: (cartItems at: 4).
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:07:58' prior: 50873254!
+test06CanNotAddBookToExpiredCart
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	
+	self advanceMinutesBy: 31.
+	
+	self should: [restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		].
+
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:08:07' prior: 50873275!
+test07AddBookRefreshesTimeOfCart
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	
+	self advanceMinutesBy: 15.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	self advanceMinutesBy: 20.
+	
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	cartItems := restInterface listCart: cartID.
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 2 equals: cartItems second. 
+	
+
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:08:14' prior: 50873301!
+test08CanNotListExpiredCart
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	
+	self advanceMinutesBy: 31.
+	
+	self should: [restInterface listCart: cartID]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: anError messageText equals: (RestInterface cartDoesNotExistErrorDescription).
+		].
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:08:22' prior: 50873321!
+test09ListCartRefreshesTime
+	| restInterface cartID cartItems |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self advanceMinutesBy: 15.
+	cartItems := restInterface listCart: cartID.
+	
+	self advanceMinutesBy: 20.
+	cartItems := restInterface listCart: cartID.
+	 
+	self assert: 2 equals: cartItems size.
+	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
+	self assert: 1 equals: cartItems second. 
+	
+
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:08:31' prior: 50873568!
+test10CheckoutCartWithOneItem
+	| restInterface cartID transactionID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	transactionID := restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: 'pepe'.
+			
+	purchases := restInterface listPurchases: validUsername password: validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore with: 1 with: storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:08:45' prior: 50874800!
+test10CheckoutCartWithOneItem
+	| restInterface cartID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: 'pepe'.
+			
+	purchases := restInterface listPurchases: validUsername password: validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore with: 1 with: storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:09:02' prior: 50874391!
+test11CheckoutTwoCartsForSameClient
+	| restInterface cartID1 cartID2 expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	cartID2 := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID2.
+	
+	restInterface checkOut: cartID1 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: validUsername .
+			
+	restInterface checkOut: cartID2 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: validUsername .
+			
+	purchases := restInterface listPurchases: validUsername password: validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore 
+										with: 2
+										with: 2* storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:09:27' prior: 50874311!
+test12CheckoutWithMultipleItems
+	| restInterface cartID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 5 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	restInterface add: 5 of: (storeFactory anotherItemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: validUsername .
+			
+	purchases := restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore 
+										with: 5 
+										with: storeFactory anotherItemSellByTheStore 
+										with: 5
+										with: 5*(storeFactory itemSellByTheStorePrice + storeFactory anotherItemSellByTheStorePrice).
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+!RestInterfaceTest methodsFor: 'setup' stamp: 'BAG 6/21/2021 20:09:42' prior: 50873880 overrides: 16927572!
+setUp
+	storeFactory _ StoreTestObjectsFactory new.
+	clock _ 0.
+	clockDate _ DateAndTime now.
+	debitBehavior _ [:amount : creditCard |].! !
+
+TestCase subclass: #RestInterfaceTest
+	instanceVariableNames: 'storeFactory clock debitBehavior clockDate'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+!classDefinition: #RestInterfaceTest category: 'TusLibros' stamp: 'BAG 6/21/2021 20:09:52'!
+TestCase subclass: #RestInterfaceTest
+	instanceVariableNames: 'storeFactory clock debitBehavior clockDate'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:10:05' prior: 50874906!
+test12CheckoutWithMultipleItems
+	| restInterface cartID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 5 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	restInterface add: 5 of: (storeFactory anotherItemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername .
+			
+	purchases := restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore 
+										with: 5 
+										with: storeFactory anotherItemSellByTheStore 
+										with: 5
+										with: 5*(storeFactory itemSellByTheStorePrice + storeFactory anotherItemSellByTheStorePrice).
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:10:26' prior: 50874863!
+test11CheckoutTwoCartsForSameClient
+	| restInterface cartID1 cartID2 expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	cartID2 := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID2.
+	
+	restInterface checkOut: cartID1 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername .
+			
+	restInterface checkOut: cartID2 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername .
+			
+	purchases := restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore 
+										with: 2
+										with: 2* storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:10:37' prior: 50874832!
+test10CheckoutCartWithOneItem
+	| restInterface cartID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: 'pepe'.
+			
+	purchases := restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore with: 1 with: storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:10:44'!
+ERROR!
+
+storeFactory validUsername!
+
+storeFactory validPassword!
+!RestInterfaceTest methodsFor: 'mocking' stamp: 'BAG 6/21/2021 20:11:25' prior: 50868137!
+authenticate: aUsername with: aPassword
+	^storeFactory validUsername = aUsername and: storeFactory validPassword = aPassword. 
+	! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:11:27'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 20:11:27'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:11:27'!
+FAILURE!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 20:12:18'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 20:12:18'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 20:12:18'!
+PASSED!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 20:12:18'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 20:12:18'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 20:12:18'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 20:12:21'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 20:12:21'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 20:12:21'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 20:12:21'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 20:12:21'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 20:12:21'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 20:12:21'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 20:12:21'!
+PASSED!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 20:18:20' prior: 50874563!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier card purchasesByClient |
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear) for: ownerName.
+	
+	salesBook := OrderedCollection new.
+	purchasesByClient := Bag new.
+	salesBook do: [ :sale |
+			sale clientName = ownerName ifTrue: [ purchasesByClient addAll: (sale books) ].
+		].
+	
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	
+	total := purchases isEmpty ifTrue: [0] ifFalse: [ purchases removeLast ]. 
+	purchases addAll: (self listCart: cartID).
+	
+	purchases add: cashier checkOut + total.
+	
+	^1
+	! !
+!Sale methodsFor: 'initialization' stamp: 'BAG 6/21/2021 20:18:48'!
+initializeTotal: aTotal books: anItems clientName: aClientName  
+
+	total := aTotal. 
+	books := anItems. 
+	clientName := aClientName .! !
+!Sale class methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 20:18:48' prior: 50874506!
+of: aTotal withItems: anItems clientName: aClientName
+
+	"should assert total is not negative or 0!!"
+	^self new initializeTotal: aTotal books: anItems clientName: aClientName ! !
+
+!methodRemoval: Sale #initializeTotal:items:clientName: stamp: 'BAG 6/21/2021 20:18:48'!
+initializeTotal: aTotal items: anItems clientName: aClientName  
+
+	total := aTotal. 
+	books := anItems. 
+	clientName := aClientName .!
+!Sale class methodsFor: 'instance creation' stamp: 'BAG 6/21/2021 20:19:08'!
+of: aTotal withBooks: anItems clientName: aClientName
+
+	"should assert total is not negative or 0!!"
+	^self new initializeTotal: aTotal books: anItems clientName: aClientName ! !
+!Cashier methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 20:19:08' prior: 50874527!
+createSale
+
+	^ Sale of: total withBooks: cart items clientName: creditCard ownerName.
+! !
+
+!methodRemoval: Sale class #of:withItems:clientName: stamp: 'BAG 6/21/2021 20:19:08'!
+of: aTotal withItems: anItems clientName: aClientName
+
+	"should assert total is not negative or 0!!"
+	^self new initializeTotal: aTotal books: anItems clientName: aClientName !
+!Sale class methodsFor: 'instance creation' stamp: 'BAG 6/21/2021 20:19:18' prior: 50875282!
+of: aTotal withBooks: anBooks clientName: aClientName
+
+	"should assert total is not negative or 0!!"
+	^self new initializeTotal: aTotal books: anBooks clientName: aClientName ! !
+!Sale methodsFor: 'initialization' stamp: 'BAG 6/21/2021 20:19:28' prior: 50875258!
+initializeTotal: aTotal books: anBooks clientName: aClientName  
+
+	total := aTotal. 
+	books := anBooks. 
+	clientName := aClientName .! !
+!Sale methodsFor: 'nil' stamp: 'BAG 6/21/2021 20:19:41'!
+books
+	^books ! !
+!Sale methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 20:19:51'!
+clientName
+	^clientName ! !
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 20:20:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 20:20:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 20:20:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 20:20:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 20:20:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 20:20:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 20:20:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 20:20:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 20:20:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:20:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:20:14'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 20:20:14'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:20:14'!
+FAILURE!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 20:21:31' prior: 50875231!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook total cashier card purchasesByClient |
+	
+	salesBook := OrderedCollection new.
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear) for: ownerName.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	
+	purchasesByClient := Bag new.
+	salesBook do: [ :sale |
+			sale clientName = ownerName ifTrue: [ purchasesByClient addAll: (sale books) ].
+		].
+	
+	
+	total := purchases isEmpty ifTrue: [0] ifFalse: [ purchases removeLast ]. 
+	purchases addAll: (self listCart: cartID).
+	
+	purchases add: cashier checkOut + total.
+	
+	^1
+	! !
+
+Object subclass: #RestInterface
+	instanceVariableNames: 'userAuthenticator nextID activeCarts catalog clock lastTimeUsedForCart merchantProcessor salesBook purchases'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 20:25:43' prior: 50875370!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| salesBook1 total cashier card purchasesByClient |
+	
+	salesBook1 := OrderedCollection new.
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear) for: ownerName.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook1.
+	
+	purchasesByClient := Bag new.
+	salesBook1 do: [ :sale |
+			sale clientName = ownerName ifTrue: [ purchasesByClient addAll: (sale books) ].
+		].
+	
+	
+	total := purchases isEmpty ifTrue: [0] ifFalse: [ purchases removeLast ]. 
+	purchases addAll: (self listCart: cartID).
+	
+	purchases add: cashier checkOut + total.
+	
+	^1
+	! !
+
+Object subclass: #RestInterface
+	instanceVariableNames: 'userAuthenticator nextID activeCarts catalog clock lastTimeUsedForCart merchantProcessor salesBook purchases'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+!classDefinition: #RestInterface category: 'TusLibros' stamp: 'BAG 6/21/2021 20:25:53'!
+Object subclass: #RestInterface
+	instanceVariableNames: 'userAuthenticator nextID activeCarts catalog clock lastTimeUsedForCart merchantProcessor salesBook purchases'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 20:26:27' prior: 50875405!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| total cashier card |
+	
+	salesBook := OrderedCollection new.
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear) for: ownerName.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	
+	^1
+	! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 20:26:38' prior: 50875450!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| cashier card |
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear) for: ownerName.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	
+	^1
+	! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 20:27:24' prior: 50873493!
+listPurchases: validUsername password: validPassword
+	| purchases1 cartID cashier ownerName purchasesByClient total |
+	purchasesByClient := Bag new.
+	salesBook do: [ :sale |
+			sale clientName = ownerName ifTrue: [ purchasesByClient addAll: (sale books) ].
+		].
+	
+	
+	total := purchases1 isEmpty ifTrue: [0] ifFalse: [ purchases1 removeLast ]. 
+	purchases1 addAll: (self listCart: cartID).
+	
+	purchases1 add: cashier checkOut + total.
+	
+	^purchases1.! !
+
+Object subclass: #RestInterface
+	instanceVariableNames: 'userAuthenticator nextID activeCarts catalog clock lastTimeUsedForCart merchantProcessor salesBook'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+!classDefinition: #RestInterface category: 'TusLibros' stamp: 'BAG 6/21/2021 20:27:49'!
+Object subclass: #RestInterface
+	instanceVariableNames: 'userAuthenticator nextID activeCarts catalog clock lastTimeUsedForCart merchantProcessor salesBook'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+	yourself.!
+
+	yourself.  !
+
+pepe !
+
+pepe := Bag new.!
+
+	yourself.!
+
+pepe !
+
+pepe add: 1 .!
+
+pepe!
+
+pepe add: 2 . !
+
+pepe add: 1 .!
+
+pepe add: 3 .!
+
+pepe !
+
+pepe  contents.!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 20:37:00' prior: 50875483!
+listPurchases: validUsername password: validPassword
+	| purchases1 purchasesByClient total |
+	purchases1:= OrderedCollection new.
+	purchasesByClient := Bag new.
+	total := 0.
+	salesBook do: [ :sale |
+			sale clientName = validUsername ifTrue: [ 
+				total := total + sale total.
+				purchasesByClient addAll: (sale books) ].
+		].
+	
+	
+	(purchasesByClient contents) do: [:item |
+			purchases1 add: item key.
+			purchases1 add: item value.
+			
+			].
+	
+	purchases1 add: total.
+	
+	^purchases1.! !
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:37:43'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:37:43'!
+ERROR!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 20:39:14' prior: 50875523!
+listPurchases: validUsername password: validPassword
+	| purchases1 purchasesByClient total |
+	purchases1:= OrderedCollection new.
+	purchasesByClient := Bag new.
+	total := 0.
+	salesBook do: [ :sale |
+			sale clientName = validUsername ifTrue: [ 
+				total := total + sale total.
+				purchasesByClient addAll: (sale books) ].
+		].
+	
+	
+	(purchasesByClient contents) associationsDo: [:item |
+			purchases1 add: item key.
+			purchases1 add: item value.
+			
+			].
+	
+	purchases1 add: total.
+	
+	^purchases1.! !
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 20:39:17'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 20:39:17'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 20:39:17'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 20:39:17'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 20:39:17'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 20:39:17'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 20:39:17'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 20:39:17'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 20:39:17'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:39:17'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:39:17'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 20:39:17'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:39:24'!
+ERROR!
+!RestInterface methodsFor: 'initialization' stamp: 'BAG 6/21/2021 20:39:49' prior: 50874095!
+initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor   
+	userAuthenticator := aUserAuthenticator.
+	nextID := 0.
+	activeCarts := Dictionary new.
+	lastTimeUsedForCart := Dictionary new.
+	salesBook := OrderedCollection new.
+	catalog := aCatalog. 
+	clock := aClock.
+	merchantProcessor := aMerchantProcessor. 
+	
+	! !
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 20:39:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 20:39:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 20:39:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 20:39:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 20:39:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 20:39:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 20:39:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 20:39:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 20:39:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:39:50'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:39:50'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 20:39:50'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:39:53'!
+FAILURE!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 20:41:45' prior: 50875467!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| cashier card |
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear) for: ownerName.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	cashier checkOut. 
+	
+	^1
+	! !
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 20:41:47'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 20:41:47'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 20:41:47'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 20:41:47'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 20:41:47'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 20:41:47'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 20:41:47'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 20:41:47'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 20:41:47'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:41:47'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:41:47'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 20:41:47'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:41:47'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:43:19'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:43:19'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:43:34'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:43:34'!
+FAILURE!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:44:52' prior: 50875053!
+test10CheckoutCartWithOneItem
+	| restInterface cartID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+			
+	purchases := restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore with: 1 with: storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:45:13'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:45:15'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 20:45:17'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 20:45:21'!
+PASSED!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:50:40'!
+test13CheckoutCartsForTwoClient
+	| restInterface cartID1 cartID2 expectedPurchases purchasesClient1 purchasesClient2 |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	cartID2 := restInterface createCartForUser: storeFactory anotherValidUsername withPassword: storeFactory anotherValidPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID2.
+	
+	restInterface checkOut: cartID1 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername .
+			
+	restInterface checkOut: cartID2 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory anotherValidUsername .
+			
+	purchasesClient1 := restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	purchasesClient2 := restInterface listPurchases: storeFactory anotherValidUsername password: storeFactory anotherValidPassword.
+	
+	
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore 
+										with: 1
+										with: storeFactory itemSellByTheStorePrice.
+	
+	 
+	self assert: expectedPurchases equals: purchasesClient2.
+	self assert: expectedPurchases equals: purchasesClient1.
+	
+	! !
+!StoreTestObjectsFactory methodsFor: 'items' stamp: 'BAG 6/21/2021 20:51:18'!
+anotherValidPassword 
+	^ '4444'. 	! !
+!StoreTestObjectsFactory methodsFor: 'items' stamp: 'BAG 6/21/2021 20:51:28'!
+anotherValidUsername 
+ 	^'pepe' . 
+	! !
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 20:51:47'!
+ERROR!
+!RestInterfaceTest methodsFor: 'mocking' stamp: 'BAG 6/21/2021 20:52:31' prior: 50875090!
+authenticate: aUsername with: aPassword
+	^(storeFactory validUsername = aUsername and: storeFactory validPassword = aPassword) 
+	or: (storeFactory anotherValidUsername = aUsername and: storeFactory anotherValidPassword = aPassword). 
+	! !
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 20:52:41'!
+PASSED!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:54:51'!
+test14CanNotCheckoutInvalidCart
+	| restInterface cartID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self advanceMinutesBy: 31.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	
+			
+	purchases := restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore with: 1 with: storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutInvalidCart stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutInvalidCart stamp: 'BAG 6/21/2021 20:55:22'!
+PASSED!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:56:19' prior: 50875941!
+test14CanNotCheckoutInvalidCart
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self advanceMinutesBy: 31.
+	
+	self should: [restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		].
+	! !
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutInvalidCart stamp: 'BAG 6/21/2021 20:56:26'!
+FAILURE!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 20:57:00' prior: 50875666!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| cashier card |
+	self removeIfCartExpired: cartID.
+	self assertCartExists: cartID. 
+	self refreshLastTimeUsed: cartID.
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear) for: ownerName.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	cashier checkOut. 
+	
+	^1
+	! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutInvalidCart stamp: 'BAG 6/21/2021 20:57:01'!
+PASSED!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:57:47'!
+test14CanNotCheckoutExpiredCart
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self advanceMinutesBy: 31.
+	
+	self should: [restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		].
+	! !
+
+!methodRemoval: RestInterfaceTest #test14CanNotCheckoutInvalidCart stamp: 'BAG 6/21/2021 20:57:47'!
+test14CanNotCheckoutInvalidCart
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self advanceMinutesBy: 31.
+	
+	self should: [restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		].
+	!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:00:49'!
+test14CanNotListPurchasesWithInvalidCredentials
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	
+	self should: [ 	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		].
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:01:03'!
+test15CanNotListPurchasesWithInvalidCredentials
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	
+	self should: [ 	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		].
+	! !
+
+!methodRemoval: RestInterfaceTest #test14CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 21:01:03'!
+test14CanNotListPurchasesWithInvalidCredentials
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	
+	self should: [ 	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		].
+	!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:02:32' prior: 50876243!
+test15CanNotListPurchasesWithInvalidCredentials
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	
+	self should: [ 	restInterface listPurchases: 'invalid user' password: 'invalid password'. ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface canNotCreateCartWithInvalidCredentialsErrorDescription) equals: anError messageText.
+		].
+	! !
+
+!testRun: #RestInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 21:02:40'!
+FAILURE!
+!RestInterface class methodsFor: 'error descriptions' stamp: 'BAG 6/21/2021 21:03:02'!
+InvalidCredentialsErrorDescription
+	^'No se puede crear un carrito con credenciales inválidas.'! !
+!RestInterface methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 21:03:02' prior: 50872521!
+createCartForUser: aUsername withPassword: aPassword 
+	(userAuthenticator authenticate: aUsername with: aPassword) ifFalse:[self error: self class InvalidCredentialsErrorDescription] . 
+	
+	nextID := nextID +1.
+	activeCarts at: nextID put: (Cart acceptingItemsOf: catalog).
+	lastTimeUsedForCart at: nextID put: clock actualTime.
+	
+	^nextID.
+	! !
+!RestInterfaceTest methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 21:03:02' prior: 50876297!
+test15CanNotListPurchasesWithInvalidCredentials
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	
+	self should: [ 	restInterface listPurchases: 'invalid user' password: 'invalid password'. ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface InvalidCredentialsErrorDescription) equals: anError messageText.
+		].
+	! !
+!RestInterfaceTest methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 21:03:02' prior: 50873151!
+test01CanNotCreateCartWithInvalidUser
+	| restInterface |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	
+	self should: [restInterface createCartForUser: 'pepe' withPassword: '1234' ]
+	 raise:  Error - MessageNotUnderstood
+	withExceptionDo: [:anError | 
+			self assert: anError messageText = RestInterface InvalidCredentialsErrorDescription.
+		].
+	! !
+
+!methodRemoval: RestInterface class #canNotCreateCartWithInvalidCredentialsErrorDescription stamp: 'BAG 6/21/2021 21:03:02'!
+canNotCreateCartWithInvalidCredentialsErrorDescription
+	^'No se puede crear un carrito con credenciales inválidas.'!
+!RestInterface class methodsFor: 'error descriptions' stamp: 'BAG 6/21/2021 21:03:16' prior: 50876331!
+InvalidCredentialsErrorDescription
+	^'Las credenciales ingresadas son inválidas.'! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 21:03:49' prior: 50875548!
+listPurchases: aUsername password: aPassword
+	| purchases1 purchasesByClient total |
+	(userAuthenticator authenticate: aUsername with: aPassword) ifFalse:[self error: self class InvalidCredentialsErrorDescription] . 
+	
+	purchases1:= OrderedCollection new.
+	purchasesByClient := Bag new.
+	total := 0.
+	salesBook do: [ :sale |
+			sale clientName = aUsername ifTrue: [ 
+				total := total + sale total.
+				purchasesByClient addAll: (sale books) ].
+		].
+	
+	
+	(purchasesByClient contents) associationsDo: [:item |
+			purchases1 add: item key.
+			purchases1 add: item value.
+			
+			].
+	
+	purchases1 add: total.
+	
+	^purchases1.! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 21:03:50'!
+PASSED!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:07:03'!
+test16CanNotCheckoutSameCartTwice
+	| restInterface cartID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+			
+	
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:07:58' prior: 50876530!
+test16CanNotCheckoutSameCartTwice
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+			
+	
+	self should: [restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface canNotCheckoutTwiceErrorDescription) equals: anError messageText.
+		].! !
+!RestInterface class methodsFor: 'error descriptions' stamp: 'BAG 6/21/2021 21:08:51'!
+canNotCheckoutTwiceErrorDescription
+	^'No se puede realizar checkout de un carrito más de una vez.'! !
+
+!methodRemoval: RestInterface class #canNotCheckoutTwiceErrorDescription stamp: 'BAG 6/21/2021 21:11:46'!
+canNotCheckoutTwiceErrorDescription
+	^'No se puede realizar checkout de un carrito más de una vez.'!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:13:16' prior: 50876552!
+test16CanNotCheckoutSameCartTwice
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+			
+	
+	self should: [restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		].! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 21:15:00' prior: 50876053!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| cashier card |
+	self removeIfCartExpired: cartID.
+	self assertCartExists: cartID. 
+	self refreshLastTimeUsed: cartID.
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear) for: ownerName.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	cashier checkOut. 
+	
+	activeCarts removeKey: cartID.
+	lastTimeUsedForCart removeKey: cartID.
+	
+	^1
+	! !
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/21/2021 21:15:11'!
+PASSED!
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 21:15:20'!
+removeCart: cartID
+
+	activeCarts removeKey: cartID.
+	lastTimeUsedForCart removeKey: cartID! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 21:15:20' prior: 50876629!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| cashier card |
+	self removeIfCartExpired: cartID.
+	self assertCartExists: cartID. 
+	self refreshLastTimeUsed: cartID.
+	
+	card := CreditCard expiringOn: (Month month: expirationMonth year: expirationYear) for: ownerName.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	cashier checkOut. 
+	
+	self removeCart: cartID.
+	
+	^1
+	! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 21:15:38' prior: 50872484!
+removeIfCartExpired: aCartID
+	lastTimeUsedForCart at:  aCartID 
+	ifPresent: [:lastTime | (clock minutesElapsedSince: lastTime) > 30 ifTrue: [ 
+		self removeCart: aCartID.
+		]] 
+
+	! !
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/21/2021 21:15:40'!
+PASSED!
+
+'1' asNumber.!
+
+'' isNumber. !
+
+'' asNumber. !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:19:07'!
+test17CanNotCheckoutWithInvalidExpirationDate
+	| restInterface cartID expectedPurchases purchases |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+			
+	purchases := restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore with: 1 with: storeFactory itemSellByTheStorePrice.
+	 
+	self assert: expectedPurchases size equals: purchases size.
+	self assert: expectedPurchases equals: purchases.
+	
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:22:44' prior: 50876791!
+test17CanNotCheckoutWithInvalidExpirationDate
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: '13' 
+			    andYear: '202'  
+			    owner: storeFactory validUsername.
+			
+	
+	! !
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:25:51' prior: 50876824!
+test17CanNotCheckoutWithInvalidExpirationDate
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self should: [restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: '13' 
+			    andYear: '202'  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		self assert: (restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword) equals: (OrderedCollection with: 0)
+		].
+	! !
+
+!testRun: #RestInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/21/2021 21:25:57'!
+FAILURE!
+
+!methodRemoval: CreditCard class #expiringOn: stamp: 'BAG 6/21/2021 21:31:55'!
+expiringOn: aMonth 
+	
+	^self new initializeExpiringOn: aMonth!
+!CreditCard methodsFor: 'initialization' stamp: 'BAG 6/21/2021 21:33:13'!
+initializeExpiringOnMonth: aMonth andYear: aYear for: anOwnerName
+	owner := anOwnerName .
+	expiration := Month month: aMonth year: aYear ! !
+
+!methodRemoval: CreditCard #initializeExpiringOn:for: stamp: 'BAG 6/21/2021 21:33:21'!
+initializeExpiringOn: aMonth for: anOwnerName
+	owner := anOwnerName .
+	expiration := aMonth !
+!CreditCard class methodsFor: 'instance creation' stamp: 'BAG 6/21/2021 21:36:17'!
+expiringOnMonth: aMonth andYear: aYear for: anOwnerName
+	(aMonth size = 2 and: aMonth isNumber and: (aMonth asNumber between: 1 and: 12)) ifFalse: [self error: self invalidExpirationDateErrorDescription].
+	(aYear size = 4 and: aYear isNumber) ifFalse: [self error: self invalidExpirationDateErrorDescription].
+	
+	^self new initializeExpiringOnMonth: aMonth andYear: aYear for: anOwnerName ! !
+!CreditCard class methodsFor: 'nil' stamp: 'BAG 6/21/2021 21:36:40'!
+invalidExpirationDateErrorDescription
+	^'La fecha de expiración ingresada es inválida'! !
+!CreditCard class methodsFor: 'error descriptions' stamp: 'BAG 6/21/2021 21:36:57' prior: 50876912!
+invalidExpirationDateErrorDescription
+	^'La fecha de expiración es inválida'! !
+
+!methodRemoval: CreditCard class #expiringOn:for: stamp: 'BAG 6/21/2021 21:37:03'!
+expiringOn: aMonth for: anOwnerName
+	
+	^self new initializeExpiringOn: aMonth for: anOwnerName !
+!CreditCard class methodsFor: 'instance creation' stamp: 'BAG 6/21/2021 21:38:03'!
+assertValidExpirationDateFor: aYear and: aMonth
+
+	(aMonth size = 2 and: aMonth isNumber and: (aMonth asNumber between: 1 and: 12)) ifFalse: [self error: self invalidExpirationDateErrorDescription].
+	(aYear size = 4 and: aYear isNumber) ifFalse: [self error: self invalidExpirationDateErrorDescription]! !
+!CreditCard class methodsFor: 'instance creation' stamp: 'BAG 6/21/2021 21:38:03' prior: 50876897!
+expiringOnMonth: aMonth andYear: aYear for: anOwnerName
+	self assertValidExpirationDateFor: aYear and: aMonth.
+	
+	^self new initializeExpiringOnMonth: aMonth andYear: aYear for: anOwnerName ! !
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 21:38:45' prior: 50874594!
+expiredCreditCard
+	
+	^CreditCard expiringOnMonth: today monthIndex andYear: today yearNumber - 1 for: (self validUsername).! !
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 21:39:01' prior: 50874602!
+notExpiredCreditCard
+	
+	^CreditCard expiringOnMonth: today monthIndex aYear: today yearNumber + 1 for: (self validUsername).! !
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 21:39:11' prior: 50876960!
+notExpiredCreditCard
+	
+	^CreditCard expiringOnMonth: today monthIndex andYear: today yearNumber + 1 for: (self validUsername).! !
+!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 21:39:38' prior: 50876709!
+checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| cashier card |
+	self removeIfCartExpired: cartID.
+	self assertCartExists: cartID. 
+	self refreshLastTimeUsed: cartID.
+	
+	card := CreditCard expiringOnMonth: expirationMonth andYear: expirationYear for: ownerName.
+	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	cashier checkOut. 
+	
+	self removeCart: cartID.
+	
+	^1
+	! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 21:39:41'!
+FAILURE!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:39:41'!
+ERROR!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 21:39:41'!
+FAILURE!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 21:39:41'!
+ERROR!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 21:39:41'!
+ERROR!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 21:39:41'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 21:39:41'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 21:39:41'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 21:39:41'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 21:39:41'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/21/2021 21:39:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 21:39:41'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/21/2021 21:39:41'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/21/2021 21:39:41'!
+FAILURE!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:39:54'!
+ERROR!
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 21:40:48' prior: 50876952!
+expiredCreditCard
+	
+	^CreditCard expiringOnMonth: (today monthIndex printString) andYear: (today yearNumber - 1) printString for: (self validUsername).! !
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 21:41:11' prior: 50876968!
+notExpiredCreditCard
+	
+	^CreditCard expiringOnMonth: (today monthIndex) printString andYear: (today yearNumber + 1) printString for: (self validUsername).! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 21:41:12'!
+FAILURE!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:41:12'!
+ERROR!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 21:41:12'!
+FAILURE!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 21:41:12'!
+ERROR!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 21:41:12'!
+ERROR!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 21:41:12'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 21:41:12'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 21:41:12'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 21:41:12'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 21:41:12'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/21/2021 21:41:12'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 21:41:12'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/21/2021 21:41:12'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/21/2021 21:41:12'!
+FAILURE!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:41:17'!
+ERROR!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:41:25'!
+ERROR!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:41:30'!
+ERROR!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:41:49'!
+ERROR!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:41:55'!
+ERROR!
+
+aMonth size = 2!
+
+aMonth size!
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 21:47:43' prior: 50877100!
+expiredCreditCard
+	| month year |
+	month := today monthIndex printString.
+	year := (today yearNumber -1) printString.
+	month size = 1 ifTrue: [month := '0',month].
+	(4 - year size) timesRepeat: [year := '0',year].
+	
+	^CreditCard expiringOnMonth: month andYear: year for: (self validUsername).! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 21:47:45'!
+FAILURE!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:47:45'!
+ERROR!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 21:47:45'!
+FAILURE!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 21:47:45'!
+ERROR!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 21:47:45'!
+ERROR!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 21:47:45'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 21:47:45'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 21:47:45'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 21:47:45'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 21:47:45'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/21/2021 21:47:45'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 21:47:45'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/21/2021 21:47:45'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/21/2021 21:47:45'!
+FAILURE!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:47:49'!
+ERROR!
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 21:48:59' prior: 50877108!
+notExpiredCreditCard
+	| month year |
+	
+	month := today monthIndex printString.
+	year := (today yearNumber +1) printString.
+	month size = 1 ifTrue: [month := '0',month].
+	(4 - year size) timesRepeat: [year := '0',year].
+	
+	^CreditCard expiringOnMonth: month andYear: year for: (self validUsername).! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 21:49:01'!
+FAILURE!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:49:01'!
+ERROR!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 21:49:01'!
+FAILURE!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 21:49:01'!
+ERROR!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 21:49:01'!
+ERROR!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 21:49:01'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 21:49:01'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 21:49:01'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 21:49:01'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 21:49:01'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/21/2021 21:49:01'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 21:49:01'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/21/2021 21:49:01'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/21/2021 21:49:01'!
+FAILURE!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:49:04'!
+ERROR!
+
+aMonth isNumber!
+
+aMonth asNumber!
+
+'06' isInteger !
+
+'06' trimmed: $0.!
+
+'06' asMonth.!
+
+'06' findPositiveInteger.!
+
+'**6' findPositiveInteger. 6 !
+
+'**pepe' findPositiveInteger.!
+!CreditCard class methodsFor: 'instance creation' stamp: 'BAG 6/21/2021 21:57:21' prior: 50876929!
+assertValidExpirationDateFor: aYear and: aMonth
+
+	(aMonth size = 2 and: (aMonth asNumber between: 1 and: 12)) ifFalse: [self error: self invalidExpirationDateErrorDescription].
+	(aYear size = 4 and: aYear isNumber) ifFalse: [self error: self invalidExpirationDateErrorDescription]! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 21:57:23'!
+FAILURE!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:57:23'!
+ERROR!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 21:57:23'!
+FAILURE!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 21:57:23'!
+ERROR!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 21:57:23'!
+ERROR!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 21:57:23'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 21:57:23'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 21:57:23'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 21:57:23'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 21:57:23'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/21/2021 21:57:23'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 21:57:23'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/21/2021 21:57:23'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/21/2021 21:57:23'!
+FAILURE!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:57:29'!
+ERROR!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:57:30'!
+ERROR!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:58:13' prior: 50876845!
+test17CanNotCheckoutWithInvalidExpirationDate
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self should: [restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 13 
+			    andYear: 202  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		self assert: (restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword) equals: (OrderedCollection with: 0)
+		].
+	! !
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 21:59:01' prior: 50877351!
+notExpiredCreditCard
+	
+	^CreditCard expiringOnMonth: today monthIndex andYear: today yearNumber +1 for: (self validUsername).! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 21:59:06'!
+FAILURE!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 21:59:06'!
+ERROR!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 21:59:06'!
+FAILURE!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 21:59:06'!
+ERROR!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 21:59:06'!
+ERROR!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 21:59:06'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 21:59:06'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 21:59:06'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 21:59:06'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 21:59:06'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/21/2021 21:59:06'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 21:59:06'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/21/2021 21:59:06'!
+ERROR!
+
+!testRun: #RestInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/21/2021 21:59:06'!
+FAILURE!
+!CreditCard class methodsFor: 'instance creation' stamp: 'BAG 6/21/2021 22:01:40' prior: 50877474!
+assertValidExpirationDateFor: aYear and: aMonth
+
+	(aMonth asNumber between: 1 and: 12) ifFalse: [self error: self invalidExpirationDateErrorDescription].
+	(aYear numberOfDigitsInBase: 10) = 4  ifFalse: [self error: self invalidExpirationDateErrorDescription]! !
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 22:01:46'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 22:01:46'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 22:01:46'!
+ERROR!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 22:01:46'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 22:01:46'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 22:01:46'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 22:01:46'!
+ERROR!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 22:01:54'!
+ERROR!
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 22:03:03' prior: 50877234!
+expiredCreditCard
+	^CreditCard expiringOnMonth: today monthIndex  andYear: today yearNumber -1 for: (self validUsername).! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/21/2021 22:03:05'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/21/2021 22:03:05'!
+FAILURE!
+
+!testRun: #RestInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/21/2021 22:03:05'!
+FAILURE!
+!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 22:03:40' prior: 50877593!
+test17CanNotCheckoutWithInvalidExpirationDate
+	| restInterface cartID |
+	
+	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self should: [restInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 13 
+			    andYear: 202  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+			self assert: (CreditCard invalidExpirationDateErrorDescription ) equals: anError messageText.
+		self assert: (restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword) equals: (OrderedCollection with: 0)
+		].
+	! !
+
+!testRun: #RestInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/21/2021 22:03:41'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test04AddBookToCart stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #RestInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/21/2021 22:03:46'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/21/2021 22:03:48'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/21/2021 22:03:48'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/21/2021 22:03:48'!
+PASSED!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/21/2021 22:03:48'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/21/2021 22:03:48'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/21/2021 22:03:48'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/21/2021 22:03:50'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/21/2021 22:03:50'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/21/2021 22:03:50'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/21/2021 22:03:50'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/21/2021 22:03:50'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/21/2021 22:03:50'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/21/2021 22:03:50'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/21/2021 22:03:50'!
+PASSED!
+
+----SNAPSHOT----(21 June 2021 22:06:37) CuisUniversity-4532.image priorSource: 17308390!
