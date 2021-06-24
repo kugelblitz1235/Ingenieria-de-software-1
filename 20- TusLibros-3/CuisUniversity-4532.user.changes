@@ -25750,3 +25750,123 @@ PASSED!
 PASSED!
 
 ----SNAPSHOT----(24 June 2021 11:10:31) CuisUniversity-4532.image priorSource: 17836755!
+
+----QUIT----(24 June 2021 11:17:13) CuisUniversity-4532.image priorSource: 17855365!
+
+----STARTUP---- (24 June 2021 16:13:49) as /home/bruno/Documents/UBA/Ingenieria del software 1/linux64New/CuisUniversity-4532.image!
+
+!Sale class methodsFor: 'instance creation' stamp: 'BAG 6/24/2021 16:33:36' prior: 50875305!
+of: aTotal withBooks: anBooks clientName: aClientName
+
+	"should assert total is not negative or 0!!"
+	self assertValidTotal: aTotal.
+	^self new initializeTotal: aTotal books: anBooks clientName: aClientName ! !
+!Sale class methodsFor: 'instance creation' stamp: 'BAG 6/24/2021 16:34:32'!
+assertValidTotal: aTotal
+	aTotal > 0 ifFalse:[ self error: self InvalidTotalErrorDescription]! !
+!Sale class methodsFor: 'instance creation' stamp: 'BAG 6/24/2021 16:34:50'!
+InvalidTotalErrorDescription
+	^'El monto total es inválido'! !
+!Sale class methodsFor: 'instance creation' stamp: 'BAG 6/24/2021 16:36:35' prior: 50889641!
+of: aTotal withBooks: anBooks clientName: aClientName
+	self assertValidTotal: aTotal.
+
+	^self new initializeTotal: aTotal books: anBooks clientName: aClientName ! !
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test04AddBookToCart stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test18CanNotCheckoutWithInvalidCreditCardNumber stamp: 'BAG 6/24/2021 16:36:39'!
+PASSED!
+
+----SNAPSHOT----(24 June 2021 16:36:51) CuisUniversity-4532.image priorSource: 17855455!

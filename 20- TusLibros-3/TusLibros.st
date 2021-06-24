@@ -937,10 +937,20 @@ clientName
 Sale class
 	instanceVariableNames: ''!
 
-!Sale class methodsFor: 'instance creation' stamp: 'BAG 6/21/2021 20:19:18'!
-of: aTotal withBooks: anBooks clientName: aClientName
+!Sale class methodsFor: 'error description' stamp: 'BAG 6/24/2021 16:34:50'!
+InvalidTotalErrorDescription
+	^'El monto total es inválido'! !
 
-	"should assert total is not negative or 0!!"
+
+!Sale class methodsFor: 'assertions' stamp: 'BAG 6/24/2021 16:34:32'!
+assertValidTotal: aTotal
+	aTotal > 0 ifFalse:[ self error: self InvalidTotalErrorDescription]! !
+
+
+!Sale class methodsFor: 'instance creation' stamp: 'BAG 6/24/2021 16:36:35'!
+of: aTotal withBooks: anBooks clientName: aClientName
+	self assertValidTotal: aTotal.
+
 	^self new initializeTotal: aTotal books: anBooks clientName: aClientName ! !
 
 
