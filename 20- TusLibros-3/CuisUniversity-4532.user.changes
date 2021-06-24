@@ -25139,3 +25139,614 @@ PASSED!
 PASSED!
 
 ----SNAPSHOT----(24 June 2021 02:21:21) CuisUniversity-4532.image priorSource: 17484028!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 02:23:49'!
+test18CanNotCheckoutWithInvalidCreditCardNumber
+	| storeInterface cartID |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self should: [storeInterface checkOut: cartID 
+			    creditCard: '1234567891234' 
+			    expiredOnMonth: 13 
+			    andYear: 202  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+			| purchases |
+			self assert: (StoreInterface canNotDebitErrorDescription ) equals: anError messageText.
+			purchases := (storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword).
+			self assert: 0 equals: (purchases at: 'items') size.
+			self assert: 0 equals: (purchases at: 'total').
+		].
+	! !
+
+!testRun: #StoreInterfaceTest #test18CanNotCheckoutWithInvalidCreditCardNumber stamp: 'BAG 6/24/2021 02:23:50'!
+FAILURE!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 02:24:02' prior: 50888846!
+test18CanNotCheckoutWithInvalidCreditCardNumber
+	| storeInterface cartID |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self should: [storeInterface checkOut: cartID 
+			    creditCard: '1234567891234' 
+			    expiredOnMonth: 12 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+			| purchases |
+			self assert: (StoreInterface canNotDebitErrorDescription ) equals: anError messageText.
+			purchases := (storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword).
+			self assert: 0 equals: (purchases at: 'items') size.
+			self assert: 0 equals: (purchases at: 'total').
+		].
+	! !
+
+!testRun: #StoreInterfaceTest #test18CanNotCheckoutWithInvalidCreditCardNumber stamp: 'BAG 6/24/2021 02:24:04'!
+FAILURE!
+
+aCreditCardNumber isNumber!
+
+self isNumber!
+
+self isNumber!
+
+self asNumber!
+!StoreInterface methodsFor: 'assertions' stamp: 'BAG 6/24/2021 02:26:15' prior: 50883517!
+assertValidCreditCardNumber: aCreditCardNumber
+
+	^ ((aCreditCardNumber asNumber numberOfDigitsInBase: 10) = 16) ifFalse: [self error: self class canNotDebitErrorDescription ]! !
+
+((aCreditCardNumber asNumber numberOfDigitsInBase: 10) = 16)!
+
+!testRun: #StoreInterfaceTest #test18CanNotCheckoutWithInvalidCreditCardNumber stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test04AddBookToCart stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/24/2021 02:26:30'!
+ERROR!
+
+!testRun: #StoreInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/24/2021 02:26:30'!
+ERROR!
+
+!testRun: #StoreInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/24/2021 02:26:30'!
+ERROR!
+
+!testRun: #StoreInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/24/2021 02:26:30'!
+ERROR!
+
+!testRun: #StoreInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/24/2021 02:26:30'!
+FAILURE!
+
+!testRun: #StoreInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/24/2021 02:26:30'!
+ERROR!
+
+!testRun: #StoreInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/24/2021 02:26:30'!
+ERROR!
+
+!testRun: #StoreInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/24/2021 02:26:30'!
+FAILURE!
+
+!testRun: #StoreInterfaceTest #test18CanNotCheckoutWithInvalidCreditCardNumber stamp: 'BAG 6/24/2021 02:26:30'!
+PASSED!
+
+----SNAPSHOT----(24 June 2021 02:27:31) CuisUniversity-4532.image priorSource: 17830151!
+
+----SNAPSHOT----(24 June 2021 02:28:33) CuisUniversity-4532.image priorSource: 17836575!
+
+----QUIT----(24 June 2021 02:28:37) CuisUniversity-4532.image priorSource: 17836665!
+
+----STARTUP---- (24 June 2021 11:05:30) as /home/bruno/Documents/UBA/Ingenieria del software 1/linux64New/CuisUniversity-4532.image!
+
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/24/2021 11:06:31'!
+validCreditCardNumber
+	
+	^'1234567891234567'.! !
+
+'0034567891234567' asNumber!
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/24/2021 11:07:05'!
+invalidCreditCardNumber
+	
+	^'0034567891234567'.! !
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:07:45' prior: 50888322!
+test10CheckoutCartWithOneItem
+	| storeInterface cartID purchases items |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	storeInterface checkOut: cartID 
+			    creditCard: (storeFactory validCreditCardNumber) 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+			
+	purchases := storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	items := (purchases at: 'items').
+	
+	self assert: (storeFactory itemSellByTheStorePrice) equals: (purchases at: 'total').
+	self assert: 1 equals: (items at: (storeFactory itemSellByTheStore)).
+	
+	! !
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:07:58' prior: 50888356!
+test11CheckoutTwoCartsForSameClient
+	| storeInterface cartID1 cartID2 purchases items expectedTotal |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	cartID2 := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID2.
+	
+	storeInterface checkOut: cartID1 
+			    creditCard: (storeFactory validCreditCardNumber)  
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername .
+			
+	storeInterface checkOut: cartID2 
+			    creditCard: (storeFactory validCreditCardNumber) 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername .
+			
+	purchases := storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	items := (purchases at: 'items').
+	expectedTotal := 2* storeFactory itemSellByTheStorePrice.
+	 
+	self assert:  2 equals: (items at: storeFactory itemSellByTheStore).
+	self assert: expectedTotal equals: (purchases at: 'total').
+	
+	! !
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:08:10' prior: 50888404!
+test12CheckoutWithMultipleItems
+	| storeInterface cartID purchases expectedTotal items |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 5 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	storeInterface add: 5 of: (storeFactory anotherItemSellByTheStore) toCart: cartID.
+	
+	storeInterface checkOut: cartID
+			    creditCard: (storeFactory validCreditCardNumber)  
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername .
+			
+	purchases := storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	items := (purchases at: 'items').
+	expectedTotal := 5*(storeFactory itemSellByTheStorePrice + storeFactory anotherItemSellByTheStorePrice).
+	 
+	self assert:  5 equals: (items at: storeFactory itemSellByTheStore).
+	self assert:  5 equals: (items at: storeFactory anotherItemSellByTheStore).
+	self assert: expectedTotal equals: (purchases at: 'total').
+	
+	! !
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:08:24' prior: 50888443!
+test13CheckoutCartsForTwoClient
+	| storeInterface cartID1 cartID2 purchasesClient1 purchasesClient2 items1 items2 |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	cartID2 := storeInterface createCartForUser: storeFactory anotherValidUsername withPassword: storeFactory anotherValidPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID2.
+	
+	storeInterface checkOut: cartID1 
+			    creditCard: (storeFactory validCreditCardNumber)  
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername .
+			
+	storeInterface checkOut: cartID2 
+			    creditCard: (storeFactory validCreditCardNumber) 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory anotherValidUsername .
+			
+	purchasesClient1 := storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	items1 := (purchasesClient1 at: 'items').
+	purchasesClient2 := storeInterface listPurchases: storeFactory anotherValidUsername password: storeFactory anotherValidPassword.
+	items2 := (purchasesClient2 at: 'items').
+	 
+	self assert:  1 equals: (items1 at: storeFactory itemSellByTheStore).
+	self assert:  1 equals: (items2 at: storeFactory itemSellByTheStore).
+	self assert: storeFactory itemSellByTheStorePrice equals: (purchasesClient1 at: 'total').
+	self assert: storeFactory itemSellByTheStorePrice equals: (purchasesClient2 at: 'total').
+	
+	
+	! !
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:08:30' prior: 50886346!
+test14CanNotCheckoutExpiredCart
+	| storeInterface cartID |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self advanceMinutesBy: 31.
+	
+	self should: [storeInterface checkOut: cartID 
+			    creditCard: (storeFactory validCreditCardNumber)  
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (StoreInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		].
+	! !
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:09:42' prior: 50886374!
+test16CanNotCheckoutSameCartTwice
+	| storeInterface cartID |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	storeInterface checkOut: cartID 
+			    creditCard: (storeFactory validCreditCardNumber) 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+			
+	
+	self should: [storeInterface checkOut: cartID 
+			    creditCard: (storeFactory validCreditCardNumber)
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (StoreInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		].! !
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:09:49' prior: 50888502!
+test17CanNotCheckoutWithInvalidExpirationDate
+	| storeInterface cartID |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self should: [storeInterface checkOut: cartID 
+			    creditCard: (storeFactory validCreditCardNumber) 
+			    expiredOnMonth: 13 
+			    andYear: 202  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+			| purchases |
+			self assert: (CreditCard invalidExpirationDateErrorDescription ) equals: anError messageText.
+			purchases := (storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword).
+			self assert: 0 equals: (purchases at: 'items') size.
+			self assert: 0 equals: (purchases at: 'total').
+		].
+	! !
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:09:58' prior: 50888884!
+test18CanNotCheckoutWithInvalidCreditCardNumber
+	| storeInterface cartID |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self should: [storeInterface checkOut: cartID 
+			    creditCard: (storeFactory invalidCreditCardNumber) 
+			    expiredOnMonth: 12 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+			| purchases |
+			self assert: (StoreInterface canNotDebitErrorDescription ) equals: anError messageText.
+			purchases := (storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword).
+			self assert: 0 equals: (purchases at: 'items') size.
+			self assert: 0 equals: (purchases at: 'total').
+		].
+	! !
+
+!testRun: #StoreInterfaceTest #test18CanNotCheckoutWithInvalidCreditCardNumber stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test04AddBookToCart stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/24/2021 11:10:00'!
+ERROR!
+
+!testRun: #StoreInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test18CanNotCheckoutWithInvalidCreditCardNumber stamp: 'BAG 6/24/2021 11:10:00'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/24/2021 11:10:00'!
+ERROR!
+!StoreInterfaceTest methodsFor: 'list purchases' stamp: 'BAG 6/24/2021 11:10:13' prior: 50886146!
+test15CanNotListPurchasesWithInvalidCredentials
+	| storeInterface cartID |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	storeInterface checkOut: cartID 
+			    creditCard: (storeFactory validCreditCardNumber) 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	
+	self should: [ 	storeInterface listPurchases: 'invalid user' password: 'invalid password'. ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (StoreInterface InvalidCredentialsErrorDescription) equals: anError messageText.
+		].
+	! !
+
+!testRun: #StoreInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/24/2021 11:10:14'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test18CanNotCheckoutWithInvalidCreditCardNumber stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CartTest #test01NewCartsAreCreatedEmpty stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CartTest #test02CanNotAddItemsThatDoNotBelongToStore stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CartTest #test03AfterAddingAnItemTheCartIsNotEmptyAnymore stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CartTest #test04CanNotAddNonPositiveNumberOfItems stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CartTest #test05CanNotAddMoreThanOneItemNotSellByTheStore stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CartTest #test06CartRemembersAddedItems stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CartTest #test07CartDoesNotHoldNotAddedItems stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CartTest #test08CartRemembersTheNumberOfAddedItems stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CashierTest #test01CanNotCheckoutAnEmptyCart stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CashierTest #test02CalculatedTotalIsCorrect stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CashierTest #test03CanNotCheckoutWithAnExpiredCreditCart stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CashierTest #test04CheckoutRegistersASale stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CashierTest #test05CashierChargesCreditCardUsingMerchantProcessor stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #CashierTest #test06CashierDoesNotSaleWhenTheCreditCardHasNoCredit stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test01CanNotCreateCartWithInvalidUser stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test02CanCreateCartWithValidCredentials stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test03CanCreateMultipleCart stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test04AddBookToCart stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test05AddMultipleBooksToCart stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test06CanNotAddBookToExpiredCart stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test07AddBookRefreshesTimeOfCart stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test08CanNotListExpiredCart stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test09ListCartRefreshesTime stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test10CheckoutCartWithOneItem stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test11CheckoutTwoCartsForSameClient stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test12CheckoutWithMultipleItems stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test13CheckoutCartsForTwoClient stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test14CanNotCheckoutExpiredCart stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test15CanNotListPurchasesWithInvalidCredentials stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test16CanNotCheckoutSameCartTwice stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test17CanNotCheckoutWithInvalidExpirationDate stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+!testRun: #StoreInterfaceTest #test18CanNotCheckoutWithInvalidCreditCardNumber stamp: 'BAG 6/24/2021 11:10:20'!
+PASSED!
+
+----SNAPSHOT----(24 June 2021 11:10:31) CuisUniversity-4532.image priorSource: 17836755!

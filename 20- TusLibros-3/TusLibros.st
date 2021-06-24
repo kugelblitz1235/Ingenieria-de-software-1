@@ -438,7 +438,7 @@ test09ListCartRefreshesTime
 	! !
 
 
-!StoreInterfaceTest methodsFor: 'list purchases' stamp: 'BAG 6/24/2021 01:15:43'!
+!StoreInterfaceTest methodsFor: 'list purchases' stamp: 'BAG 6/24/2021 11:10:13'!
 test15CanNotListPurchasesWithInvalidCredentials
 	| storeInterface cartID |
 	
@@ -447,7 +447,7 @@ test15CanNotListPurchasesWithInvalidCredentials
 	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
 	
 	storeInterface checkOut: cartID 
-			    creditCard: '123456789123456' 
+			    creditCard: (storeFactory validCreditCardNumber) 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername.
@@ -460,7 +460,7 @@ test15CanNotListPurchasesWithInvalidCredentials
 	! !
 
 
-!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 02:07:36'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:07:45'!
 test10CheckoutCartWithOneItem
 	| storeInterface cartID purchases items |
 	
@@ -469,7 +469,7 @@ test10CheckoutCartWithOneItem
 	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
 	
 	storeInterface checkOut: cartID 
-			    creditCard: '123456789123456' 
+			    creditCard: (storeFactory validCreditCardNumber) 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername.
@@ -482,7 +482,7 @@ test10CheckoutCartWithOneItem
 	
 	! !
 
-!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 02:09:51'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:07:58'!
 test11CheckoutTwoCartsForSameClient
 	| storeInterface cartID1 cartID2 purchases items expectedTotal |
 	
@@ -493,13 +493,13 @@ test11CheckoutTwoCartsForSameClient
 	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID2.
 	
 	storeInterface checkOut: cartID1 
-			    creditCard: '123456789123456' 
+			    creditCard: (storeFactory validCreditCardNumber)  
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername .
 			
 	storeInterface checkOut: cartID2 
-			    creditCard: '123456789123456' 
+			    creditCard: (storeFactory validCreditCardNumber) 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername .
@@ -513,7 +513,7 @@ test11CheckoutTwoCartsForSameClient
 	
 	! !
 
-!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 02:11:11'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:08:10'!
 test12CheckoutWithMultipleItems
 	| storeInterface cartID purchases expectedTotal items |
 	
@@ -523,7 +523,7 @@ test12CheckoutWithMultipleItems
 	storeInterface add: 5 of: (storeFactory anotherItemSellByTheStore) toCart: cartID.
 	
 	storeInterface checkOut: cartID
-			    creditCard: '123456789123456' 
+			    creditCard: (storeFactory validCreditCardNumber)  
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername .
@@ -538,7 +538,7 @@ test12CheckoutWithMultipleItems
 	
 	! !
 
-!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 02:13:50'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:08:24'!
 test13CheckoutCartsForTwoClient
 	| storeInterface cartID1 cartID2 purchasesClient1 purchasesClient2 items1 items2 |
 	
@@ -549,13 +549,13 @@ test13CheckoutCartsForTwoClient
 	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID2.
 	
 	storeInterface checkOut: cartID1 
-			    creditCard: '123456789123456' 
+			    creditCard: (storeFactory validCreditCardNumber)  
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername .
 			
 	storeInterface checkOut: cartID2 
-			    creditCard: '123456789123456' 
+			    creditCard: (storeFactory validCreditCardNumber) 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory anotherValidUsername .
@@ -573,7 +573,7 @@ test13CheckoutCartsForTwoClient
 	
 	! !
 
-!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 01:16:22'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:08:30'!
 test14CanNotCheckoutExpiredCart
 	| storeInterface cartID |
 	
@@ -584,7 +584,7 @@ test14CanNotCheckoutExpiredCart
 	self advanceMinutesBy: 31.
 	
 	self should: [storeInterface checkOut: cartID 
-			    creditCard: '123456789123456' 
+			    creditCard: (storeFactory validCreditCardNumber)  
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername.
@@ -595,7 +595,7 @@ test14CanNotCheckoutExpiredCart
 		].
 	! !
 
-!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 01:16:30'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:09:42'!
 test16CanNotCheckoutSameCartTwice
 	| storeInterface cartID |
 	
@@ -604,14 +604,14 @@ test16CanNotCheckoutSameCartTwice
 	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
 	
 	storeInterface checkOut: cartID 
-			    creditCard: '123456789123456' 
+			    creditCard: (storeFactory validCreditCardNumber) 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername.
 			
 	
 	self should: [storeInterface checkOut: cartID 
-			    creditCard: '123456789123456' 
+			    creditCard: (storeFactory validCreditCardNumber)
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername.
@@ -621,7 +621,7 @@ test16CanNotCheckoutSameCartTwice
 		self assert: (StoreInterface cartDoesNotExistErrorDescription) equals: anError messageText.
 		].! !
 
-!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 02:16:24'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:09:49'!
 test17CanNotCheckoutWithInvalidExpirationDate
 	| storeInterface cartID |
 	
@@ -630,7 +630,7 @@ test17CanNotCheckoutWithInvalidExpirationDate
 	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
 	
 	self should: [storeInterface checkOut: cartID 
-			    creditCard: '123456789123456' 
+			    creditCard: (storeFactory validCreditCardNumber) 
 			    expiredOnMonth: 13 
 			    andYear: 202  
 			    owner: storeFactory validUsername.
@@ -639,6 +639,30 @@ test17CanNotCheckoutWithInvalidExpirationDate
 	withExceptionDo: [:anError |
 			| purchases |
 			self assert: (CreditCard invalidExpirationDateErrorDescription ) equals: anError messageText.
+			purchases := (storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword).
+			self assert: 0 equals: (purchases at: 'items') size.
+			self assert: 0 equals: (purchases at: 'total').
+		].
+	! !
+
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 11:09:58'!
+test18CanNotCheckoutWithInvalidCreditCardNumber
+	| storeInterface cartID |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	self should: [storeInterface checkOut: cartID 
+			    creditCard: (storeFactory invalidCreditCardNumber) 
+			    expiredOnMonth: 12 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	 ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+			| purchases |
+			self assert: (StoreInterface canNotDebitErrorDescription ) equals: anError messageText.
 			purchases := (storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword).
 			self assert: 0 equals: (purchases at: 'items') size.
 			self assert: 0 equals: (purchases at: 'total').
@@ -1057,10 +1081,10 @@ assertCartIsValid: aCartID
 	self assertCartExpired: aCartID.
 	self assertCartExists: aCartID! !
 
-!StoreInterface methodsFor: 'assertions' stamp: 'BAG 6/22/2021 19:33:01'!
+!StoreInterface methodsFor: 'assertions' stamp: 'BAG 6/24/2021 02:26:15'!
 assertValidCreditCardNumber: aCreditCardNumber
 
-	^ (aCreditCardNumber isNumber and: (aCreditCardNumber asNumber numberOfDigitsInBase: 10) = 16) ifTrue: [self error: self class canNotDebitErrorDescription ]! !
+	^ ((aCreditCardNumber asNumber numberOfDigitsInBase: 10) = 16) ifFalse: [self error: self class canNotDebitErrorDescription ]! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
@@ -1154,10 +1178,20 @@ defaultCatalog
 expiredCreditCard
 	^CreditCard expiringOnMonth: today monthIndex  andYear: today yearNumber -1 for: (self validUsername).! !
 
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/24/2021 11:07:05'!
+invalidCreditCardNumber
+	
+	^'0034567891234567'.! !
+
 !StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/21/2021 21:59:01'!
 notExpiredCreditCard
 	
 	^CreditCard expiringOnMonth: today monthIndex andYear: today yearNumber +1 for: (self validUsername).! !
+
+!StoreTestObjectsFactory methodsFor: 'credit card' stamp: 'BAG 6/24/2021 11:06:31'!
+validCreditCardNumber
+	
+	^'1234567891234567'.! !
 
 
 !StoreTestObjectsFactory methodsFor: 'initialization' stamp: 'HernanWilkinson 6/17/2013 18:37'!
