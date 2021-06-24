@@ -246,292 +246,344 @@ debit: anAmount from: aCreditCard
 	^debitBehavior value: anAmount value: aCreditCard ! !
 
 
-!classDefinition: #RestInterfaceTest category: 'TusLibros'!
-TestCase subclass: #RestInterfaceTest
-	instanceVariableNames: 'storeFactory clock debitBehavior clockDate'
+!classDefinition: #StoreInterfaceTest category: 'TusLibros'!
+TestCase subclass: #StoreInterfaceTest
+	instanceVariableNames: 'storeFactory clock clockDate debitBehavior'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'TusLibros'!
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:03:02'!
+!StoreInterfaceTest methodsFor: 'create cart' stamp: 'BAG 6/24/2021 01:13:11'!
 test01CanNotCreateCartWithInvalidUser
-	| restInterface |
+	| storeInterface |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
 	
-	self should: [restInterface createCartForUser: 'pepe' withPassword: '1234' ]
+	self should: [storeInterface createCartForUser: 'pepe' withPassword: '1234' ]
 	 raise:  Error - MessageNotUnderstood
 	withExceptionDo: [:anError | 
-			self assert: anError messageText = RestInterface InvalidCredentialsErrorDescription.
+			self assert: anError messageText = StoreInterface InvalidCredentialsErrorDescription.
 		].
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:07:10'!
+!StoreInterfaceTest methodsFor: 'create cart' stamp: 'BAG 6/24/2021 01:13:37'!
 test02CanCreateCartWithValidCredentials
-	| restInterface cartID cartItems |
+	| storeInterface cartID cartItems |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
-	cartItems := restInterface listCart: cartID.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
+	cartItems := storeInterface listCart: cartID.
 	
 	self assert: 0 equals: cartItems size.
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:07:24'!
+!StoreInterfaceTest methodsFor: 'create cart' stamp: 'BAG 6/24/2021 01:13:47'!
 test03CanCreateMultipleCart
-	| restInterface cartID1 cartID2 cartItems1 cartItems2 |
+	| storeInterface cartID1 cartID2 cartItems1 cartItems2 |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID1 := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
-	cartID2 := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
-	cartItems1 := restInterface listCart: cartID1.
-	cartItems2 := restInterface listCart: cartID2.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
+	cartID2 := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
+	cartItems1 := storeInterface listCart: cartID1.
+	cartItems2 := storeInterface listCart: cartID2.
 	
 	self assert: cartID1 ~= cartID2.
 	self assert: 0 equals: cartItems1 size.
 	self assert: 0 equals: cartItems2 size.
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:07:40'!
+
+!StoreInterfaceTest methodsFor: 'add to cart' stamp: 'BAG 6/24/2021 01:36:34'!
 test04AddBookToCart
-	| restInterface cartID cartItems |
+	| storeInterface cartID cartItems item |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
+	item := storeFactory itemSellByTheStore. 
 	
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID  .
-	cartItems := restInterface listCart: cartID.
+	storeInterface add: 1 of: item toCart: cartID  .
+	cartItems := storeInterface listCart: cartID.
 	
-	
-	self assert: 2 equals: cartItems size.
-	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
-	self assert: 1 equals: cartItems second.
+	self assert: 1 equals: cartItems size.
+	self assert: 1 equals: (cartItems occurrencesOf: item).
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:07:48'!
+!StoreInterfaceTest methodsFor: 'add to cart' stamp: 'BAG 6/24/2021 01:35:06'!
 test05AddMultipleBooksToCart
-	| restInterface cartID cartItems item1 item2 |
+	| storeInterface cartID cartItems item1 item2 |
 	
 	item1 := storeFactory itemSellByTheStore. 
 	item2 := storeFactory anotherItemSellByTheStore.
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword. 
 	
-	restInterface add: 1 of: item1 toCart: cartID  .
-	restInterface add: 1 of: item2 toCart: cartID  .
-	cartItems := restInterface listCart: cartID.
+	storeInterface add: 1 of: item1 toCart: cartID  .
+	storeInterface add: 1 of: item2 toCart: cartID  .
+	cartItems := storeInterface listCart: cartID.
 	
-	self assert: 4 equals: cartItems size.
-	self assert: item1 equals: (cartItems at: 1).
-	self assert: 1 equals: (cartItems at: 2).
-	self assert: item2 equals: (cartItems at: 3).
-	self assert: 1 equals: (cartItems at: 4).
+	self assert: 2 equals: cartItems size.
+	self assert: 1 equals: (cartItems occurrencesOf: item1).
+	self assert: 1 equals: (cartItems occurrencesOf: item2).
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:07:58'!
+!StoreInterfaceTest methodsFor: 'add to cart' stamp: 'BAG 6/24/2021 01:14:23'!
 test06CanNotAddBookToExpiredCart
-	| restInterface cartID |
+	| storeInterface cartID |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
 	
 	self advanceMinutesBy: 31.
 	
-	self should: [restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID ]  
+	self should: [storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID ]  
 	raise: Error - MessageNotUnderstood  
 	withExceptionDo: [:anError |
-		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		self assert: (StoreInterface cartDoesNotExistErrorDescription) equals: anError messageText.
 		].
 
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:08:07'!
+!StoreInterfaceTest methodsFor: 'add to cart' stamp: 'BAG 6/24/2021 01:37:36'!
 test07AddBookRefreshesTimeOfCart
-	| restInterface cartID cartItems |
+	| storeInterface cartID cartItems item |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
-	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	item := storeFactory itemSellByTheStore.
+	 
 	self advanceMinutesBy: 15.
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	storeInterface add: 1 of: item toCart: cartID.
 	self advanceMinutesBy: 20.
 	
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	storeInterface add: 1 of: item toCart: cartID.
 	
-	cartItems := restInterface listCart: cartID.
+	cartItems := storeInterface listCart: cartID.
 	 
 	self assert: 2 equals: cartItems size.
-	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
-	self assert: 2 equals: cartItems second. 
+	self assert: 2 equals: (cartItems occurrencesOf: item). 
 	
 
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:08:14'!
+
+!StoreInterfaceTest methodsFor: 'setup' stamp: 'BAG 6/22/2021 19:50:24'!
+setUp
+	storeFactory _ StoreTestObjectsFactory new.
+	clock _ 0.
+	clockDate _ DateAndTime now.
+	debitBehavior _ [:amount : creditCard |].
+	! !
+
+
+!StoreInterfaceTest methodsFor: 'clock mocking' stamp: 'BAG 6/19/2021 12:04:15'!
+actualTime
+	^clock. 
+	! !
+
+!StoreInterfaceTest methodsFor: 'clock mocking' stamp: 'BAG 6/21/2021 19:07:47'!
+advanceMinutesBy: aTimeSpan 
+	clock _ clock +  aTimeSpan.! !
+
+!StoreInterfaceTest methodsFor: 'clock mocking' stamp: 'BAG 6/19/2021 12:11:33'!
+minutesElapsedSince: aTimeStamp
+	^clock - aTimeStamp. 
+	! !
+
+!StoreInterfaceTest methodsFor: 'clock mocking' stamp: 'BAG 6/21/2021 19:08:02'!
+today
+	^clockDate.! !
+
+
+!StoreInterfaceTest methodsFor: 'authentication mocking' stamp: 'BAG 6/21/2021 20:52:31'!
+authenticate: aUsername with: aPassword
+	^(storeFactory validUsername = aUsername and: storeFactory validPassword = aPassword) 
+	or: (storeFactory anotherValidUsername = aUsername and: storeFactory anotherValidPassword = aPassword). 
+	! !
+
+
+!StoreInterfaceTest methodsFor: 'list cart' stamp: 'BAG 6/24/2021 01:15:15'!
 test08CanNotListExpiredCart
-	| restInterface cartID |
+	| storeInterface cartID |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
 	
 	self advanceMinutesBy: 31.
 	
-	self should: [restInterface listCart: cartID]  
+	self should: [storeInterface listCart: cartID]  
 	raise: Error - MessageNotUnderstood  
 	withExceptionDo: [:anError |
-		self assert: anError messageText equals: (RestInterface cartDoesNotExistErrorDescription).
+		self assert: anError messageText equals: (StoreInterface cartDoesNotExistErrorDescription).
 		].
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:08:22'!
+!StoreInterfaceTest methodsFor: 'list cart' stamp: 'BAG 6/24/2021 01:35:59'!
 test09ListCartRefreshesTime
-	| restInterface cartID cartItems |
+	| storeInterface cartID cartItems |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
 	
 	self advanceMinutesBy: 15.
-	cartItems := restInterface listCart: cartID.
+	cartItems := storeInterface listCart: cartID.
 	
 	self advanceMinutesBy: 20.
-	cartItems := restInterface listCart: cartID.
+	cartItems := storeInterface listCart: cartID.
 	 
-	self assert: 2 equals: cartItems size.
-	self assert: (storeFactory itemSellByTheStore) equals: cartItems first.
-	self assert: 1 equals: cartItems second. 
+	self assert: 1 equals: cartItems size.
+	self assert: 1 equals: (cartItems occurrencesOf:(storeFactory itemSellByTheStore)).
 	
 
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:44:52'!
+
+!StoreInterfaceTest methodsFor: 'list purchases' stamp: 'BAG 6/24/2021 01:15:43'!
+test15CanNotListPurchasesWithInvalidCredentials
+	| storeInterface cartID |
+	
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	
+	storeInterface checkOut: cartID 
+			    creditCard: '123456789123456' 
+			    expiredOnMonth: 06 
+			    andYear: 2021  
+			    owner: storeFactory validUsername.
+	
+	self should: [ 	storeInterface listPurchases: 'invalid user' password: 'invalid password'. ]  
+	raise: Error - MessageNotUnderstood  
+	withExceptionDo: [:anError |
+		self assert: (StoreInterface InvalidCredentialsErrorDescription) equals: anError messageText.
+		].
+	! !
+
+
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 02:07:36'!
 test10CheckoutCartWithOneItem
-	| restInterface cartID expectedPurchases purchases |
+	| storeInterface cartID purchases items |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
 	
-	restInterface checkOut: cartID 
+	storeInterface checkOut: cartID 
 			    creditCard: '123456789123456' 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername.
 			
-	purchases := restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
-	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore with: 1 with: storeFactory itemSellByTheStorePrice.
-	 
-	self assert: expectedPurchases size equals: purchases size.
-	self assert: expectedPurchases equals: purchases.
+	purchases := storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	items := (purchases at: 'items').
+	
+	self assert: (storeFactory itemSellByTheStorePrice) equals: (purchases at: 'total').
+	self assert: 1 equals: (items at: (storeFactory itemSellByTheStore)).
 	
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:10:26'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 02:09:51'!
 test11CheckoutTwoCartsForSameClient
-	| restInterface cartID1 cartID2 expectedPurchases purchases |
+	| storeInterface cartID1 cartID2 purchases items expectedTotal |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID1 := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
-	cartID2 := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID2.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	cartID2 := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID2.
 	
-	restInterface checkOut: cartID1 
+	storeInterface checkOut: cartID1 
 			    creditCard: '123456789123456' 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername .
 			
-	restInterface checkOut: cartID2 
+	storeInterface checkOut: cartID2 
 			    creditCard: '123456789123456' 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername .
 			
-	purchases := restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
-	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore 
-										with: 2
-										with: 2* storeFactory itemSellByTheStorePrice.
+	purchases := storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	items := (purchases at: 'items').
+	expectedTotal := 2* storeFactory itemSellByTheStorePrice.
 	 
-	self assert: expectedPurchases size equals: purchases size.
-	self assert: expectedPurchases equals: purchases.
+	self assert:  2 equals: (items at: storeFactory itemSellByTheStore).
+	self assert: expectedTotal equals: (purchases at: 'total').
 	
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:10:05'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 02:11:11'!
 test12CheckoutWithMultipleItems
-	| restInterface cartID expectedPurchases purchases |
+	| storeInterface cartID purchases expectedTotal items |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
-	restInterface add: 5 of: (storeFactory itemSellByTheStore) toCart: cartID.
-	restInterface add: 5 of: (storeFactory anotherItemSellByTheStore) toCart: cartID.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 5 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	storeInterface add: 5 of: (storeFactory anotherItemSellByTheStore) toCart: cartID.
 	
-	restInterface checkOut: cartID
+	storeInterface checkOut: cartID
 			    creditCard: '123456789123456' 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername .
 			
-	purchases := restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
-	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore 
-										with: 5 
-										with: storeFactory anotherItemSellByTheStore 
-										with: 5
-										with: 5*(storeFactory itemSellByTheStorePrice + storeFactory anotherItemSellByTheStorePrice).
+	purchases := storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	items := (purchases at: 'items').
+	expectedTotal := 5*(storeFactory itemSellByTheStorePrice + storeFactory anotherItemSellByTheStorePrice).
 	 
-	self assert: expectedPurchases size equals: purchases size.
-	self assert: expectedPurchases equals: purchases.
+	self assert:  5 equals: (items at: storeFactory itemSellByTheStore).
+	self assert:  5 equals: (items at: storeFactory anotherItemSellByTheStore).
+	self assert: expectedTotal equals: (purchases at: 'total').
 	
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:50:40'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 02:13:50'!
 test13CheckoutCartsForTwoClient
-	| restInterface cartID1 cartID2 expectedPurchases purchasesClient1 purchasesClient2 |
+	| storeInterface cartID1 cartID2 purchasesClient1 purchasesClient2 items1 items2 |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID1 := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
-	cartID2 := restInterface createCartForUser: storeFactory anotherValidUsername withPassword: storeFactory anotherValidPassword.
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID2.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID1 := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	cartID2 := storeInterface createCartForUser: storeFactory anotherValidUsername withPassword: storeFactory anotherValidPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID1.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID2.
 	
-	restInterface checkOut: cartID1 
+	storeInterface checkOut: cartID1 
 			    creditCard: '123456789123456' 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername .
 			
-	restInterface checkOut: cartID2 
+	storeInterface checkOut: cartID2 
 			    creditCard: '123456789123456' 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory anotherValidUsername .
 			
-	purchasesClient1 := restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
-	purchasesClient2 := restInterface listPurchases: storeFactory anotherValidUsername password: storeFactory anotherValidPassword.
-	
-	
-	expectedPurchases := OrderedCollection with: storeFactory itemSellByTheStore 
-										with: 1
-										with: storeFactory itemSellByTheStorePrice.
-	
+	purchasesClient1 := storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword.
+	items1 := (purchasesClient1 at: 'items').
+	purchasesClient2 := storeInterface listPurchases: storeFactory anotherValidUsername password: storeFactory anotherValidPassword.
+	items2 := (purchasesClient2 at: 'items').
 	 
-	self assert: expectedPurchases equals: purchasesClient2.
-	self assert: expectedPurchases equals: purchasesClient1.
+	self assert:  1 equals: (items1 at: storeFactory itemSellByTheStore).
+	self assert:  1 equals: (items2 at: storeFactory itemSellByTheStore).
+	self assert: storeFactory itemSellByTheStorePrice equals: (purchasesClient1 at: 'total').
+	self assert: storeFactory itemSellByTheStorePrice equals: (purchasesClient2 at: 'total').
+	
 	
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 20:57:47'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 01:16:22'!
 test14CanNotCheckoutExpiredCart
-	| restInterface cartID |
+	| storeInterface cartID |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
 	
 	self advanceMinutesBy: 31.
 	
-	self should: [restInterface checkOut: cartID 
+	self should: [storeInterface checkOut: cartID 
 			    creditCard: '123456789123456' 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
@@ -539,47 +591,26 @@ test14CanNotCheckoutExpiredCart
 	 ]  
 	raise: Error - MessageNotUnderstood  
 	withExceptionDo: [:anError |
-		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		self assert: (StoreInterface cartDoesNotExistErrorDescription) equals: anError messageText.
 		].
 	! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:03:02'!
-test15CanNotListPurchasesWithInvalidCredentials
-	| restInterface cartID |
-	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
-	
-	restInterface checkOut: cartID 
-			    creditCard: '123456789123456' 
-			    expiredOnMonth: 06 
-			    andYear: 2021  
-			    owner: storeFactory validUsername.
-	
-	self should: [ 	restInterface listPurchases: 'invalid user' password: 'invalid password'. ]  
-	raise: Error - MessageNotUnderstood  
-	withExceptionDo: [:anError |
-		self assert: (RestInterface InvalidCredentialsErrorDescription) equals: anError messageText.
-		].
-	! !
-
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 21:13:16'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 01:16:30'!
 test16CanNotCheckoutSameCartTwice
-	| restInterface cartID |
+	| storeInterface cartID |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
 	
-	restInterface checkOut: cartID 
+	storeInterface checkOut: cartID 
 			    creditCard: '123456789123456' 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
 			    owner: storeFactory validUsername.
 			
 	
-	self should: [restInterface checkOut: cartID 
+	self should: [storeInterface checkOut: cartID 
 			    creditCard: '123456789123456' 
 			    expiredOnMonth: 06 
 			    andYear: 2021  
@@ -587,18 +618,18 @@ test16CanNotCheckoutSameCartTwice
 	 ]  
 	raise: Error - MessageNotUnderstood  
 	withExceptionDo: [:anError |
-		self assert: (RestInterface cartDoesNotExistErrorDescription) equals: anError messageText.
+		self assert: (StoreInterface cartDoesNotExistErrorDescription) equals: anError messageText.
 		].! !
 
-!RestInterfaceTest methodsFor: 'tests' stamp: 'BAG 6/21/2021 22:03:40'!
+!StoreInterfaceTest methodsFor: 'checkout cart' stamp: 'BAG 6/24/2021 02:16:24'!
 test17CanNotCheckoutWithInvalidExpirationDate
-	| restInterface cartID |
+	| storeInterface cartID |
 	
-	restInterface := RestInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
-	cartID := restInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
-	restInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
+	storeInterface := StoreInterface withAuthenticator: self catalog: storeFactory defaultCatalog clock: self merchantProcessor: self.
+	cartID := storeInterface createCartForUser: storeFactory validUsername withPassword: storeFactory validPassword.
+	storeInterface add: 1 of: (storeFactory itemSellByTheStore) toCart: cartID.
 	
-	self should: [restInterface checkOut: cartID 
+	self should: [storeInterface checkOut: cartID 
 			    creditCard: '123456789123456' 
 			    expiredOnMonth: 13 
 			    andYear: 202  
@@ -606,48 +637,19 @@ test17CanNotCheckoutWithInvalidExpirationDate
 	 ]  
 	raise: Error - MessageNotUnderstood  
 	withExceptionDo: [:anError |
+			| purchases |
 			self assert: (CreditCard invalidExpirationDateErrorDescription ) equals: anError messageText.
-		self assert: (restInterface listPurchases: storeFactory validUsername password: storeFactory validPassword) equals: (OrderedCollection with: 0)
+			purchases := (storeInterface listPurchases: storeFactory validUsername password: storeFactory validPassword).
+			self assert: 0 equals: (purchases at: 'items') size.
+			self assert: 0 equals: (purchases at: 'total').
 		].
 	! !
 
 
-!RestInterfaceTest methodsFor: 'setup' stamp: 'BAG 6/21/2021 20:09:42'!
-setUp
-	storeFactory _ StoreTestObjectsFactory new.
-	clock _ 0.
-	clockDate _ DateAndTime now.
-	debitBehavior _ [:amount : creditCard |].! !
-
-
-!RestInterfaceTest methodsFor: 'mocking' stamp: 'BAG 6/19/2021 12:04:15'!
-actualTime
-	^clock. 
-	! !
-
-!RestInterfaceTest methodsFor: 'mocking' stamp: 'BAG 6/21/2021 19:07:47'!
-advanceMinutesBy: aTimeSpan 
-	clock _ clock +  aTimeSpan.! !
-
-!RestInterfaceTest methodsFor: 'mocking' stamp: 'BAG 6/21/2021 20:52:31'!
-authenticate: aUsername with: aPassword
-	^(storeFactory validUsername = aUsername and: storeFactory validPassword = aPassword) 
-	or: (storeFactory anotherValidUsername = aUsername and: storeFactory anotherValidPassword = aPassword). 
-	! !
-
-!RestInterfaceTest methodsFor: 'mocking' stamp: 'BAG 6/21/2021 18:49:11'!
+!StoreInterfaceTest methodsFor: 'merchant processor mocking' stamp: 'BAG 6/21/2021 18:49:11'!
 debit: anAmount from: aCreditCard 
 
 	^debitBehavior value: anAmount value: aCreditCard ! !
-
-!RestInterfaceTest methodsFor: 'mocking' stamp: 'BAG 6/19/2021 12:11:33'!
-minutesElapsedSince: aTimeStamp
-	^clock - aTimeStamp. 
-	! !
-
-!RestInterfaceTest methodsFor: 'mocking' stamp: 'BAG 6/21/2021 19:08:02'!
-today
-	^clockDate.! !
 
 
 !classDefinition: #Cart category: 'TusLibros'!
@@ -679,14 +681,14 @@ assertIsValidQuantity: aQuantity
 	aQuantity strictlyPositive ifFalse: [ self error: self invalidQuantityErrorMessage ]! !
 
 
-!Cart methodsFor: 'initialization' stamp: 'HernanWilkinson 6/17/2013 17:48'!
+!Cart methodsFor: 'initialization' stamp: 'BAG 6/24/2021 01:20:39'!
 initializeAcceptingItemsOf: aCatalog
 
 	catalog := aCatalog.
-	items := OrderedCollection new.! !
+	items := Bag new.! !
 
 
-!Cart methodsFor: 'queries' stamp: 'BAG 6/21/2021 20:01:04'!
+!Cart methodsFor: 'queries' stamp: 'BAG 6/22/2021 19:08:57'!
 items
 	^items ! !
 
@@ -876,163 +878,6 @@ invalidExpirationDateErrorDescription
 	^'La fecha de expiración es inválida'! !
 
 
-!classDefinition: #RestInterface category: 'TusLibros'!
-Object subclass: #RestInterface
-	instanceVariableNames: 'userAuthenticator nextID activeCarts catalog clock lastTimeUsedForCart merchantProcessor salesBook'
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'TusLibros'!
-
-!RestInterface methodsFor: 'cart creation' stamp: 'BAG 6/21/2021 21:03:02'!
-createCartForUser: aUsername withPassword: aPassword 
-	(userAuthenticator authenticate: aUsername with: aPassword) ifFalse:[self error: self class InvalidCredentialsErrorDescription] . 
-	
-	nextID := nextID +1.
-	activeCarts at: nextID put: (Cart acceptingItemsOf: catalog).
-	lastTimeUsedForCart at: nextID put: clock actualTime.
-	
-	^nextID.
-	! !
-
-
-!RestInterface methodsFor: 'operations' stamp: 'BAG 6/19/2021 13:29:52'!
-add: aQuantity of: aBookISBN toCart: aCartID
-	self removeIfCartExpired: aCartID.
-	self assertCartExists: aCartID. 
-	self refreshLastTimeUsed: aCartID.
-	
-	(activeCarts at: aCartID ifAbsent: [self error: self class cartDoesNotExistErrorDescription]) add: aQuantity of: aBookISBN. 
-	 
-	! !
-
-!RestInterface methodsFor: 'operations' stamp: 'BAG 6/19/2021 13:39:11'!
-assertCartExists: aCartID
-
-	lastTimeUsedForCart at:  aCartID 
-	ifAbsent: [
-		self error: self class cartDoesNotExistErrorDescription
-		]! !
-
-!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 21:39:38'!
-checkOut: cartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
-	| cashier card |
-	self removeIfCartExpired: cartID.
-	self assertCartExists: cartID. 
-	self refreshLastTimeUsed: cartID.
-	
-	card := CreditCard expiringOnMonth: expirationMonth andYear: expirationYear for: ownerName.
-	cashier := Cashier toCheckout: (activeCarts at: cartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
-	cashier checkOut. 
-	
-	self removeCart: cartID.
-	
-	^1
-	! !
-
-!RestInterface methodsFor: 'operations' stamp: 'BAG 6/19/2021 13:37:58'!
-listCart: aCartID
-	| cart listCart |
-	
-	self removeIfCartExpired: aCartID.
-	self assertCartExists: aCartID. 
-	self refreshLastTimeUsed: aCartID.
-	
-	listCart := OrderedCollection new. 
-	cart _ activeCarts at: aCartID ifAbsent: [ self error: self class cartDoesNotExistErrorDescription].
-	
-	catalog keys do:[ :book | 	
-		| quantity |
-		
-		quantity := cart occurrencesOf: book.
-		quantity > 0 ifTrue:[
-			listCart add: book.
-			listCart add: quantity 
-			].
-		].
-
-	^listCart.
-	! !
-
-!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 21:03:49'!
-listPurchases: aUsername password: aPassword
-	| purchases1 purchasesByClient total |
-	(userAuthenticator authenticate: aUsername with: aPassword) ifFalse:[self error: self class InvalidCredentialsErrorDescription] . 
-	
-	purchases1:= OrderedCollection new.
-	purchasesByClient := Bag new.
-	total := 0.
-	salesBook do: [ :sale |
-			sale clientName = aUsername ifTrue: [ 
-				total := total + sale total.
-				purchasesByClient addAll: (sale books) ].
-		].
-	
-	
-	(purchasesByClient contents) associationsDo: [:item |
-			purchases1 add: item key.
-			purchases1 add: item value.
-			
-			].
-	
-	purchases1 add: total.
-	
-	^purchases1.! !
-
-!RestInterface methodsFor: 'operations' stamp: 'BAG 6/19/2021 13:39:11'!
-refreshLastTimeUsed: aCartID
-	lastTimeUsedForCart at: aCartID put: clock actualTime.
-	 
-	! !
-
-!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 21:15:20'!
-removeCart: cartID
-
-	activeCarts removeKey: cartID.
-	lastTimeUsedForCart removeKey: cartID! !
-
-!RestInterface methodsFor: 'operations' stamp: 'BAG 6/21/2021 21:15:38'!
-removeIfCartExpired: aCartID
-	lastTimeUsedForCart at:  aCartID 
-	ifPresent: [:lastTime | (clock minutesElapsedSince: lastTime) > 30 ifTrue: [ 
-		self removeCart: aCartID.
-		]] 
-
-	! !
-
-
-!RestInterface methodsFor: 'initialization' stamp: 'BAG 6/21/2021 20:39:49'!
-initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor   
-	userAuthenticator := aUserAuthenticator.
-	nextID := 0.
-	activeCarts := Dictionary new.
-	lastTimeUsedForCart := Dictionary new.
-	salesBook := OrderedCollection new.
-	catalog := aCatalog. 
-	clock := aClock.
-	merchantProcessor := aMerchantProcessor. 
-	
-	! !
-
-"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
-
-!classDefinition: 'RestInterface class' category: 'TusLibros'!
-RestInterface class
-	instanceVariableNames: ''!
-
-!RestInterface class methodsFor: 'error descriptions' stamp: 'BAG 6/21/2021 21:03:16'!
-InvalidCredentialsErrorDescription
-	^'Las credenciales ingresadas son inválidas.'! !
-
-!RestInterface class methodsFor: 'error descriptions' stamp: 'BAG 6/19/2021 11:35:21'!
-cartDoesNotExistErrorDescription
-	^'El ID ingresado no está asociado a ningún carrito existente'.! !
-
-
-!RestInterface class methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:40'!
-withAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor   
-	^self new initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor. ! !
-
-
 !classDefinition: #Sale category: 'TusLibros'!
 Object subclass: #Sale
 	instanceVariableNames: 'total books clientName'
@@ -1073,6 +918,172 @@ of: aTotal withBooks: anBooks clientName: aClientName
 
 	"should assert total is not negative or 0!!"
 	^self new initializeTotal: aTotal books: anBooks clientName: aClientName ! !
+
+
+!classDefinition: #StoreInterface category: 'TusLibros'!
+Object subclass: #StoreInterface
+	instanceVariableNames: 'userAuthenticator nextID nextTransactionID activeCarts catalog clock lastTimeUsedForCart merchantProcessor salesBook'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+!StoreInterface methodsFor: 'cart creation' stamp: 'BAG 6/24/2021 01:59:47'!
+createCartForUser: aUsername withPassword: aPassword 
+	self assertAuthenticationForUser: aUsername password: aPassword. 
+	
+	nextID := nextID +1.
+	activeCarts at: nextID put: (Cart acceptingItemsOf: catalog).
+	lastTimeUsedForCart at: nextID put: clock actualTime.
+	
+	^nextID.
+	! !
+
+
+!StoreInterface methodsFor: 'private - operations' stamp: 'BAG 6/24/2021 01:56:20'!
+purchasesForClientSales: aClientSales
+	| purchases total items |
+	
+	items := aClientSales inject: Bag new into: [ :books :sale |		books addAll: (sale books). books				].
+	total := aClientSales sum: [:sale | sale total ] ifEmpty: [0].
+	
+	purchases := Dictionary new.
+	purchases at: 'items' put: items contents.
+	purchases at: 'total' put: total.
+	
+	^purchases. 
+	! !
+
+!StoreInterface methodsFor: 'private - operations' stamp: 'BAG 6/19/2021 13:39:11'!
+refreshLastTimeUsed: aCartID
+	lastTimeUsedForCart at: aCartID put: clock actualTime.
+	 
+	! !
+
+!StoreInterface methodsFor: 'private - operations' stamp: 'BAG 6/21/2021 21:15:20'!
+removeCart: cartID
+
+	activeCarts removeKey: cartID.
+	lastTimeUsedForCart removeKey: cartID! !
+
+
+!StoreInterface methodsFor: 'operations' stamp: 'BAG 6/24/2021 01:18:33'!
+add: aQuantity of: aBookISBN toCart: aCartID
+	self assertCartIsValid: aCartID. 
+	self refreshLastTimeUsed: aCartID.
+	
+	(activeCarts at: aCartID) add: aQuantity of: aBookISBN. 
+	 
+	! !
+
+!StoreInterface methodsFor: 'operations' stamp: 'BAG 6/24/2021 02:00:21'!
+checkOut: aCartID creditCard: creditCardNumber expiredOnMonth: expirationMonth andYear: expirationYear owner: ownerName
+	| cashier card |
+	self assertValidCreditCardNumber: creditCardNumber. 
+	self assertCartIsValid: aCartID. 
+	self refreshLastTimeUsed: aCartID.
+	
+	card := CreditCard expiringOnMonth: expirationMonth andYear: expirationYear for: ownerName.
+	cashier := Cashier toCheckout: (activeCarts at: aCartID) charging: card throught: merchantProcessor on: (clock today)  registeringOn: salesBook.
+	cashier checkOut. 
+	
+	self removeCart: aCartID.
+	
+	nextTransactionID := nextTransactionID +1.
+	^nextTransactionID 
+	! !
+
+!StoreInterface methodsFor: 'operations' stamp: 'BAG 6/24/2021 01:38:36'!
+listCart: aCartID
+	self assertCartIsValid: aCartID. 
+	self refreshLastTimeUsed: aCartID.
+	
+	^(activeCarts at: aCartID) items.
+	
+	! !
+
+!StoreInterface methodsFor: 'operations' stamp: 'BAG 6/24/2021 01:54:32'!
+listPurchases: aUsername password: aPassword
+	| clientSales |
+	self assertAuthenticationForUser: aUsername password: aPassword. 
+	
+	clientSales := (salesBook select: [:sale | sale clientName = aUsername]).
+	
+	^self purchasesForClientSales: clientSales. 
+	! !
+
+
+!StoreInterface methodsFor: 'initialization' stamp: 'BAG 6/24/2021 01:58:33'!
+initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor   
+	userAuthenticator := aUserAuthenticator.
+	nextID := 0.
+	nextTransactionID := 0.
+	activeCarts := Dictionary new.
+	lastTimeUsedForCart := Dictionary new.
+	salesBook := OrderedCollection new.
+	catalog := aCatalog. 
+	clock := aClock.
+	merchantProcessor := aMerchantProcessor. 
+	
+	! !
+
+
+!StoreInterface methodsFor: 'assertions' stamp: 'BAG 6/22/2021 18:46:29'!
+assertAuthenticationForUser: aUsername password: aPassword
+
+	^ (userAuthenticator authenticate: aUsername with: aPassword) ifFalse:[self error: self class InvalidCredentialsErrorDescription]! !
+
+!StoreInterface methodsFor: 'assertions' stamp: 'BAG 6/19/2021 13:39:11'!
+assertCartExists: aCartID
+
+	lastTimeUsedForCart at:  aCartID 
+	ifAbsent: [
+		self error: self class cartDoesNotExistErrorDescription
+		]! !
+
+!StoreInterface methodsFor: 'assertions' stamp: 'BAG 6/24/2021 00:56:30'!
+assertCartExpired: aCartID
+	lastTimeUsedForCart at: aCartID 
+	ifPresent: [:lastTime | (clock minutesElapsedSince: lastTime) > 30 ifTrue: [ 
+		self removeCart: aCartID.
+		self error: self class cartDoesNotExistErrorDescription.
+		]].
+	
+
+	! !
+
+!StoreInterface methodsFor: 'assertions' stamp: 'BAG 6/24/2021 01:01:36'!
+assertCartIsValid: aCartID
+
+	self assertCartExpired: aCartID.
+	self assertCartExists: aCartID! !
+
+!StoreInterface methodsFor: 'assertions' stamp: 'BAG 6/22/2021 19:33:01'!
+assertValidCreditCardNumber: aCreditCardNumber
+
+	^ (aCreditCardNumber isNumber and: (aCreditCardNumber asNumber numberOfDigitsInBase: 10) = 16) ifTrue: [self error: self class canNotDebitErrorDescription ]! !
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+!classDefinition: 'StoreInterface class' category: 'TusLibros'!
+StoreInterface class
+	instanceVariableNames: ''!
+
+!StoreInterface class methodsFor: 'error descriptions' stamp: 'BAG 6/21/2021 21:03:16'!
+InvalidCredentialsErrorDescription
+	^'Las credenciales ingresadas son inválidas.'! !
+
+!StoreInterface class methodsFor: 'error descriptions' stamp: 'BAG 6/24/2021 02:20:58'!
+canNotDebitErrorDescription
+	^'No se puede realizar el débito'! !
+
+!StoreInterface class methodsFor: 'error descriptions' stamp: 'BAG 6/19/2021 11:35:21'!
+cartDoesNotExistErrorDescription
+	^'El ID ingresado no está asociado a ningún carrito existente'.! !
+
+
+!StoreInterface class methodsFor: 'as yet unclassified' stamp: 'BAG 6/21/2021 18:15:40'!
+withAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor   
+	^self new initializeWithAuthenticator: aUserAuthenticator catalog: aCatalog clock: aClock merchantProcessor: aMerchantProcessor. ! !
 
 
 !classDefinition: #StoreTestObjectsFactory category: 'TusLibros'!
