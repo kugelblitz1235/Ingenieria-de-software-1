@@ -248,9 +248,9 @@ initializeWith: aUsername password: aPassword purchases: aListOfPurchases
 build1stRow
 	^LabelMorph contents: 'Cliente : ',self model username.! !
 
-!StoreClientPurchasesWindow methodsFor: 'GUI building' stamp: 'BAG 7/6/2021 22:21:11'!
+!StoreClientPurchasesWindow methodsFor: 'GUI building' stamp: 'BAG 7/7/2021 21:26:42'!
 build2ndRow
-	^LabelMorph contents: 'Gastos totales: ',self model total.! !
+	^LabelMorph contents: 'Gastos totales: $',self model total.! !
 
 !StoreClientPurchasesWindow methodsFor: 'GUI building' stamp: 'BAG 7/6/2021 22:26:51'!
 build3ndRow
@@ -478,7 +478,7 @@ Panel subclass: #StoreClientTicketWindow
 	poolDictionaries: ''
 	category: 'StoreClientDemo'!
 
-!StoreClientTicketWindow methodsFor: 'GUI building' stamp: 'BAG 7/6/2021 22:30:08'!
+!StoreClientTicketWindow methodsFor: 'GUI building' stamp: 'BAG 7/7/2021 21:28:11'!
 build1stRow
 	| firstRowLayoutMorph ticketLineMorph |
 	
@@ -489,7 +489,7 @@ build1stRow
 	firstRowLayoutMorph morphWidth: 200;
 	axisEdgeWeight: 0.5;
 	addMorph: 	ticketLineMorph;
-	addMorph: (LabelMorph contents:'Total: ',self model total).
+	addMorph: (LabelMorph contents:'Total: $',self model total).
 
 	firstRowLayoutMorph layoutSpec proportionalWidth: 10.
 	
@@ -515,11 +515,11 @@ build2ndRow
 	
 	^secondRowLayoutMorph.! !
 
-!StoreClientTicketWindow methodsFor: 'GUI building' stamp: 'BAG 7/6/2021 21:08:35'!
+!StoreClientTicketWindow methodsFor: 'GUI building' stamp: 'BAG 7/7/2021 21:32:06'!
 build2stRow2ndRow
 	| noButtonMorph secondRowLayoutMorphOfSecondRow yesButtonMorph |
 	
-	yesButtonMorph := PluggableButtonMorph model: self model stateGetter: nil action: #createNewCart  label: 'YES'.
+	yesButtonMorph := PluggableButtonMorph model: self model stateGetter: nil action: #createNewCart  label: 'SI'.
 	noButtonMorph := PluggableButtonMorph model: self model stateGetter: nil action: #logOut  label: 'NO' .
 		
 	secondRowLayoutMorphOfSecondRow := LayoutMorph newRow.
@@ -636,7 +636,7 @@ purchaseIndex: anIndex
 	purchaseIndex := anIndex.
 	^true.! !
 
-!StoreClientPurchasesWindowModel methodsFor: 'PluggableListSelector' stamp: 'BAG 7/6/2021 22:25:44'!
+!StoreClientPurchasesWindowModel methodsFor: 'PluggableListSelector' stamp: 'BAG 7/7/2021 21:31:42'!
 purchases
 	| purchasesItems |
 	purchasesItems := OrderedCollection new.
@@ -644,7 +644,7 @@ purchases
 		| quantity total |
 		quantity := (purchases at: isbn) at:'quantity'.
 		total := (purchases at: isbn) at:'total'.
-		purchasesItems add: isbn, ' | ',(quantity printString), ' | ',(total printString).].
+		purchasesItems add: isbn, ' x',(quantity printString), ' total: $',(total printString).].
 	
 	^purchasesItems	 ! !
 
@@ -839,7 +839,7 @@ catalogItemIndex: anIndex
 	^true.
 	 ! !
 
-!StoreClientShoppingWindowModel methodsFor: 'PluggableListSelector' stamp: 'BAG 7/6/2021 01:03:56'!
+!StoreClientShoppingWindowModel methodsFor: 'PluggableListSelector' stamp: 'BAG 7/7/2021 21:33:21'!
 catalogItems
 	| catalogItems |
 	catalogItems := OrderedCollection new.
@@ -847,7 +847,7 @@ catalogItems
 		| price title |
 		price := (catalog at: isbn) at:'price'.
 		title := (catalog at: isbn) at:'title'.
-		catalogItems add: isbn, ' | ',title, ' | ',(price printString).].
+		catalogItems add: isbn, ' | titulo: ',title, ' | precio: $',(price printString).].
 	
 	^catalogItems	 ! !
 
@@ -878,7 +878,7 @@ initializeWith: aUsername password: aPassword ticket: aTicket
 	restInterface := StoreRestInterface new.! !
 
 
-!StoreClientTicketWindowModel methodsFor: 'PluggableListSelector' stamp: 'BAG 7/6/2021 21:15:32'!
+!StoreClientTicketWindowModel methodsFor: 'PluggableListSelector' stamp: 'BAG 7/7/2021 21:31:24'!
 ticket
 	| ticketItems |
 	ticketItems := OrderedCollection new.
@@ -886,7 +886,7 @@ ticket
 		| quantity total |
 		quantity := (ticket at: isbn) at:'quantity'.
 		total := (ticket at: isbn) at:'total'.
-		ticketItems add: isbn, ' | ',(quantity printString), ' | ',(total printString).].
+		ticketItems add: isbn, ' x',(quantity printString), ' total: $',(total printString).].
 	
 	^ticketItems	 ! !
 
