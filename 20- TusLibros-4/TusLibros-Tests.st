@@ -503,7 +503,7 @@ validUsersAndPasswords
 		yourself! !
 
 
-!TusLibrosSystemFacadeTest methodsFor: 'tests - checkout' stamp: 'HAW 6/19/2018 11:45:13'!
+!TusLibrosSystemFacadeTest methodsFor: 'tests - checkout' stamp: 'BAG 7/7/2021 21:56:14'!
 test10CanCheckoutACart
 
 	| cartId purchases |
@@ -518,7 +518,7 @@ test10CanCheckoutACart
 
 	purchases := systemFacade listPurchasesOf: self validUser authenticatingWith: self validUserPassword.
 
-	self assert: (purchases at: self validBook) equals: testObjectsFactory itemSellByTheStorePrice.
+	self assert: ((purchases at: self validBook)at:'total') equals: testObjectsFactory itemSellByTheStorePrice.
 ! !
 
 !TusLibrosSystemFacadeTest methodsFor: 'tests - checkout' stamp: 'HAW 11/26/2018 18:05:20'!
